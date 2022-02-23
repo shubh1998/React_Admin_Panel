@@ -1,9 +1,9 @@
-import { Home } from "../pages/Home";
-import { Login } from "../pages/Login";
-import { Reports } from "../pages/Reports";
-import DashboardIcon from '@mui/icons-material/Dashboard';
-import AssessmentIcon from '@mui/icons-material/Assessment';
-import LoginIcon from '@mui/icons-material/Login';
+import { Home } from '../pages/Home'
+import { Login } from '../pages/Login'
+import { Reports } from '../pages/Reports'
+import DashboardIcon from '@mui/icons-material/Dashboard'
+import AssessmentIcon from '@mui/icons-material/Assessment'
+import LoginIcon from '@mui/icons-material/Login'
 
 const routerList = [
   {
