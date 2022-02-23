@@ -10,29 +10,39 @@ import { DrawerHeader } from './sidebar.styles'
 
 const drawerWidth = 240
 
-export const Sidebar = () => {
+export const Sidebar = ({ isAlwaysOpen = true }) => {
   const location = useLocation()
   const dispatch = useDispatch()
   const open = useSelector((state) => state.ham.open)
 
   return (
     <Drawer
-      variant='persistent'
       anchor='left'
-      open={open}
+      variant={isAlwaysOpen ? 'permanent' : 'temporary'}
+      open={isAlwaysOpen ? true : open}
+      ModalProps={{
+        keepMounted: !isAlwaysOpen // Better open performance on mobile.
+      }}
       sx={{
         width: drawerWidth,
         flexShrink: 0,
         '& .MuiDrawer-paper': {
           width: drawerWidth,
           boxSizing: 'border-box'
+        },
+        // '@media (max-width: 600px)': {
+        //   display: isAlwaysOpen ? 'none' : 'block'
+        // }
+        display: {
+          sm: isAlwaysOpen ? 'block' : 'none',
+          xs: isAlwaysOpen ? 'none' : 'block'
         }
       }}
     >
       <Box sx={{ overflow: 'auto' }}>
         <DrawerHeader>
           <IconButton onClick={() => dispatch(handleDrawerToggle())}>
-            <ChevronLeftIcon />
+            {isAlwaysOpen ? <></> : <ChevronLeftIcon />}
           </IconButton>
         </DrawerHeader>
         <Divider />

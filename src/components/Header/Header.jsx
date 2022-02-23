@@ -1,10 +1,10 @@
-import { Avatar, IconButton, Menu, MenuItem, Toolbar, Typography } from '@mui/material'
+import { AppBar, Avatar, IconButton, Menu, MenuItem, Toolbar, Typography } from '@mui/material'
 import MenuIcon from '@mui/icons-material/Menu'
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { handleDrawerToggle } from '../../redux-thunk/redux/Ham/hamSlice'
-import { AppBar } from './header.styles'
 
+const drawerWidth = 240
 export const Header = () => {
   const [anchorElUser, setAnchorElUser] = React.useState(null)
   const dispatch = useDispatch()
@@ -41,21 +41,36 @@ export const Header = () => {
   ]
 
   return (
-    <AppBar position='fixed' open={open} sx={{ zIndex: (theme) => theme.zIndex.drawer + 1, backgroundColor: '#000000', color: '#ffffff' }}>
+    <AppBar
+      position='fixed'
+      sx={{
+        width: { sm: `calc(100% - ${drawerWidth}px)` },
+        ml: { sm: `${drawerWidth}px` },
+        // zIndex: (theme) => theme.zIndex.drawer + 1,
+        backgroundColor: '#000000',
+        color: '#ffffff'
+      }}
+    >
       <Toolbar>
         <IconButton
           color='inherit'
           aria-label='open drawer'
           onClick={() => dispatch(handleDrawerToggle())}
           edge='start'
-          sx={{ mr: 2, ...(open && { display: 'none' }) }}
+          // sx={{ mr: 2, ...(open && { display: 'none' }) }}
+          sx={{ mr: 2, display: { sm: 'none' } }}
         >
           <MenuIcon />
         </IconButton>
         <Typography variant='h6' noWrap component='div' sx={{ flexGrow: 1, textAlign: 'left' }}>
           Admin Panel
         </Typography>
-        <Avatar onClick={handleOpenUserMenu} sx={{ p: 0, cursor: 'pointer' }}>PK</Avatar>
+        <Avatar
+          onClick={handleOpenUserMenu}
+          sx={{ p: 0, cursor: 'pointer' }}
+        >
+          PK
+        </Avatar>
         <Menu
           sx={{ mt: '45px' }}
           id='menu-appbar'

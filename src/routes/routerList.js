@@ -4,6 +4,7 @@ import { Reports } from '../pages/Reports'
 import DashboardIcon from '@mui/icons-material/Dashboard'
 import AssessmentIcon from '@mui/icons-material/Assessment'
 import LoginIcon from '@mui/icons-material/Login'
+import { Settings } from '../pages/Settings'
 
 const routerList = [
   {
@@ -27,6 +28,14 @@ const routerList = [
     label: 'Reports',
     path: '/reports',
     component: Reports,
+    hasNavbar: true,
+    icon: AssessmentIcon
+  },
+  {
+    key: 3,
+    label: 'Settings',
+    path: '/settings',
+    component: Settings,
     hasNavbar: true,
     icon: AssessmentIcon
   }
