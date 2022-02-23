@@ -3,9 +3,11 @@ import MenuIcon from '@mui/icons-material/Menu'
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { handleDrawerToggle } from '../../redux-thunk/redux/Ham/hamSlice'
+import { useNavigate } from 'react-router-dom'
 
 const drawerWidth = 240
 export const Header = () => {
+  const navigate = useNavigate()
   const [anchorElUser, setAnchorElUser] = React.useState(null)
   const dispatch = useDispatch()
   const open = useSelector((state) => state.ham.open)
@@ -21,12 +23,13 @@ export const Header = () => {
 
   const logoutHandler = () => {
     setAnchorElUser(null)
-    console.log('Logout')
+    localStorage.removeItem('token')
+    navigate('/login')
   }
 
   const profileHandler = () => {
     setAnchorElUser(null)
-    console.log('Profile')
+    navigate('/settings')
   }
 
   const menuItems = [
@@ -48,7 +51,8 @@ export const Header = () => {
         ml: { sm: `${drawerWidth}px` },
         // zIndex: (theme) => theme.zIndex.drawer + 1,
         backgroundColor: '#000000',
-        color: '#ffffff'
+        color: '#ffffff',
+        boxShadow: 'rgba(0, 0, 0, 0.35) 0px 5px 15px'
       }}
     >
       <Toolbar>

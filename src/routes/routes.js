@@ -1,5 +1,7 @@
 import React, { Fragment } from 'react'
 import { Route, Routes } from 'react-router-dom'
+import { AuthenticationValidator } from '../HOC/PrivateRoute'
+import NotFound from '../pages/NotFound'
 import routes from './routerList'
 import RouteValidator from './RouteValidator'
 
@@ -16,6 +18,10 @@ const CustomRoutes = () => (
           />
         )
       })}
+      <Route
+        path='*'
+        element={<AuthenticationValidator Component={NotFound} />}
+      />
     </Routes>
   </>
 )

@@ -9,7 +9,6 @@ const hamSlice = createSlice({
   initialState: defaultState,
   reducers: {
     handleDrawerToggle: (state) => {
-      console.log('dispacth')
       return {
         open: !state.open
       }
