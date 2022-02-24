@@ -1,12 +1,26 @@
-import React from 'react'
 import PropTypes from 'prop-types'
-import { AuthenticationValidator } from '../HOC/PrivateRoute'
-import { NonAuthenticationValidator } from '../HOC/PublicRoute'
+import { useAuthGuard } from '../custom-hooks/guards/useAuthGuard'
+import { MainLayout } from '../components/MainLayout/MainLayout'
 
 const RouteValidator = ({ hasNavbar, component: Component, ...props }) => {
-  return hasNavbar
-    ? <AuthenticationValidator Component={Component} />
-    : <NonAuthenticationValidator Component={Component} />
+  const auth = useAuthGuard()
+  let JSXComponent = <Component />
+
+  if (auth) {
+    if (hasNavbar) {
+      JSXComponent = (
+        <MainLayout>
+          <Component />
+        </MainLayout>
+      )
+    } else {
+      JSXComponent = <Component />
+    }
+  } else {
+    JSXComponent = <Component />
+  }
+
+  return JSXComponent
 }
 
 RouteValidator.propTypes = {

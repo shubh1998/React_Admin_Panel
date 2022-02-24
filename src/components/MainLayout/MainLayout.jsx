@@ -5,14 +5,14 @@ import { Sidebar } from '../Sidebar/Sidebar'
 
 const drawerWidth = 240
 
-export const MainLayout = ({ Child }) => {
+export const MainLayout = ({ children }) => {
   return (
     <div className='App'>
       <Box sx={{ display: 'flex' }}>
         <CssBaseline />
         <Header />
-        <Sidebar isAlwaysOpen={false} />
-        <Sidebar isAlwaysOpen />
+        <Sidebar isDesktopView={false} />
+        <Sidebar isDesktopView />
         <Box
           component='main'
           sx={{
@@ -22,7 +22,7 @@ export const MainLayout = ({ Child }) => {
           }}
         >
           <Toolbar />
-          <Child />
+          {children}
         </Box>
       </Box>
     </div>

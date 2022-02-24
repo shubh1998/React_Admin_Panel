@@ -10,7 +10,7 @@ import { DrawerHeader } from './sidebar.styles'
 
 const drawerWidth = 240
 
-export const Sidebar = ({ isAlwaysOpen = true }) => {
+export const Sidebar = ({ isDesktopView = true }) => {
   const location = useLocation()
   const dispatch = useDispatch()
   const open = useSelector((state) => state.ham.open)
@@ -18,10 +18,10 @@ export const Sidebar = ({ isAlwaysOpen = true }) => {
   return (
     <Drawer
       anchor='left'
-      variant={isAlwaysOpen ? 'permanent' : 'temporary'}
-      open={isAlwaysOpen ? true : open}
+      variant={isDesktopView ? 'permanent' : 'temporary'}
+      open={isDesktopView ? true : open}
       ModalProps={{
-        keepMounted: !isAlwaysOpen // Better open performance on mobile.
+        keepMounted: !isDesktopView // Better open performance on mobile.
       }}
       sx={{
         width: drawerWidth,
@@ -31,18 +31,18 @@ export const Sidebar = ({ isAlwaysOpen = true }) => {
           boxSizing: 'border-box'
         },
         // '@media (max-width: 600px)': {
-        //   display: isAlwaysOpen ? 'none' : 'block'
+        //   display: isDesktopView ? 'none' : 'block'
         // }
         display: {
-          sm: isAlwaysOpen ? 'block' : 'none',
-          xs: isAlwaysOpen ? 'none' : 'block'
+          sm: isDesktopView ? 'block' : 'none',
+          xs: isDesktopView ? 'none' : 'block'
         }
       }}
     >
       <Box sx={{ overflow: 'auto' }}>
         <DrawerHeader>
           <IconButton onClick={() => dispatch(handleDrawerToggle())}>
-            {isAlwaysOpen ? <></> : <ChevronLeftIcon />}
+            {isDesktopView ? <></> : <ChevronLeftIcon />}
           </IconButton>
         </DrawerHeader>
         <Divider />

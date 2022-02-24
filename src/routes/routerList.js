@@ -10,7 +10,7 @@ const routerList = [
   {
     key: 1,
     label: 'Home',
-    path: '/',
+    path: '/dashboard',
     component: Home,
     hasNavbar: true,
     icon: DashboardIcon

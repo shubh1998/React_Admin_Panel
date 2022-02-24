@@ -20,7 +20,7 @@ export const Login = () => {
     if (email && password) {
       const jwtToken = encodeURIComponent(email + password)
       localStorage.setItem('token', jwtToken)
-      navigate('/', { replace: true })
+      navigate('/dashboard', { replace: true })
     }
   }
 
