@@ -10,7 +10,7 @@ const NotFound = () => {
   const navigate = useNavigate()
   const { pathname } = useLocation()
   if (auth && pathname === '/') {
-    navigate('/dashboard', { replace: true })
+    navigate('/dashboard/reports', { replace: true })
   }
 
   return (

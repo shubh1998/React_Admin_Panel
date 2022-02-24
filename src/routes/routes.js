@@ -1,14 +1,22 @@
 import React, { Fragment } from 'react'
 import { Route, Routes } from 'react-router-dom'
-// import { AuthenticationValidator } from '../HOC/PrivateRoute'
 import NotFound from '../pages/NotFound'
 import routes from './routerList'
 import RouteValidator from './RouteValidator'
 
+let allRoutes = []
+routes.forEach(a => {
+  const route = a
+  if (a.subMenus.length) {
+    allRoutes = [...allRoutes, ...a.subMenus]
+  }
+  allRoutes.push(route)
+})
+
 const CustomRoutes = () => (
   <>
     <Routes>
-      {routes.map(({ path, key, ...props }) => {
+      {allRoutes.map(({ path, key, ...props }) => {
         return (
           <Route
             path={path}
@@ -18,10 +26,6 @@ const CustomRoutes = () => (
           />
         )
       })}
-      {/* <Route
-        path='*'
-        element={<AuthenticationValidator Component={NotFound} />}
-      /> */}
       <Route
         path='*'
         element={<NotFound />}

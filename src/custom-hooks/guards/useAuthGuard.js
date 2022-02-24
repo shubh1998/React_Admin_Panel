@@ -8,7 +8,7 @@ export const useAuthGuard = () => {
 
   useEffect(() => {
     if (token) {
-      if (pathname === '/') navigate('/dashboard', { replace: true })
+      if (pathname === '/') navigate('/dashboard/reports', { replace: true })
     } else {
       navigate('/login', { replace: true })
     }

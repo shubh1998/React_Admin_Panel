@@ -13,31 +13,53 @@ const routerList = [
     path: '/dashboard',
     component: Home,
     hasNavbar: true,
-    icon: DashboardIcon
+    icon: DashboardIcon,
+    subMenus: [
+      {
+        key: 2,
+        label: 'reports',
+        path: '/dashboard/reports',
+        component: Reports,
+        hasNavbar: true,
+        icon: AssessmentIcon
+      }
+    ]
   },
   {
-    key: 2,
+    key: 3,
     label: 'login',
     path: '/login',
     component: Login,
     hasNavbar: false,
-    icon: LoginIcon
+    icon: LoginIcon,
+    subMenus: []
   },
   {
-    key: 3,
-    label: 'reports',
-    path: '/reports',
+    key: 4,
+    label: 'users',
+    path: '/users',
     component: Reports,
     hasNavbar: true,
-    icon: AssessmentIcon
+    icon: AssessmentIcon,
+    subMenus: [
+      {
+        key: 6,
+        label: 'reports',
+        path: '/users/reports',
+        component: Reports,
+        hasNavbar: true,
+        icon: AssessmentIcon
+      }
+    ]
   },
   {
-    key: 3,
+    key: 5,
     label: 'settings',
     path: '/settings',
     component: Settings,
     hasNavbar: true,
-    icon: AssessmentIcon
+    icon: AssessmentIcon,
+    subMenus: []
   }
 ]
 
