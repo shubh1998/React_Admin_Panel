@@ -1,8 +1,8 @@
 import { AppBar, Avatar, IconButton, Menu, MenuItem, Toolbar, Typography } from '@mui/material'
 import MenuIcon from '@mui/icons-material/Menu'
 import React from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { handleDrawerToggle } from '../../redux-thunk/redux/Ham/hamSlice'
+import { useDispatch } from 'react-redux'
+import { handleDrawerToggle } from '../../../redux-thunk/redux/Ham/hamSlice'
 import { useNavigate } from 'react-router-dom'
 
 const drawerWidth = 240
@@ -10,8 +10,6 @@ export const Header = () => {
   const navigate = useNavigate()
   const [anchorElUser, setAnchorElUser] = React.useState(null)
   const dispatch = useDispatch()
-  const open = useSelector((state) => state.ham.open)
-  console.log('open', open)
 
   const handleOpenUserMenu = (event) => {
     setAnchorElUser(event.currentTarget)
@@ -43,6 +41,8 @@ export const Header = () => {
     }
   ]
 
+  const handleDrawer= () => dispatch(handleDrawerToggle())
+
   return (
     <AppBar
       position='fixed'
@@ -59,7 +59,7 @@ export const Header = () => {
         <IconButton
           color='inherit'
           aria-label='open drawer'
-          onClick={() => dispatch(handleDrawerToggle())}
+          onClick={handleDrawer}
           edge='start'
           // sx={{ mr: 2, ...(open && { display: 'none' }) }}
           sx={{ mr: 2, display: { sm: 'none' } }}

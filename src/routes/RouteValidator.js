@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
+import { MainLayout } from '../components/layout/MainLayout/MainLayout'
 import { useAuthGuard } from '../custom-hooks/guards/useAuthGuard'
-import { MainLayout } from '../components/MainLayout/MainLayout'
 
 const RouteValidator = ({ hasNavbar, component: Component, ...props }) => {
   const auth = useAuthGuard()
