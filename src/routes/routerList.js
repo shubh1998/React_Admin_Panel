@@ -9,7 +9,7 @@ import { Settings } from '../pages/Settings'
 const routerList = [
   {
     key: 1,
-    label: 'Home',
+    label: 'home',
     path: '/dashboard',
     component: Home,
     hasNavbar: true,
@@ -17,7 +17,7 @@ const routerList = [
   },
   {
     key: 2,
-    label: 'Login',
+    label: 'login',
     path: '/login',
     component: Login,
     hasNavbar: false,
@@ -25,7 +25,7 @@ const routerList = [
   },
   {
     key: 3,
-    label: 'Reports',
+    label: 'reports',
     path: '/reports',
     component: Reports,
     hasNavbar: true,
@@ -33,7 +33,7 @@ const routerList = [
   },
   {
     key: 3,
-    label: 'Settings',
+    label: 'settings',
     path: '/settings',
     component: Settings,
     hasNavbar: true,

@@ -1,4 +1,4 @@
-import './styles/App.css'
+import './assets/styles/App.css'
 import AppRoutes from './routes'
 import { store } from './redux-thunk/store'
 import { Provider } from 'react-redux'

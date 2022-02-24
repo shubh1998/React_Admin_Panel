@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft'
 import { handleDrawerToggle } from '../../../redux-thunk/redux/Ham/hamSlice'
 import { DrawerHeader } from './Sidebar.styles'
+import { useTranslation } from 'react-i18next'
 
 const drawerWidth = 240
 
@@ -14,7 +15,8 @@ export const Sidebar = ({ isDesktopView = true }) => {
   const location = useLocation()
   const dispatch = useDispatch()
   const open = useSelector((state) => state.ham.open)
-  const handleDrawer= () => dispatch(handleDrawerToggle())
+  const handleDrawer = () => dispatch(handleDrawerToggle())
+  const { t } = useTranslation()
 
   return (
     <Drawer
@@ -53,11 +55,11 @@ export const Sidebar = ({ isDesktopView = true }) => {
             if (item.hasNavbar) {
               return (
                 (
-                  <ListItem button to={item.path} component={RouterLink} key={item.label} selected={item.path === location.pathname} onClick={handleDrawer} >
+                  <ListItem button to={item.path} component={RouterLink} key={item.label} selected={item.path === location.pathname} onClick={handleDrawer}>
                     <ListItemIcon>
                       <NavIcon />
                     </ListItemIcon>
-                    <ListItemText primary={item.label} />
+                    <ListItemText primary={t(item.label)} />
                   </ListItem>
                 )
               )
