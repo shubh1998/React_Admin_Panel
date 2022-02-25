@@ -19,7 +19,7 @@ const routerList = [
         key: 2,
         label: 'reports',
         path: '/dashboard/reports',
-        component: Reports,
+        component: Home,
         hasNavbar: true,
         icon: AssessmentIcon
       }

@@ -1,7 +1,10 @@
 import styled from '@emotion/styled'
 import { Button, Paper, TextField } from '@mui/material'
 import React, { useState } from 'react'
+import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
+import { handleToaster } from '../redux-thunk/redux/Toaster/toasterSlice'
+import { toasterTypes } from '../utils/constants/toaster'
 
 export const GamesContainer = styled.div({
   display: 'grid',
@@ -15,11 +18,17 @@ export const Login = () => {
   const navigate = useNavigate()
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  const dispatch = useDispatch()
 
   const loginHandler = () => {
     if (email && password) {
       const jwtToken = encodeURIComponent(email + password)
       localStorage.setItem('token', jwtToken)
+      dispatch(handleToaster({
+        open: true,
+        message: 'Logged in successfully !',
+        type: toasterTypes.success
+      }))
       navigate('/dashboard/reports', { replace: true })
     }
   }
