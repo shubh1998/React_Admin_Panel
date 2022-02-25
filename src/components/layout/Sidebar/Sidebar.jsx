@@ -42,13 +42,14 @@ export const Sidebar = ({ isDesktopView = true }) => {
           width: drawerWidth,
           boxSizing: 'border-box'
         },
-        // '@media (max-width: 600px)': {
-        //   display: isDesktopView ? 'none' : 'block'
-        // }
+        backgroundColor: 'red',
         display: {
           sm: isDesktopView ? 'block' : 'none',
           xs: isDesktopView ? 'none' : 'block'
         }
+        // '& .MuiPaper-root': {
+        //   backgroundColor: (theme) => theme.colors.drawerBackground
+        // }
       }}
     >
       <Box sx={{ overflow: 'auto' }}>
@@ -65,7 +66,12 @@ export const Sidebar = ({ isDesktopView = true }) => {
               return (
                 <Fragment key={item.key}>
                   <ListItem button to={item.subMenus.length ? '' : item.path} component={RouterLink} selected={item.path === location.pathname} onClick={() => handleDrawer(item.label)}>
-                    <ListItemIcon>
+                    <ListItemIcon sx={{
+                      '& .MuiSvgIcon-root': {
+                        fill: (theme) => theme.colors.white
+                      }
+                    }}
+                    >
                       <NavIcon />
                     </ListItemIcon>
                     <ListItemText primary={t(item.label)} />
@@ -77,7 +83,12 @@ export const Sidebar = ({ isDesktopView = true }) => {
                         <Collapse in={openCollapse.includes(item.label)} timeout='auto' unmountOnExit key={subItem.key}>
                           <List component='div' disablePadding>
                             <ListItem button sx={{ pl: 4 }} to={subItem.path} component={RouterLink}>
-                              <ListItemIcon>
+                              <ListItemIcon sx={{
+                                '& .MuiSvgIcon-root': {
+                                  fill: (theme) => theme.colors.white
+                                }
+                              }}
+                              >
                                 <StarBorder />
                               </ListItemIcon>
                               <ListItemText primary={t(subItem.label)} />

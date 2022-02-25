@@ -18,6 +18,8 @@ export const MainLayout = ({ children }) => {
           sx={{
             flexGrow: 1,
             p: 3,
+            height: '100vh',
+            backgroundColor: (theme) => theme.colors.layout,
             width: { sm: `calc(100% - ${drawerWidth}px)` }
           }}
         >
