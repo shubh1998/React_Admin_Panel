@@ -1,18 +1,18 @@
-import { Collapse, Divider, Drawer, IconButton, List, ListItem, ListItemIcon, ListItemText } from '@mui/material'
+import { Collapse, Divider, Drawer, IconButton, List, ListItem, ListItemIcon, ListItemText, Typography } from '@mui/material'
 import { Box } from '@mui/material/node_modules/@mui/system'
 import React, { Fragment } from 'react'
 import routerList from '../../../routes/routerList'
 import { Link as RouterLink, useLocation } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
-import ChevronLeftIcon from '@mui/icons-material/ChevronLeft'
 import { handleDrawerToggle } from '../../../redux-thunk/redux/Ham/hamSlice'
 import { DrawerHeader } from './Sidebar.styles'
 import { useTranslation } from 'react-i18next'
 import { ExpandLess, ExpandMore, StarBorder } from '@mui/icons-material'
+import { ReactComponent as LeftArrow } from '../../../assets/images/leftArrow.svg'
 
 const drawerWidth = 240
 
-export const Sidebar = ({ isDesktopView = true }) => {
+export const Sidebar = () => {
   const location = useLocation()
   const dispatch = useDispatch()
   const open = useSelector((state) => state.ham.open)
@@ -22,40 +22,48 @@ export const Sidebar = ({ isDesktopView = true }) => {
     } else {
       setOpenCollapse(prev => prev.concat(label))
     }
+  }
+
+  const handleDrawerClose = () => {
     dispatch(handleDrawerToggle())
   }
+
   const { t } = useTranslation()
   const [openCollapse, setOpenCollapse] = React.useState([])
 
   return (
     <Drawer
       anchor='left'
-      variant={isDesktopView ? 'permanent' : 'temporary'}
-      open={isDesktopView ? true : open}
-      ModalProps={{
-        keepMounted: !isDesktopView // Better open performance on mobile.
-      }}
+      variant='persistent'
+      open={open}
       sx={{
         width: drawerWidth,
         flexShrink: 0,
         '& .MuiDrawer-paper': {
           width: drawerWidth,
           boxSizing: 'border-box'
-        },
-        backgroundColor: 'red',
-        display: {
-          sm: isDesktopView ? 'block' : 'none',
-          xs: isDesktopView ? 'none' : 'block'
         }
-        // '& .MuiPaper-root': {
-        //   backgroundColor: (theme) => theme.colors.drawerBackground
-        // }
       }}
     >
       <Box sx={{ overflow: 'auto' }}>
-        <DrawerHeader>
-          <IconButton onClick={handleDrawer}>
-            {isDesktopView ? <></> : <ChevronLeftIcon />}
+        <DrawerHeader sx={{
+          justifyContent: 'space-between',
+          padding: '0px'
+        }}
+        >
+          <Typography
+            sx={{ paddingLeft: '15px' }}
+            variant='h4'
+          >
+            Admin
+          </Typography>
+          <IconButton
+            sx={{
+              padding: '0px'
+            }}
+            onClick={handleDrawerClose}
+          >
+            <LeftArrow />
           </IconButton>
         </DrawerHeader>
         <Divider />
@@ -65,7 +73,18 @@ export const Sidebar = ({ isDesktopView = true }) => {
             if (item.hasNavbar) {
               return (
                 <Fragment key={item.key}>
-                  <ListItem button to={item.subMenus.length ? '' : item.path} component={RouterLink} selected={item.path === location.pathname} onClick={() => handleDrawer(item.label)}>
+                  <ListItem
+                    button
+                    to={item.subMenus.length ? '' : item.path}
+                    component={RouterLink}
+                    onClick={() => handleDrawer(item.label)}
+                    sx={{
+                      backgroundColor: item.path === location.pathname ? '#2C3344' : 'none',
+                      '&:hover': {
+                        backgroundColor: '#2C3344 !important'
+                      }
+                    }}
+                  >
                     <ListItemIcon sx={{
                       '& .MuiSvgIcon-root': {
                         fill: (theme) => theme.colors.white
@@ -82,7 +101,18 @@ export const Sidebar = ({ isDesktopView = true }) => {
                       ? (item.subMenus.map(subItem => (
                         <Collapse in={openCollapse.includes(item.label)} timeout='auto' unmountOnExit key={subItem.key}>
                           <List component='div' disablePadding>
-                            <ListItem button sx={{ pl: 4 }} to={subItem.path} component={RouterLink}>
+                            <ListItem
+                              sx={{
+                                pl: 4,
+                                backgroundColor: subItem.path === location.pathname ? '#2C3344' : 'none',
+                                '&:hover': {
+                                  backgroundColor: '#2C3344'
+                                }
+                              }}
+                              button
+                              to={subItem.path}
+                              component={RouterLink}
+                            >
                               <ListItemIcon sx={{
                                 '& .MuiSvgIcon-root': {
                                   fill: (theme) => theme.colors.white

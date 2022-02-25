@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 const defaultState = {
-  open: false
+  open: true
 }
 
 const hamSlice = createSlice({
