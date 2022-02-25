@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit'
 
 const defaultState = {
   open: false,
-  message: 'this is demo',
+  message: '',
   type: 'success'
 }
 
@@ -12,6 +12,7 @@ const toasterSlice = createSlice({
   reducers: {
     handleToaster: (state, { payload }) => {
       return {
+        ...defaultState,
         ...payload
       }
     }

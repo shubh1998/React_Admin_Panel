@@ -4,12 +4,13 @@ import './assets//styles//index.css'
 import App from './App'
 import reportWebVitals from './reportWebVitals'
 import './assets/translation'
+import { appRoot } from './assets/domNodes'
 
 ReactDOM.render(
   <React.StrictMode>
     <App />
   </React.StrictMode>,
-  document.getElementById('root')
+  appRoot
 )
 
 // If you want to start measuring performance in your app, pass a function
