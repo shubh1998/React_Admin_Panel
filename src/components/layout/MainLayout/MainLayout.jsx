@@ -1,24 +1,26 @@
 import { Box, CssBaseline, Toolbar } from '@mui/material'
 import React from 'react'
+import { useSelector } from 'react-redux'
 import { Header } from '../Header/Header'
 import { Sidebar } from '../Sidebar/Sidebar'
-
-const drawerWidth = 240
+import { Main } from './main.styles'
 
 export const MainLayout = ({ children }) => {
+  const open = useSelector((state) => state.ham.open)
   return (
     <div className='App'>
       <Box sx={{ display: 'flex' }}>
         <CssBaseline />
         <Header />
-        <Sidebar isDesktopView={false} />
-        <Sidebar isDesktopView />
+        <Sidebar />
         <Box
-          component='main'
+          component={Main}
+          open={open}
           sx={{
             flexGrow: 1,
             p: 3,
-            width: { sm: `calc(100% - ${drawerWidth}px)` }
+            height: '100vh',
+            backgroundColor: (theme) => theme.colors.layout
           }}
         >
           <Toolbar />
