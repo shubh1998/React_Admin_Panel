@@ -1,7 +1,7 @@
 import { Box } from '@mui/material'
 import React from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
-import { useAuthGuard } from '../custom-hooks/guards/useAuthGuard'
+import { useAuthGuard } from '../utils/custom-hooks/guards/useAuthGuard'
 
 // import Image from './undraw_page_not_found_su7k.svg'
 

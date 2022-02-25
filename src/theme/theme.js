@@ -13,15 +13,15 @@ export const theme = createTheme({
     }
   },
   palette: {
-    primary: {
-      main: '#0F172A'
-    },
-    error: {
-      main: '#0F172A'
-    },
-    success: {
-      main: '#0F172A'
-    }
+    // primary: {
+    //   main: '#0F172A'
+    // },
+    // error: {
+    //   main: '#0F172A'
+    // },
+    // success: {
+    //   main: '#0F172A'
+    // }
   },
   typography: {
     button: {
@@ -32,9 +32,10 @@ export const theme = createTheme({
     width: 240
   },
   colors: {
-    drawerBackground: '#0F172A',
+    darkJungleGreen: '#0F172A',
     white: '#fff',
-    layout: '#E5E5E5'
+    layout: '#E5E5E5',
+    gunmetal: '#2C3344'
   }
 })
 

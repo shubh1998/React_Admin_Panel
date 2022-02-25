@@ -1,5 +1,4 @@
-import { Collapse, Divider, Drawer, IconButton, List, ListItem, ListItemIcon, ListItemText, Typography } from '@mui/material'
-import { Box } from '@mui/material/node_modules/@mui/system'
+import { Box, Collapse, Divider, Drawer, IconButton, List, ListItem, ListItemIcon, ListItemText, Typography } from '@mui/material'
 import React, { Fragment } from 'react'
 import routerList from '../../../routes/routerList'
 import { Link as RouterLink, useLocation } from 'react-router-dom'
@@ -8,7 +7,7 @@ import { handleDrawerToggle } from '../../../redux-thunk/redux/Ham/hamSlice'
 import { DrawerHeader } from './Sidebar.styles'
 import { useTranslation } from 'react-i18next'
 import { ExpandLess, ExpandMore, StarBorder } from '@mui/icons-material'
-import { ReactComponent as LeftArrow } from '../../../assets/images/leftArrow.svg'
+import { LeftArrowIcon } from '../../ui-kit/icons/iconComponents/LeftArrowIcon'
 
 const drawerWidth = 240
 
@@ -63,7 +62,7 @@ export const Sidebar = () => {
             }}
             onClick={handleDrawerClose}
           >
-            <LeftArrow />
+            <LeftArrowIcon />
           </IconButton>
         </DrawerHeader>
         <Divider />
@@ -79,9 +78,9 @@ export const Sidebar = () => {
                     component={RouterLink}
                     onClick={() => handleDrawer(item.label)}
                     sx={{
-                      backgroundColor: item.path === location.pathname ? '#2C3344' : 'none',
+                      backgroundColor: item.path === location.pathname ? (theme) => theme.colors.gunmetal : 'none',
                       '&:hover': {
-                        backgroundColor: '#2C3344 !important'
+                        backgroundColor: `${(theme) => theme.colors.gunmetal} !important`
                       }
                     }}
                   >
@@ -104,9 +103,9 @@ export const Sidebar = () => {
                             <ListItem
                               sx={{
                                 pl: 4,
-                                backgroundColor: subItem.path === location.pathname ? '#2C3344' : 'none',
+                                backgroundColor: subItem.path === location.pathname ? (theme) => theme.colors.gunmetal : 'none',
                                 '&:hover': {
-                                  backgroundColor: '#2C3344'
+                                  backgroundColor: `${(theme) => theme.colors.gunmetal} !important`
                                 }
                               }}
                               button

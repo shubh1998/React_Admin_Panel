@@ -1,21 +1,21 @@
+import { useState } from 'react'
 import { Button, IconButton, Menu, MenuItem, Toolbar, Typography } from '@mui/material'
-import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import MenuIcon from '@mui/icons-material/Menu'
 import { handleDrawerToggle } from '../../../redux-thunk/redux/Ham/hamSlice'
 import { useNavigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
-import { ReactComponent as NotificationIcon } from '../../../assets/images/notification.svg'
-import { ReactComponent as ProfileIcon } from '../../../assets/images/profile.svg'
+import { AppBar } from './header.styles'
+import MenuIcon from '@mui/icons-material/Menu'
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp'
-import { AppBar } from './header.styles'
+import { NotificationIcon } from '../../ui-kit/icons/iconComponents/NotificationIcon'
+import { ProfileIcon } from '../../ui-kit/icons/iconComponents/ProfileIcon'
 
 export const Header = () => {
   const { i18n } = useTranslation()
   const navigate = useNavigate()
-  const [anchorElUser, setAnchorElUser] = React.useState(null)
-  const [anchorElLanguage, setAnchorElLanguage] = React.useState(null)
+  const [anchorElUser, setAnchorElUser] = useState(null)
+  const [anchorElLanguage, setAnchorElLanguage] = useState(null)
   const [selectedLanguage, setSelectedLanguage] = useState(localStorage.getItem('language') || 'en')
   const open = useSelector((state) => state.ham.open)
   const dispatch = useDispatch()
@@ -81,7 +81,6 @@ export const Header = () => {
       position='fixed'
       sx={{
         // zIndex: (theme) => theme.zIndex.drawer + 1,
-        // backgroundColor: '#000000',
         color: 'black',
         boxShadow: 'rgba(0, 0, 0, 0.35) 0px 5px 15px'
       }}
@@ -160,7 +159,7 @@ export const Header = () => {
             onClose={handleCloseUserMenu}
           >
             {menuItems.map((menuItem) => (
-              <MenuItem key={menuItem.label} onClick={() => { menuItem.handler() }}>
+              <MenuItem key={menuItem.label} onClick={() => { menuItem.handler() }} sx={{ width: 160 }}>
                 <Typography textAlign='center'>{menuItem.label}</Typography>
               </MenuItem>
             ))}
