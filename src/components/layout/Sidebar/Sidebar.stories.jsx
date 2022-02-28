@@ -5,23 +5,30 @@ import { Link as RouterLink } from 'react-router-dom'
 import { DrawerHeader } from './styles/Sidebar.styles'
 import { ExpandLess, ExpandMore, StarBorder } from '@mui/icons-material'
 import { LeftArrowIcon } from '../../ui-kit/icons/iconComponents/LeftArrowIcon'
-import { useSidebarController } from './controller/useSidebarController'
+import { colors } from '../../../theme/Colors/colors'
 
-export const Sidebar = () => {
-  const {
-    location,
-    open,
-    openCollapse,
-    t,
-    handleDrawer,
-    handleDrawerClose
-  } = useSidebarController()
+export default {
+  title: 'Sidebar',
+  args: {
+    handleDrawer: true,
+    openCollapse: ['settings']
+  },
+  argTypes: {
+    handleDrawer: {
+      control: {
+        type: 'boolean'
+      }
+    }
+  }
+}
 
+export const SideBarComponent = (args) => {
+  const { handleDrawer, openCollapse } = args
   return (
     <Drawer
       anchor='left'
       variant='persistent'
-      open={open}
+      open={handleDrawer}
       sx={{
         width: (theme) => theme.drawerWidth,
         flexShrink: 0,
@@ -47,7 +54,6 @@ export const Sidebar = () => {
             sx={{
               padding: '0px'
             }}
-            onClick={handleDrawerClose}
           >
             <LeftArrowIcon />
           </IconButton>
@@ -62,24 +68,23 @@ export const Sidebar = () => {
                   <ListItem
                     button
                     to={item.subMenus.length ? '' : item.path}
-                    component={RouterLink}
-                    onClick={() => handleDrawer(item.label)}
+                    // onClick={() => handleDrawer(item.label)}
                     sx={{
-                      backgroundColor: item.path === location.pathname ? (theme) => theme.colors.gunmetal : 'none',
+                      backgroundColor: colors.gunmetal,
                       '&:hover': {
-                        backgroundColor: `${(theme) => theme.colors.gunmetal} !important`
+                        backgroundColor: `${colors.gunmetal} !important`
                       }
                     }}
                   >
                     <ListItemIcon sx={{
                       '& .MuiSvgIcon-root': {
-                        fill: (theme) => theme.colors.white
+                        fill: colors.white
                       }
                     }}
                     >
                       <NavIcon />
                     </ListItemIcon>
-                    <ListItemText primary={t(item.label)} />
+                    <ListItemText primary={item.label} />
                     {(item.subMenus.length > 0) && (openCollapse.includes(item.label) ? <ExpandLess /> : <ExpandMore />)}
                   </ListItem>
                   {
@@ -90,9 +95,9 @@ export const Sidebar = () => {
                             <ListItem
                               sx={{
                                 pl: 4,
-                                backgroundColor: subItem.path === location.pathname ? (theme) => theme.colors.gunmetal : 'none',
+                                backgroundColor: colors.gunmetal,
                                 '&:hover': {
-                                  backgroundColor: `${(theme) => theme.colors.gunmetal} !important`
+                                  backgroundColor: `${colors.gunmetal} !important`
                                 }
                               }}
                               button
@@ -101,13 +106,13 @@ export const Sidebar = () => {
                             >
                               <ListItemIcon sx={{
                                 '& .MuiSvgIcon-root': {
-                                  fill: (theme) => theme.colors.white
+                                  fill: colors.white
                                 }
                               }}
                               >
                                 <StarBorder />
                               </ListItemIcon>
-                              <ListItemText primary={t(subItem.label)} />
+                              <ListItemText primary={subItem.label} />
                             </ListItem>
                           </List>
                         </Collapse>)))

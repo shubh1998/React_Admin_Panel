@@ -1,4 +1,5 @@
 import { createTheme } from '@mui/material'
+import { colors } from './Colors/colors'
 
 export const theme = createTheme({
   components: {
@@ -31,12 +32,8 @@ export const theme = createTheme({
   drawer: {
     width: 240
   },
-  colors: {
-    darkJungleGreen: '#0F172A',
-    white: '#fff',
-    layout: '#E5E5E5',
-    gunmetal: '#2C3344'
-  }
+  colors: colors,
+  drawerWidth: 240
 })
 
 export default theme

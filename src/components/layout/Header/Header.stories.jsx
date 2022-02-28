@@ -5,23 +5,66 @@ import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp'
 import { NotificationIcon } from '../../ui-kit/icons/iconComponents/NotificationIcon'
 import { ProfileIcon } from '../../ui-kit/icons/iconComponents/ProfileIcon'
-import { useHeaderController } from './controller/useHeaderController'
+import { useState } from 'react'
 
-export const Header = () => {
-  const {
-    anchorElUser,
-    anchorElLanguage,
-    selectedLanguage,
-    open,
-    menuItems,
-    languageMenuItems,
-    handleOpenUserMenu,
-    handleCloseUserMenu,
-    handleOpenLanguageMenu,
-    handleCloseLanguageMenu,
-    changeLanguage,
-    handleDrawer
-  } = useHeaderController()
+export default {
+  title: 'Header',
+  args: {
+    menuItems: [
+      {
+        label: 'Profile',
+        handler: () => {}
+      },
+      {
+        label: 'Logout',
+        handler: () => {}
+      }
+    ],
+    languageMenuItems: [
+      {
+        label: 'en'
+      },
+      {
+        label: 'de'
+      }
+    ]
+  },
+  argTypes: {
+    handleDrawer: {
+      control: {
+        type: 'boolean'
+      }
+    }
+  }
+}
+
+export const HeaderComponent = (args) => {
+  const { menuItems, languageMenuItems } = args
+  const [anchorElUser, setAnchorElUser] = useState(null)
+  const [anchorElLanguage, setAnchorElLanguage] = useState(null)
+  const [selectedLanguage, setSelectedLanguage] = useState(localStorage.getItem('language') || 'en')
+  const open = true
+
+  const handleOpenUserMenu = (event) => {
+    setAnchorElUser(event.currentTarget)
+  }
+
+  const handleCloseUserMenu = () => {
+    setAnchorElUser(null)
+  }
+
+  const handleOpenLanguageMenu = (event) => {
+    setAnchorElLanguage(event.currentTarget)
+  }
+
+  const handleCloseLanguageMenu = () => {
+    setAnchorElLanguage(null)
+  }
+
+  const changeLanguage = (lang) => {
+    setAnchorElLanguage(null)
+    setSelectedLanguage(lang)
+  }
 
   return (
     <AppBar
@@ -44,7 +87,6 @@ export const Header = () => {
           <IconButton
             color='inherit'
             aria-label='open drawer'
-            onClick={handleDrawer}
             edge='start'
             sx={{ mr: 2, ...(open && { display: 'none' }) }}
           >
