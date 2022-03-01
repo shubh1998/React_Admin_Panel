@@ -1,18 +1,17 @@
-import styled from '@emotion/styled'
-import { Button, Paper, TextField } from '@mui/material'
+import { Button, Paper, styled, TextField } from '@mui/material'
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { handleToaster } from '../redux-thunk/redux/Toaster/toasterSlice'
 import { toasterTypes } from '../utils/constants/toaster'
 
-export const GamesContainer = styled.div({
+export const LoginContainer = styled('div')(({ theme }) => ({
   display: 'grid',
   padding: '4%',
   margin: '10%',
   justifyContent: 'center',
   textAlign: 'center'
-})
+}))
 
 export const Login = () => {
   const navigate = useNavigate()
@@ -43,7 +42,7 @@ export const Login = () => {
         display: 'flex'
       }}
     >
-      <GamesContainer className='games-container'>
+      <LoginContainer>
         <h1> Login </h1>
         <TextField
           sx={{ marginBottom: '10px' }}
@@ -63,7 +62,7 @@ export const Login = () => {
         >
           Login
         </Button>
-      </GamesContainer>
+      </LoginContainer>
     </Paper>
   )
 }
