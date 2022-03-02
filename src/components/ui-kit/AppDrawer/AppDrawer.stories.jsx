@@ -5,13 +5,6 @@ export default {
   args: {
     openDrawer: true,
     handleDrawerClose: () => {}
-  },
-  argTypes: {
-    open: {
-      control: {
-        type: 'boolean'
-      }
-    }
   }
 }
 
@@ -19,7 +12,7 @@ export const Default = (args) => {
   const { openDrawer, handleDrawerClose } = args
   return (
     <AppDrawer open={openDrawer} handleDrawerClose={handleDrawerClose}>
-      <h5 style={{ color: '#ffffff' }}>Content goes here</h5>
+      <h3 style={{ color: '#ffffff', textAlign: 'center' }}>Content goes here</h3>
     </AppDrawer>
   )
 }

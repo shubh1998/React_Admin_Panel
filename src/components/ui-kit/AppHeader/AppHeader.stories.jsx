@@ -5,13 +5,6 @@ export default {
   args: {
     openHeader: true,
     handleDrawer: () => {}
-  },
-  argTypes: {
-    open: {
-      control: {
-        type: 'boolean'
-      }
-    }
   }
 }
 

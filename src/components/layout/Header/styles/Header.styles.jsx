@@ -1,5 +1,4 @@
-import { styled } from '@mui/material/styles'
-import { IconButton, Menu, MenuItem } from '@mui/material'
+import { IconButton, Menu, MenuItem, styled } from '@mui/material'
 
 export const StyledMenu = styled(Menu)(({ theme, mt }) => ({
   marginTop: mt || 0

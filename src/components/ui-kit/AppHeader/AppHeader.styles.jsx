@@ -1,9 +1,5 @@
-import { styled } from '@mui/material/styles'
 import MuiAppBar from '@mui/material/AppBar'
-import { Toolbar } from '@mui/material'
-import { colors } from '../../../theme/colors/colors'
-
-const drawerWidth = 240
+import { styled, Toolbar } from '@mui/material'
 
 export const AppBar = styled(MuiAppBar, {
   shouldForwardProp: (prop) => prop !== 'open'
@@ -12,11 +8,11 @@ export const AppBar = styled(MuiAppBar, {
     easing: theme.transitions.easing.sharp,
     duration: theme.transitions.duration.leavingScreen
   }),
-  color: colors.black,
-  boxShadow: colors.greyShadow,
+  color: theme.colors.black,
+  boxShadow: theme.colors.greyShadow,
   ...(open && {
-    width: `calc(100% - ${drawerWidth}px)`,
-    marginLeft: `${drawerWidth}px`,
+    width: `calc(100% - ${theme.drawerWidth}px)`,
+    marginLeft: `${theme.drawerWidth}px`,
     transition: theme.transitions.create(['margin', 'width'], {
       easing: theme.transitions.easing.easeOut,
       duration: theme.transitions.duration.enteringScreen

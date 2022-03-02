@@ -35,5 +35,3 @@ export const theme = createTheme({
   colors: colors,
   drawerWidth: 240
 })
-
-export default theme
