@@ -1,7 +1,7 @@
 import { AppDrawer } from './AppDrawer'
 
 export default {
-  title: 'AppDrawer',
+  title: 'compounds/AppDrawer',
   args: {
     openDrawer: true,
     handleDrawerClose: () => {}

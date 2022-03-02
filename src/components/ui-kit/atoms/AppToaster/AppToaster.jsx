@@ -2,8 +2,8 @@ import React from 'react'
 import { createPortal } from 'react-dom'
 import { Alert, Slide, Snackbar } from '@mui/material'
 import { useSelector, useDispatch } from 'react-redux'
-import { handleToaster } from '../../../redux-thunk/redux/Toaster/toasterSlice'
-import { notificationRoot } from '../../../assets/domNodes'
+import { handleToaster } from '../../../../redux-thunk/redux/Toaster/toasterSlice'
+import { notificationRoot } from '../../../../assets/domNodes'
 
 const TransitionLeft = (props) => {
   return <Slide {...props} direction='right' />

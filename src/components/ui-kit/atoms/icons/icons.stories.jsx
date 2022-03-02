@@ -5,13 +5,13 @@ import { NotificationIcon } from './iconComponents/NotificationIcon'
 import { ProfileIcon } from './iconComponents/ProfileIcon'
 
 export default {
-  title: 'icons'
+  title: 'atoms/Icons'
 }
 
 const Row = props => <Box p={2} {...props} />
 const Cell = props => <Box display='inline-block' m={1} {...props} style={{ cursor: 'pointer' }} />
 
-export const icons = () => (
+export const Default = () => (
   <Box>
     <Row>
       <Cell><LeftArrowIcon title='LeftArrowIcon' width={40} height={40} /></Cell>

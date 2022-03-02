@@ -1,7 +1,7 @@
 import { AppHeader } from './AppHeader'
 
 export default {
-  title: 'AppHeader',
+  title: 'compounds/AppHeader',
   args: {
     openHeader: true,
     handleDrawer: () => {}

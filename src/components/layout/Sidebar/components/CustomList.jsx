@@ -2,7 +2,7 @@ import React, { Fragment } from 'react'
 import { Link as RouterLink } from 'react-router-dom'
 import { Collapse, List } from '@mui/material'
 import { StarBorder } from '@mui/icons-material'
-import { CustomListItem } from '../../../ui-kit/ListItem/CustomListItem'
+import { CustomListItem } from '../../../ui-kit/molecules/ListItem/CustomListItem'
 
 const CustomList = ({
   t,

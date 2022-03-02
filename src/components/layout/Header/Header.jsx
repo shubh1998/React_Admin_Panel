@@ -1,10 +1,10 @@
 import { StyledIconButton } from './styles/Header.styles'
 import MenuIcon from '@mui/icons-material/Menu'
 import { useHeaderController } from './controller/useHeaderController'
-import { ProfileMenu } from './components/ProfileMenu/ProfileMenu'
 import { LanguageMenu } from './components/LanguageMenu/LanguageMenu'
 import { Notification } from './components/Notification/Notification'
-import { AppHeader } from '../../ui-kit/AppHeader/AppHeader'
+import { AppHeader } from '../../ui-kit/compounds/AppHeader/AppHeader'
+import { ProfileMenu } from './components/ProfileMenu/ProfileMenu'
 
 export const Header = () => {
   const { isSideNavOpen, toggleSideNavbar } = useHeaderController()

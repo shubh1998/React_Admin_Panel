@@ -2,7 +2,7 @@
 import { Toaster } from './AppToaster'
 
 export default {
-  title: 'toasters',
+  title: 'atoms/Toasters',
   args: {
     successToaster: false,
     toasterTypes: 'success'
@@ -15,6 +15,6 @@ export default {
   }
 }
 
-export const SuccessToaster = ({ successToaster, toasterTypes }) => {
+export const Default = ({ successToaster, toasterTypes }) => {
   return (<Toaster openToaster={successToaster} message='This is demo' type={toasterTypes} handleToasterClose={() => {}} />)
 }
