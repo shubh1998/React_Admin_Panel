@@ -1,8 +1,9 @@
 import React, { Fragment } from 'react'
 import { Link as RouterLink, useLocation } from 'react-router-dom'
-import { Collapse, List, ListItem, ListItemIcon, ListItemText } from '@mui/material'
-import { ExpandLess, ExpandMore, StarBorder } from '@mui/icons-material'
+import { Collapse, List } from '@mui/material'
+import { StarBorder } from '@mui/icons-material'
 import { useTranslation } from 'react-i18next'
+import { CustomListItem } from '../../../ui-kit/ListItem/CustomListItem'
 
 const CustomList = ({
   list,
@@ -18,8 +19,7 @@ const CustomList = ({
         if (item.hasNavbar) {
           return (
             <Fragment key={item.key}>
-              <ListItem
-                button
+              <CustomListItem
                 to={item.subMenus.length ? '' : item.path}
                 component={RouterLink}
                 onClick={() => handleDrawer(item.label)}
@@ -31,22 +31,17 @@ const CustomList = ({
                     backgroundColor: (theme) => `${theme.colors.gunmetal} !important`
                   }
                 }}
-              >
-                <ListItemIcon sx={{
+                icon={<NavIcon />}
+                text={t(item.label)}
+                expandless={item.subMenus.length > 0 &&
+                  (openCollapse.includes(item.label))}
+                iconStyle={{
                   '& .MuiSvgIcon-root': {
                     fill: (theme) => theme.colors.white
                   }
                 }}
-                >
-                  <NavIcon />
-                </ListItemIcon>
-                <ListItemText primary={t(item.label)} />
-                {item.subMenus.length > 0 &&
-                  (openCollapse.includes(item.label)
-                    ? (<ExpandLess />)
-                    : (
-                      <ExpandMore />))}
-              </ListItem>
+                hasSubMenu
+              />
               {item.subMenus.length
                 ? (item.subMenus.map((subItem) => (
                   <Collapse
@@ -56,26 +51,24 @@ const CustomList = ({
                     key={subItem.key}
                   >
                     <List component='div' disablePadding>
-                      <ListItem
+                      <CustomListItem
                         sx={{
                           color: 'white',
                           pl: 4
                         }}
                         selected={subItem.path === location.pathname}
-                        button
+                        isbutton
                         to={subItem.path}
                         component={RouterLink}
-                      >
-                        <ListItemIcon sx={{
+                        text={t(subItem.label)}
+                        icon={<StarBorder />}
+                        hasSubMenu={false}
+                        iconStyle={{
                           '& .MuiSvgIcon-root': {
                             fill: (theme) => theme.colors.white
                           }
                         }}
-                        >
-                          <StarBorder />
-                        </ListItemIcon>
-                        <ListItemText primary={t(subItem.label)} />
-                      </ListItem>
+                      />
                     </List>
                   </Collapse>)))
                 : (
