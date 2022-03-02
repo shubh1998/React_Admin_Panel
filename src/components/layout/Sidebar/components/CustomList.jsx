@@ -1,9 +1,8 @@
 import React, { Fragment } from 'react'
 import { Link as RouterLink, useLocation } from 'react-router-dom'
-import { Collapse, List, ListItemIcon, ListItemText } from '@mui/material'
+import { Collapse, List, ListItem, ListItemIcon, ListItemText } from '@mui/material'
 import { ExpandLess, ExpandMore, StarBorder } from '@mui/icons-material'
 import { useTranslation } from 'react-i18next'
-import { CustomListItem } from './CustomListItem'
 
 const CustomList = ({
   list,
@@ -19,8 +18,8 @@ const CustomList = ({
         if (item.hasNavbar) {
           return (
             <Fragment key={item.key}>
-              <CustomListItem
-                isbutton
+              <ListItem
+                button
                 to={item.subMenus.length ? '' : item.path}
                 component={RouterLink}
                 onClick={() => handleDrawer(item.label)}
@@ -47,7 +46,7 @@ const CustomList = ({
                     ? (<ExpandLess />)
                     : (
                       <ExpandMore />))}
-              </CustomListItem>
+              </ListItem>
               {item.subMenus.length
                 ? (item.subMenus.map((subItem) => (
                   <Collapse
@@ -57,13 +56,13 @@ const CustomList = ({
                     key={subItem.key}
                   >
                     <List component='div' disablePadding>
-                      <CustomListItem
+                      <ListItem
                         sx={{
                           color: 'white',
                           pl: 4
                         }}
                         selected={subItem.path === location.pathname}
-                        isbutton
+                        button
                         to={subItem.path}
                         component={RouterLink}
                       >
@@ -76,7 +75,7 @@ const CustomList = ({
                           <StarBorder />
                         </ListItemIcon>
                         <ListItemText primary={t(subItem.label)} />
-                      </CustomListItem>
+                      </ListItem>
                     </List>
                   </Collapse>)))
                 : (

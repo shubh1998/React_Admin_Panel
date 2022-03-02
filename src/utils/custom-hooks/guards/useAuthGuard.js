@@ -12,7 +12,7 @@ export const useAuthGuard = () => {
     } else {
       navigate('/login', { replace: true })
     }
-  }, [token])
+  }, [token, navigate, pathname])
 
   if (token) {
     return true
