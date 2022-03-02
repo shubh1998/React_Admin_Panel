@@ -1,22 +1,23 @@
 import { useEffect } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
+import { ROUTE_PATHS, TOKEN } from '../../constants/constants'
 
 export const useAuthGuard = () => {
   const navigate = useNavigate()
-  const token = localStorage.getItem('token')
+  const token = localStorage.getItem(TOKEN)
   const { pathname } = useLocation()
 
   useEffect(() => {
     if (token) {
-      if (pathname === '/') navigate('/dashboard/reports', { replace: true })
+      if (pathname === '/') {
+        navigate(ROUTE_PATHS.dashboardReports, {
+          replace: true
+        })
+      }
     } else {
-      navigate('/login', { replace: true })
+      navigate(ROUTE_PATHS.login, { replace: true })
     }
   }, [token, navigate, pathname])
 
-  if (token) {
-    return true
-  } else {
-    return false
-  }
+  return !!token
 }

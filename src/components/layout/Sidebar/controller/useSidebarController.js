@@ -1,34 +1,37 @@
 import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { useDispatch, useSelector } from 'react-redux'
 import { useLocation } from 'react-router-dom'
+import { useDispatch, useSelector } from 'react-redux'
 import { handleDrawerToggle } from '../../../../redux-thunk/redux/Ham/hamSlice'
 
 export const useSidebarController = () => {
   const location = useLocation()
   const dispatch = useDispatch()
-  const open = useSelector((state) => state.ham.open)
   const { t } = useTranslation()
-  const [openCollapse, setOpenCollapse] = useState([])
+  const isSideBarOpen = useSelector((state) => state.ham.open)
+  const [expandedMenuItem, setExpandedMenuItem] = useState([])
 
-  const handleDrawer = (label) => {
-    if (openCollapse.includes(label)) {
-      setOpenCollapse((prev) => prev.filter((item) => item !== label))
+  const handleDrawerOptions = (label) => {
+    const isAlreadyExpanded = expandedMenuItem.includes(label)
+    if (isAlreadyExpanded) {
+      // Shrink that menu list
+      setExpandedMenuItem((prev) => prev.filter((item) => item !== label))
     } else {
-      setOpenCollapse(prev => prev.concat(label))
+      // Expand that menu list
+      setExpandedMenuItem(prev => prev.concat(label))
     }
   }
 
-  const handleDrawerClose = () => {
+  const toggleSideNavbar = () => {
     dispatch(handleDrawerToggle())
   }
 
   return {
-    location,
-    open,
-    openCollapse,
     t,
-    handleDrawer,
-    handleDrawerClose
+    location,
+    isSideBarOpen,
+    expandedMenuItem,
+    handleDrawerOptions,
+    toggleSideNavbar
   }
 }

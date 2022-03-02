@@ -1,5 +1,5 @@
 import { createTheme } from '@mui/material'
-import { colors } from './Colors/colors'
+import { colors } from './colors/colors'
 
 export const theme = createTheme({
   components: {

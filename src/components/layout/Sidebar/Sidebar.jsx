@@ -1,23 +1,27 @@
 import React from 'react'
+import CustomList from './components/CustomList'
 import routerList from '../../../routes/routerList'
 import { useSidebarController } from './controller/useSidebarController'
-import CustomList from './components/CustomList'
 import { AppDrawer } from '../../ui-kit/AppDrawer/AppDrawer'
 
 export const Sidebar = () => {
   const {
-    open,
-    openCollapse,
-    handleDrawer,
-    handleDrawerClose
+    t,
+    location,
+    isSideBarOpen,
+    expandedMenuItem,
+    handleDrawerOptions,
+    toggleSideNavbar
   } = useSidebarController()
 
   return (
-    <AppDrawer open={open} handleDrawerClose={handleDrawerClose}>
+    <AppDrawer open={isSideBarOpen} handleDrawerClose={toggleSideNavbar}>
       <CustomList
+        t={t}
+        location={location}
         list={routerList}
-        handleDrawer={handleDrawer}
-        openCollapse={openCollapse}
+        handleDrawerOptions={handleDrawerOptions}
+        expandedMenuItem={expandedMenuItem}
       />
     </AppDrawer>
   )

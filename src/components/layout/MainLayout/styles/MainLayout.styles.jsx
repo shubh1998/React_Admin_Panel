@@ -1,6 +1,5 @@
 import { Box } from '@mui/material'
 import { styled } from '@mui/material/styles'
-const drawerWidth = 240
 
 export const Main = styled('main', {
   shouldForwardProp: (prop) => prop !== 'open'
@@ -11,7 +10,7 @@ export const Main = styled('main', {
     easing: theme.transitions.easing.sharp,
     duration: theme.transitions.duration.leavingScreen
   }),
-  marginLeft: `-${drawerWidth}px`,
+  marginLeft: `-${theme.drawerWidth}px`,
   ...(open && {
     transition: theme.transitions.create('margin', {
       easing: theme.transitions.easing.easeOut,

@@ -1,7 +1,7 @@
 import { styled } from '@mui/material/styles'
 import MuiAppBar from '@mui/material/AppBar'
 import { Toolbar } from '@mui/material'
-import { colors } from '../../../theme/Colors/colors'
+import { colors } from '../../../theme/colors/colors'
 
 const drawerWidth = 240
 

@@ -5,12 +5,13 @@ import DashboardIcon from '@mui/icons-material/Dashboard'
 import AssessmentIcon from '@mui/icons-material/Assessment'
 import LoginIcon from '@mui/icons-material/Login'
 import { Settings } from '../pages/Settings'
+import { ROUTE_PATHS } from '../utils/constants/constants'
 
 const routerList = [
   {
     key: 1,
     label: 'home',
-    path: '/dashboard',
+    path: ROUTE_PATHS.dashboardReports,
     component: Home,
     hasNavbar: true,
     icon: DashboardIcon,
@@ -18,7 +19,7 @@ const routerList = [
       {
         key: 2,
         label: 'reports',
-        path: '/dashboard/reports',
+        path: ROUTE_PATHS.dashboardReports,
         component: Home,
         hasNavbar: true,
         icon: AssessmentIcon
@@ -28,7 +29,7 @@ const routerList = [
   {
     key: 3,
     label: 'login',
-    path: '/login',
+    path: ROUTE_PATHS.login,
     component: Login,
     hasNavbar: false,
     icon: LoginIcon,
@@ -37,7 +38,7 @@ const routerList = [
   {
     key: 4,
     label: 'users',
-    path: '/users',
+    path: ROUTE_PATHS.users,
     component: Reports,
     hasNavbar: true,
     icon: AssessmentIcon,
@@ -45,7 +46,7 @@ const routerList = [
       {
         key: 6,
         label: 'reports',
-        path: '/users/reports',
+        path: ROUTE_PATHS.usersReports,
         component: Reports,
         hasNavbar: true,
         icon: AssessmentIcon
@@ -55,7 +56,7 @@ const routerList = [
   {
     key: 5,
     label: 'settings',
-    path: '/settings',
+    path: ROUTE_PATHS.settings,
     component: Settings,
     hasNavbar: true,
     icon: AssessmentIcon,

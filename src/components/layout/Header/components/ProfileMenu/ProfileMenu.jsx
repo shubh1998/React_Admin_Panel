@@ -1,16 +1,16 @@
-import { Button, Typography } from '@mui/material'
-import { ProfileIcon } from '../../../../ui-kit/icons/iconComponents/ProfileIcon'
-import { useHeaderController } from '../../controller/useHeaderController'
-import { StyledMenu, StyledMenuItem } from '../../styles/Header.styles'
+import { Button } from '@mui/material'
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp'
+import { ProfileIcon } from '../../../../ui-kit/icons/iconComponents/ProfileIcon'
+import CustomTypography from '../../../../ui-kit/Typography/CustomTypography'
+import { useHeaderController } from '../../controller/useHeaderController'
+import { StyledMenu, StyledMenuItem } from '../../styles/Header.styles'
 
 export const ProfileMenu = () => {
   const {
     anchorElUser,
     menuItems,
-    handleOpenUserMenu,
-    handleCloseUserMenu
+    toggleUserMenu
   } = useHeaderController()
 
   return (
@@ -18,7 +18,7 @@ export const ProfileMenu = () => {
       <Button
         color='primary'
         variant='outlined'
-        onClick={handleOpenUserMenu}
+        onClick={toggleUserMenu}
         startIcon={<ProfileIcon style={{ width: 20, height: 20 }} />}
         endIcon={
           !anchorElUser ? <KeyboardArrowDownIcon /> : <KeyboardArrowUpIcon />
@@ -34,7 +34,7 @@ export const ProfileMenu = () => {
           horizontal: 'right'
         }}
         open={Boolean(anchorElUser)}
-        onClose={handleCloseUserMenu}
+        onClose={e => toggleUserMenu(e, true)}
       >
         {menuItems.map((menuItem) => (
           <StyledMenuItem
@@ -44,7 +44,7 @@ export const ProfileMenu = () => {
             }}
             width='160px'
           >
-            <Typography textAlign='center'>{menuItem.label}</Typography>
+            <CustomTypography align='center' value={menuItem.label} />
           </StyledMenuItem>
         ))}
       </StyledMenu>

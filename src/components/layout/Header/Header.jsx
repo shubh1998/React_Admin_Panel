@@ -3,25 +3,22 @@ import MenuIcon from '@mui/icons-material/Menu'
 import { useHeaderController } from './controller/useHeaderController'
 import { ProfileMenu } from './components/ProfileMenu/ProfileMenu'
 import { LanguageMenu } from './components/LanguageMenu/LanguageMenu'
-import { AppHeader } from '../../ui-kit/AppHeader/AppHeader'
 import { Notification } from './components/Notification/Notification'
+import { AppHeader } from '../../ui-kit/AppHeader/AppHeader'
 
 export const Header = () => {
-  const {
-    open,
-    handleDrawer
-  } = useHeaderController()
+  const { isSideNavOpen, toggleSideNavbar } = useHeaderController()
 
   return (
     <AppHeader
-      open={open}
-      handleDrawer={handleDrawer}
+      open={isSideNavOpen}
+      handleDrawer={toggleSideNavbar}
       left={
-        !open && (
+        !isSideNavOpen && (
           <StyledIconButton
             color='inherit'
             aria-label='open drawer'
-            onClick={handleDrawer}
+            onClick={toggleSideNavbar}
             edge='start'
             mr={2}
           >

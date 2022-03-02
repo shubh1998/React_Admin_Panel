@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { handleToaster } from '../redux-thunk/redux/Toaster/toasterSlice'
-import { toasterTypes } from '../utils/constants/toaster'
+import { ROUTE_PATHS, TOASTER_TYPE, TOKEN } from '../utils/constants/constants'
 
 export const LoginContainer = styled('div')(({ theme }) => ({
   display: 'grid',
@@ -22,13 +22,17 @@ export const Login = () => {
   const loginHandler = () => {
     if (email && password) {
       const jwtToken = encodeURIComponent(email + password)
-      localStorage.setItem('token', jwtToken)
-      dispatch(handleToaster({
-        open: true,
-        message: 'Logged in successfully !',
-        type: toasterTypes.success
-      }))
-      navigate('/dashboard/reports', { replace: true })
+      localStorage.setItem(TOKEN, jwtToken)
+      dispatch(
+        handleToaster({
+          open: true,
+          message: 'Logged in successfully !!',
+          type: TOASTER_TYPE.success
+        })
+      )
+      navigate(ROUTE_PATHS.dashboardReports, {
+        replace: true
+      })
     }
   }
 

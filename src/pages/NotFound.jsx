@@ -1,6 +1,7 @@
 import { Box } from '@mui/material'
 import React from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
+import { ROUTE_PATHS } from '../utils/constants/constants'
 import { useAuthGuard } from '../utils/custom-hooks/guards/useAuthGuard'
 
 // import Image from './undraw_page_not_found_su7k.svg'
@@ -10,7 +11,9 @@ const NotFound = () => {
   const navigate = useNavigate()
   const { pathname } = useLocation()
   if (auth && pathname === '/') {
-    navigate('/dashboard/reports', { replace: true })
+    navigate(ROUTE_PATHS.dashboardReports, {
+      replace: true
+    })
   }
 
   return (
