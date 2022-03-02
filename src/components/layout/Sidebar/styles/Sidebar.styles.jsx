@@ -1,4 +1,4 @@
-import { Drawer, IconButton, ListItem, ListItemIcon } from '@mui/material'
+import { Drawer, IconButton } from '@mui/material'
 import { styled } from '@mui/material/styles'
 
 export const DrawerHeader = styled('div')(({ theme }) => ({
@@ -22,17 +22,17 @@ export const StyledIconButton = styled(IconButton)(({ theme, padding }) => ({
   padding: padding || 0
 }))
 
-export const StyledListItem = styled(ListItem)(({ theme, selected }) => ({
-  backgroundColor: selected ? theme.colors.gunmetal : 'none',
-  '&:hover': {
-    backgroundColor: `${theme.colors.gunmetal} !important`
-  }
-}))
+// export const StyledListItem = styled(ListItem)(({ theme, selected }) => ({
+//   backgroundColor: selected ? theme.colors.gunmetal : 'none',
+//   '&:hover': {
+//     backgroundColor: `${theme.colors.gunmetal} !important`
+//   }
+// }))
 
-export const StyledListItemIcon = styled(ListItemIcon)(
-  ({ theme, padding, Icon }) => ({
-    '& .MuiSvgIcon-root': {
-      fill: theme.colors.white
-    }
-  })
-)
+// export const StyledListItemIcon = styled(ListItemIcon)(
+//   ({ theme, padding, Icon }) => ({
+//     '& .MuiSvgIcon-root': {
+//       fill: theme.colors.white
+//     }
+//   })
+// )
