@@ -17,15 +17,17 @@ export const Header = () => {
       open={open}
       handleDrawer={handleDrawer}
       left={
-        <StyledIconButton
-          color='inherit'
-          aria-label='open drawer'
-          onClick={handleDrawer}
-          edge='start'
-          mr={2}
-        >
-          <MenuIcon />
-        </StyledIconButton>
+        !open && (
+          <StyledIconButton
+            color='inherit'
+            aria-label='open drawer'
+            onClick={handleDrawer}
+            edge='start'
+            mr={2}
+          >
+            <MenuIcon />
+          </StyledIconButton>
+        )
       }
       right={
         <>
