@@ -11,7 +11,7 @@ const routerList = [
   {
     key: 1,
     label: 'home',
-    path: ROUTE_PATHS.dashboardReports,
+    path: ROUTE_PATHS.dashboard,
     component: Home,
     hasNavbar: true,
     icon: DashboardIcon,
