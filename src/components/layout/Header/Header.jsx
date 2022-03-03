@@ -14,17 +14,19 @@ export const Header = () => {
       open={isSideNavOpen}
       handleDrawer={toggleSideNavbar}
       left={
-        !isSideNavOpen && (
-          <StyledIconButton
-            color='inherit'
-            aria-label='open drawer'
-            onClick={toggleSideNavbar}
-            edge='start'
-            mr={2}
-          >
-            <MenuIcon />
-          </StyledIconButton>
-        )
+        !isSideNavOpen
+          ? (
+            <StyledIconButton
+              color='inherit'
+              aria-label='open drawer'
+              onClick={toggleSideNavbar}
+              edge='start'
+              mr={2}
+            >
+              <MenuIcon />
+            </StyledIconButton>
+            )
+          : <></>
       }
       right={
         <>

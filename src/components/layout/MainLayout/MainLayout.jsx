@@ -1,5 +1,5 @@
+import PropTypes from 'prop-types'
 import { CssBaseline, Toolbar } from '@mui/material'
-import React from 'react'
 import { useSelector } from 'react-redux'
 import { Header } from '../Header/Header'
 import { Sidebar } from '../Sidebar/Sidebar'
@@ -26,4 +26,13 @@ export const MainLayout = ({ children }) => {
       </StyledBox>
     </div>
   )
+}
+
+MainLayout.defaultProps = {
+  children: 'null'
+
+}
+
+MainLayout.propTypes = {
+  children: PropTypes.element
 }

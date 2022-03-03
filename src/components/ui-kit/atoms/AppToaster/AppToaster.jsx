@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { createPortal } from 'react-dom'
 import { Alert, Slide, Snackbar } from '@mui/material'
 import { useSelector, useDispatch } from 'react-redux'
@@ -45,4 +46,16 @@ export const AppToaster = () => {
   return notificationRoot
     ? createPortal(<Toaster openToaster={openToaster} toasterMessage={toasterMessage} toasterType={toasterType} handleToasterClose={handleToasterClose} />, notificationRoot)
     : <></>
+}
+
+Toaster.defaultProps = {
+  openToaster: true,
+  toasterMessage: 'This is demo of toaster',
+  toasterType: 'success'
+}
+
+Toaster.propTypes = {
+  openToaster: PropTypes.bool,
+  toasterMessage: PropTypes.string,
+  toasterType: PropTypes.oneOf(['success', 'error', 'warning', 'info'])
 }
