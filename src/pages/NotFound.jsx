@@ -4,9 +4,7 @@ import { useLocation, useNavigate } from 'react-router-dom'
 import { ROUTE_PATHS } from '../utils/constants/constants'
 import { useAuthGuard } from '../utils/custom-hooks/guards/useAuthGuard'
 
-// import Image from './undraw_page_not_found_su7k.svg'
-
-const NotFound = () => {
+export const NotFound = () => {
   const auth = useAuthGuard()
   const navigate = useNavigate()
   const { pathname } = useLocation()
@@ -22,5 +20,3 @@ const NotFound = () => {
     </Box>
   )
 }
-
-export default NotFound

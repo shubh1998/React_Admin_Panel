@@ -1,5 +1,5 @@
 import { Fragment } from 'react'
-import CustomTypography from './CustomTypography'
+import { CustomTypography } from './CustomTypography'
 
 export default {
   title: 'atoms/Typography'

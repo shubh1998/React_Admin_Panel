@@ -2,7 +2,7 @@ import React from 'react'
 import routerList from '../../../routes/routerList'
 import { useSidebarController } from './controller/useSidebarController'
 import { AppDrawer } from '../../ui-kit/compounds/AppDrawer/AppDrawer'
-import CustomList from './components/CustomList'
+import { CustomList } from './components/CustomList'
 
 export const Sidebar = () => {
   const {

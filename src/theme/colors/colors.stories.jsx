@@ -1,5 +1,5 @@
 import { Grid } from '@mui/material'
-import CustomTypography from '../../components/ui-kit/atoms/Typography/CustomTypography'
+import { CustomTypography } from '../../components/ui-kit/atoms/Typography/CustomTypography'
 import { colors } from './colors'
 
 export default {

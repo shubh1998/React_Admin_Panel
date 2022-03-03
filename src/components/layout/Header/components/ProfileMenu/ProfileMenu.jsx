@@ -3,7 +3,7 @@ import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp'
 import { useHeaderController } from '../../controller/useHeaderController'
 import { StyledMenu, StyledMenuItem } from '../../styles/Header.styles'
-import CustomTypography from '../../../../ui-kit/atoms/Typography/CustomTypography'
+import { CustomTypography } from '../../../../ui-kit/atoms/Typography/CustomTypography'
 import { ProfileIcon } from '../../../../ui-kit/atoms/icons/iconComponents/ProfileIcon'
 
 export const ProfileMenu = () => {

@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Typography } from '@mui/material'
 
-const CustomTypography = ({
+export const CustomTypography = ({
   variant,
   display,
   align,
@@ -53,5 +53,3 @@ CustomTypography.propTypes = {
   value: PropTypes.string.isRequired,
   noWrap: PropTypes.bool
 }
-
-export default CustomTypography

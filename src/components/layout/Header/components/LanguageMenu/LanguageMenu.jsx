@@ -1,6 +1,6 @@
 import { MenuItem } from '@mui/material'
 import { LANGUAGES } from '../../../../../utils/constants/constants'
-import CustomTypography from '../../../../ui-kit/atoms/Typography/CustomTypography'
+import { CustomTypography } from '../../../../ui-kit/atoms/Typography/CustomTypography'
 import { useHeaderController } from '../../controller/useHeaderController'
 import { StyledIconButton, StyledMenu } from '../../styles/Header.styles'
 

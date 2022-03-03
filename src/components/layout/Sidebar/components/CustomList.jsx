@@ -4,7 +4,7 @@ import { Collapse, List } from '@mui/material'
 import { StarBorder } from '@mui/icons-material'
 import { CustomListItem } from '../../../ui-kit/molecules/ListItem/CustomListItem'
 
-const CustomList = ({
+export const CustomList = ({
   t,
   location,
   list,
@@ -90,5 +90,3 @@ const CustomList = ({
     </List>
   )
 }
-
-export default CustomList
