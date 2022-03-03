@@ -6,7 +6,7 @@ import { Sidebar } from '../Sidebar/Sidebar'
 import { Main, StyledBox } from './styles/MainLayout.styles'
 
 export const MainLayout = ({ children }) => {
-  const open = useSelector((state) => state.ham.openHam)
+  const openHam = useSelector((state) => state.ham.openHam)
   return (
     <div className='App'>
       <StyledBox display='flex'>
@@ -15,7 +15,7 @@ export const MainLayout = ({ children }) => {
         <Sidebar />
         <StyledBox
           component={Main}
-          open={open}
+          open={openHam}
           flexGrow={1}
           padding={3}
           height='100vh'
