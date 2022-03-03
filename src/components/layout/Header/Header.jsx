@@ -11,7 +11,7 @@ export const Header = () => {
 
   return (
     <AppHeader
-      open={isSideNavOpen}
+      openDrawer={isSideNavOpen}
       handleDrawer={toggleSideNavbar}
       left={
         !isSideNavOpen

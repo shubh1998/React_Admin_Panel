@@ -1,12 +1,12 @@
 import PropTypes from 'prop-types'
 import { AppBar, StyledToolbar } from './AppHeader.styles'
 
-export const AppHeader = ({ left, right, open = true, handleDrawer = () => {} }) => {
+export const AppHeader = ({ left, right, openDrawer = true, handleDrawer = () => {} }) => {
   return (
     <AppBar
       position='fixed'
       color='default'
-      open={open}
+      open={openDrawer}
     >
       <StyledToolbar>
         <div>
@@ -21,7 +21,7 @@ export const AppHeader = ({ left, right, open = true, handleDrawer = () => {} })
 }
 
 AppHeader.defaultProps = {
-  open: true,
+  openDrawer: true,
   handleDrawer: () => {},
   left: 'null',
   right: 'null'
@@ -29,7 +29,7 @@ AppHeader.defaultProps = {
 }
 
 AppHeader.propTypes = {
-  open: PropTypes.bool,
+  openDrawer: PropTypes.bool,
   handleDrawer: PropTypes.func,
   left: PropTypes.element,
   right: PropTypes.element
