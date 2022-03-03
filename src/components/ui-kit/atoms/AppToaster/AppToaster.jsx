@@ -9,7 +9,7 @@ const TransitionLeft = (props) => {
   return <Slide {...props} direction='right' />
 }
 
-export const Toaster = ({ openToaster, type, message, handleToasterClose }) => {
+export const Toaster = ({ openToaster, toasterType, toasterMessage, handleToasterClose }) => {
   return (
     <Snackbar
       anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}
@@ -26,23 +26,23 @@ export const Toaster = ({ openToaster, type, message, handleToasterClose }) => {
         }}
         variant='filled'
         onClose={handleToasterClose}
-        severity={type}
+        severity={toasterType}
       >
-        {message}
+        {toasterMessage}
       </Alert>
     </Snackbar>
   )
 }
 
 export const AppToaster = () => {
-  const { open, message, type } = useSelector(state => state.toaster)
+  const { openToaster, toasterMessage, toasterType } = useSelector(state => state.toaster)
   const dispatch = useDispatch()
 
   const handleToasterClose = () => {
-    dispatch(handleToaster({ open: false }))
+    dispatch(handleToaster({ openToaster: false }))
   }
 
   return notificationRoot
-    ? createPortal(<Toaster openToaster={open} message={message} type={type} handleToasterClose={handleToasterClose} />, notificationRoot)
+    ? createPortal(<Toaster openToaster={openToaster} toasterMessage={toasterMessage} toasterType={toasterType} handleToasterClose={handleToasterClose} />, notificationRoot)
     : <></>
 }

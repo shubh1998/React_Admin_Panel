@@ -68,9 +68,9 @@ export const useHeaderController = () => {
 
   const showNotification = () => {
     dispatch(handleToaster({
-      open: true,
-      message: 'You don\'t have any pending notification !!',
-      type: TOASTER_TYPE.warning
+      openToaster: true,
+      toasterMessage: 'You don\'t have any pending notification !!',
+      toasterType: TOASTER_TYPE.warning
     }))
   }
 

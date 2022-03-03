@@ -25,9 +25,9 @@ export const Login = () => {
       localStorage.setItem(TOKEN, jwtToken)
       dispatch(
         handleToaster({
-          open: true,
-          message: 'Logged in successfully !!',
-          type: TOASTER_TYPE.success
+          openToaster: true,
+          toasterMessage: 'Logged in successfully !!',
+          toasterType: TOASTER_TYPE.success
         })
       )
       navigate(ROUTE_PATHS.dashboardReports, {
