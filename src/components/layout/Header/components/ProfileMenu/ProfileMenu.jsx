@@ -18,6 +18,12 @@ export const ProfileMenu = () => {
       <Button
         color='primary'
         variant='outlined'
+        sx={{
+          border: 'none',
+          '&:hover': {
+            border: 'none'
+          }
+        }}
         onClick={toggleUserMenu}
         startIcon={<ProfileIcon style={{ width: 20, height: 20 }} />}
         endIcon={
