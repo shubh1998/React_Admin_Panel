@@ -2,7 +2,7 @@ import React, { Fragment } from 'react'
 import { Link as RouterLink } from 'react-router-dom'
 import { Collapse, List } from '@mui/material'
 import { StarBorder } from '@mui/icons-material'
-import { CustomListItem } from '../../../ui-kit/molecules/ListItem/CustomListItem'
+import { CustomListItem } from './CustomListItem'
 
 export const CustomList = ({
   t,
@@ -27,7 +27,7 @@ export const CustomList = ({
                   color: 'white',
                   backgroundColor: (theme) =>
                     item.path === location.pathname
-                      ? theme.colors.gunmetal
+                      ? `${theme.colors.majorelleBlue} !important`
                       : 'none',
                   '&:hover': {
                     backgroundColor: (theme) =>
@@ -60,9 +60,14 @@ export const CustomList = ({
                           <CustomListItem
                             sx={{
                               color: 'white',
-                              pl: 4
+                              pl: 4,
+                              backgroundColor: (theme) => location.pathname.includes(item.path) ? `${theme.colors.majorelleBlue} !important` : 'none',
+                              '&:hover': {
+                                backgroundColor: (theme) =>
+                                `${theme.colors.gunmetal} !important`
+                              }
                             }}
-                            selected={subItem.path === location.pathname}
+                            // selected={subItem.path === location.pathname}
                             isbutton
                             to={subItem.path}
                             component={RouterLink}

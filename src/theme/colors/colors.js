@@ -6,5 +6,6 @@ export const colors = {
   red: '#FF0000',
   lightGreen: '#b2e75d',
   black: '#000000',
-  greyShadow: 'rgba(0, 0, 0, 0.35) 0px 5px 15px'
+  greyShadow: 'rgba(0, 0, 0, 0.35) 0px 5px 15px',
+  majorelleBlue: '#4F46E5'
 }
