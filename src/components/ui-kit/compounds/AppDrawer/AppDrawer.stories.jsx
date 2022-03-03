@@ -4,14 +4,14 @@ export default {
   title: 'compounds/AppDrawer',
   args: {
     openDrawer: true,
-    handleDrawerClose: () => {}
+    handleDrawer: () => {}
   }
 }
 
 export const Default = (args) => {
-  const { openDrawer, handleDrawerClose } = args
+  const { openDrawer, handleDrawer } = args
   return (
-    <AppDrawer open={openDrawer} handleDrawerClose={handleDrawerClose}>
+    <AppDrawer openDrawer={openDrawer} handleDrawer={handleDrawer}>
       <h3 style={{ color: '#ffffff', textAlign: 'center' }}>Content goes here</h3>
     </AppDrawer>
   )

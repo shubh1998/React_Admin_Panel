@@ -15,7 +15,7 @@ export const useHeaderController = () => {
   const { i18n } = useTranslation()
   const navigate = useNavigate()
   const dispatch = useDispatch()
-  const isSideNavOpen = useSelector((state) => state.ham.open)
+  const isSideNavOpen = useSelector((state) => state.ham.openHam)
 
   const [anchorElUser, setAnchorElUser] = useState(null)
   const [anchorElLanguage, setAnchorElLanguage] = useState(null)

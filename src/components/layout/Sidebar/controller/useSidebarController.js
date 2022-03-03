@@ -8,7 +8,7 @@ export const useSidebarController = () => {
   const location = useLocation()
   const dispatch = useDispatch()
   const { t } = useTranslation()
-  const isSideBarOpen = useSelector((state) => state.ham.open)
+  const isSideBarOpen = useSelector((state) => state.ham.openHam)
   const [expandedMenuItem, setExpandedMenuItem] = useState([])
 
   const handleDrawerOptions = (label) => {
