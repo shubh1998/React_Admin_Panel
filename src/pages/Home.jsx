@@ -1,5 +1,6 @@
 import React from 'react'
 import { useTranslation } from 'react-i18next'
+import CustomCheckbox from '../components/ui-kit/atoms/CheckBox/CustomCheckBox'
 import CustomSelect from '../components/ui-kit/atoms/Select/CustomSelect'
 import { CustomSwitch } from '../components/ui-kit/atoms/Switch/CustomSwitch'
 
@@ -19,10 +20,21 @@ const items = [
 export const Home = () => {
   const { t } = useTranslation()
   const [age, setAge] = React.useState('12')
+  const [checkedOne, setCheckedOne] = React.useState(true)
+  const [checkedTwo, setCheckedTwo] = React.useState(false)
+
+  console.log('age', age)
 
   const handleChange = (event) => {
     console.log(event.target.value)
     setAge(event.target.value)
+  }
+
+  const handleCheckBoxOneChange = (event) => {
+    setCheckedOne(event.target.checked)
+  }
+  const handleCheckBoxTwoChange = (event) => {
+    setCheckedTwo(event.target.checked)
   }
 
   return (
@@ -51,6 +63,23 @@ export const Home = () => {
           onChange={handleChange}
           items={items}
           styled={false}
+        />
+      </div>
+      <div>
+        <CustomCheckbox
+          checked={checkedOne}
+          onChange={handleCheckBoxOneChange}
+          label='checked start'
+          labelPlacement='start'
+        />
+      </div>
+
+      <div>
+        <CustomCheckbox
+          checked={checkedTwo}
+          onChange={handleCheckBoxTwoChange}
+          label='checked end'
+          labelPlacement='end'
         />
       </div>
     </div>
