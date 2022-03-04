@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types'
 import { Box, Divider } from '@mui/material'
-import { LeftArrowIcon } from '../../atoms/icons/iconComponents/LeftArrowIcon'
 import { CustomTypography } from '../../atoms/Typography/CustomTypography'
 import { DrawerHeader, StyledDrawer, StyledIconButton } from './AppDrawer.styles'
+import { SideArrowIcon } from '../../atoms/icons/iconComponents/SideArrowIcon'
 
 export const AppDrawer = ({ children, openDrawer = true, handleDrawer = () => {} }) => {
   return (
@@ -15,7 +15,7 @@ export const AppDrawer = ({ children, openDrawer = true, handleDrawer = () => {}
             value='Admin'
           />
           <StyledIconButton padding='0px' onClick={handleDrawer}>
-            <LeftArrowIcon />
+            <SideArrowIcon />
           </StyledIconButton>
         </DrawerHeader>
         <Divider />

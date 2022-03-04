@@ -2,7 +2,7 @@ const { pascalize } = require('humps')
 const fs = require('fs')
 const glob = require('glob')
 
-const iconsBasePath = 'src/components/ui-kit/icons'
+const iconsBasePath = 'src/components/ui-kit/atoms/icons'
 
 const iconsSvgBasePath = `${iconsBasePath}/svg`
 const iconsComponentsBasePath = `${iconsBasePath}/iconComponents`
@@ -47,7 +47,7 @@ import { Box } from '@mui/material'
 ${components.map(component => `import { ${component} } from './iconComponents/${component}'`).join('\n')}
 
 export default {
-  title: 'icons'
+  title: 'atoms/icons'
 }
 
 const Row = props => <Box p={2} {...props} />

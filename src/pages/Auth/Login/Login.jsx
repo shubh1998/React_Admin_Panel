@@ -30,7 +30,7 @@ export const Login = () => {
           toasterType: TOASTER_TYPE.success
         })
       )
-      navigate(ROUTE_PATHS.dashboardReports, {
+      navigate(ROUTE_PATHS.dashboard, {
         replace: true
       })
     }

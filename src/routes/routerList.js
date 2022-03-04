@@ -1,5 +1,3 @@
-import DashboardIcon from '@mui/icons-material/Dashboard'
-import AssessmentIcon from '@mui/icons-material/Assessment'
 import LoginIcon from '@mui/icons-material/Login'
 import { ROUTE_PATHS } from '../utils/constants/constants'
 import { Login } from '../pages/Auth/Login/Login'
@@ -8,6 +6,10 @@ import { CancelledGames } from '../pages/Games/CancelledGames/CancelledGames'
 import { Settings } from '../pages/Settings/Settings'
 import { Dashboard } from '../pages/Dashboard/Dashboard'
 import { Profile } from '../pages/Profile/Profile'
+import { DashboardIcon } from '../components/ui-kit/atoms/icons/iconComponents/DashboardIcon'
+import { GameIcon } from '../components/ui-kit/atoms/icons/iconComponents/GameIcon'
+import { EllipseIcon } from '../components/ui-kit/atoms/icons/iconComponents/EllipseIcon'
+import { ProfileIcon } from '../components/ui-kit/atoms/icons/iconComponents/ProfileIcon'
 
 const routerList = [
   {
@@ -40,7 +42,7 @@ const routerList = [
     component: PreRoundReport,
     hasAuth: true,
     hasSideBarOption: true,
-    icon: AssessmentIcon,
+    icon: GameIcon,
     subMenus: [
       {
         key: 6,
@@ -50,7 +52,7 @@ const routerList = [
         component: PreRoundReport,
         hasAuth: true,
         hasSideBarOption: true,
-        icon: AssessmentIcon
+        icon: EllipseIcon
       },
       {
         key: 7,
@@ -60,7 +62,7 @@ const routerList = [
         component: CancelledGames,
         hasAuth: true,
         hasSideBarOption: true,
-        icon: AssessmentIcon
+        icon: EllipseIcon
       }
     ]
   },
@@ -72,7 +74,7 @@ const routerList = [
     component: Settings,
     hasAuth: true,
     hasSideBarOption: false,
-    icon: AssessmentIcon,
+    icon: EllipseIcon,
     subMenus: []
   },
   {
@@ -83,7 +85,7 @@ const routerList = [
     component: Profile,
     hasAuth: true,
     hasSideBarOption: false,
-    icon: AssessmentIcon,
+    icon: ProfileIcon,
     subMenus: []
   }
 ]

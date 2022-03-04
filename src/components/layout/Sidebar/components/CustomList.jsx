@@ -1,7 +1,6 @@
 import React, { Fragment } from 'react'
 import { Link as RouterLink } from 'react-router-dom'
 import { Collapse, List } from '@mui/material'
-import { StarBorder } from '@mui/icons-material'
 import { CustomListItem } from './CustomListItem'
 import { CustomTypography } from '../../../ui-kit/atoms/Typography/CustomTypography'
 import { colors } from '../../../../theme/colors/colors'
@@ -75,7 +74,7 @@ export const CustomList = ({
                               to={subItem.path}
                               component={RouterLink}
                               text={t(subItem.label)}
-                              icon={<StarBorder />}
+                              icon={subItem.icon ? <subItem.icon /> : <></>}
                               hasSubMenu={false}
                               iconStyle={{
                                 '& .MuiSvgIcon-root': {
