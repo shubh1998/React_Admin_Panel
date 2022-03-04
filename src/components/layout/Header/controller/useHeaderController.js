@@ -8,6 +8,7 @@ import { handleToaster } from '../../../../redux-thunk/redux/Toaster/toasterSlic
 
 const NAV_MENU_OPTIONS = {
   logout: 'Logout',
+  settings: 'Settings',
   profile: 'Profile'
 }
 
@@ -26,6 +27,13 @@ export const useHeaderController = () => {
   const menuItems = [
     {
       label: NAV_MENU_OPTIONS.profile,
+      handler: () => {
+        setAnchorElUser(null)
+        navigate(ROUTE_PATHS.profile)
+      }
+    },
+    {
+      label: NAV_MENU_OPTIONS.settings,
       handler: () => {
         setAnchorElUser(null)
         navigate(ROUTE_PATHS.settings)

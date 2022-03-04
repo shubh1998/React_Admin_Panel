@@ -1,54 +1,65 @@
-import { Home } from '../pages/Home'
-import { Login } from '../pages/Login'
-import { Reports } from '../pages/Reports'
 import DashboardIcon from '@mui/icons-material/Dashboard'
 import AssessmentIcon from '@mui/icons-material/Assessment'
 import LoginIcon from '@mui/icons-material/Login'
-import { Settings } from '../pages/Settings'
 import { ROUTE_PATHS } from '../utils/constants/constants'
+import { Login } from '../pages/Auth/Login/Login'
+import { PreRoundReport } from '../pages/Games/PreRoundReport/PreRoundReport'
+import { CancelledGames } from '../pages/Games/CancelledGames/CancelledGames'
+import { Settings } from '../pages/Settings/Settings'
+import { Dashboard } from '../pages/Dashboard/Dashboard'
+import { Profile } from '../pages/Profile/Profile'
 
 const routerList = [
   {
     key: 1,
-    label: 'home',
+    label: 'dashboard',
+    sectionName: 'home',
     path: ROUTE_PATHS.dashboard,
-    component: Home,
-    hasNavbar: true,
+    component: Dashboard,
+    hasAuth: true,
+    hasSideBarOption: true,
     icon: DashboardIcon,
-    subMenus: [
-      {
-        key: 2,
-        label: 'reports',
-        path: ROUTE_PATHS.dashboardReports,
-        component: Home,
-        hasNavbar: true,
-        icon: AssessmentIcon
-      }
-    ]
+    subMenus: []
   },
   {
     key: 3,
     label: 'login',
+    sectionName: 'login',
     path: ROUTE_PATHS.login,
     component: Login,
-    hasNavbar: false,
+    hasAuth: false,
+    hasSideBarOption: false,
     icon: LoginIcon,
     subMenus: []
   },
   {
     key: 4,
-    label: 'users',
-    path: ROUTE_PATHS.users,
-    component: Reports,
-    hasNavbar: true,
+    label: 'games',
+    sectionName: 'reports',
+    path: ROUTE_PATHS.games,
+    component: PreRoundReport,
+    hasAuth: true,
+    hasSideBarOption: true,
     icon: AssessmentIcon,
     subMenus: [
       {
         key: 6,
-        label: 'reports',
-        path: ROUTE_PATHS.usersReports,
-        component: Reports,
-        hasNavbar: true,
+        label: 'pre round report',
+        sectionName: 'reports',
+        path: ROUTE_PATHS.preRoundReportReports,
+        component: PreRoundReport,
+        hasAuth: true,
+        hasSideBarOption: true,
+        icon: AssessmentIcon
+      },
+      {
+        key: 7,
+        label: 'cancelled games',
+        sectionName: 'reports',
+        path: ROUTE_PATHS.cancelledGames,
+        component: CancelledGames,
+        hasAuth: true,
+        hasSideBarOption: true,
         icon: AssessmentIcon
       }
     ]
@@ -56,9 +67,22 @@ const routerList = [
   {
     key: 5,
     label: 'settings',
+    sectionName: 'settings',
     path: ROUTE_PATHS.settings,
     component: Settings,
-    hasNavbar: true,
+    hasAuth: true,
+    hasSideBarOption: false,
+    icon: AssessmentIcon,
+    subMenus: []
+  },
+  {
+    key: 6,
+    label: 'profile',
+    sectionName: 'profile',
+    path: ROUTE_PATHS.profile,
+    component: Profile,
+    hasAuth: true,
+    hasSideBarOption: false,
     icon: AssessmentIcon,
     subMenus: []
   }

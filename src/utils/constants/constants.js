@@ -27,13 +27,15 @@ const TOASTER_TYPE = {
   All the navigation route Paths
 ========================================================================== */
 const ROUTE_PATHS = {
-  root: '/',
   login: '/login',
-  users: '/users',
   settings: '/settings',
   dashboard: '/dashboard',
-  reports: '/reports',
-  dashboardReports: '/dashboard/reports',
-  usersReports: '/users/reports'
+  profile: '/profile',
+
+  // ----parent child routes------------
+  games: '/games',
+  preRoundReportReports: '/games/pre-round-reports',
+  cancelledGames: '/games/cancelled-games'
+
 }
 export { TOASTER_TYPE, LANGUAGES, TOKEN, LANGUAGE, USERNAME, ROUTE_PATHS }

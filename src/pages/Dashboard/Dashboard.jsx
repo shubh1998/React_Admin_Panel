@@ -141,7 +141,7 @@ export const Dashboard = () => {
   return (
     <>
       <Grid container spacing={4} sx={{ marginBottom: 5 }}>
-        <Grid item xs={7}>
+        <Grid item xs={12} sm={12} md={7} lg={7}>
           <Grid container spacing={4}>
             {
                 cardData.map((item, index) => {
@@ -156,7 +156,7 @@ export const Dashboard = () => {
                     bgColor = colors.butterCup
                   }
                   return (
-                    <Grid item xs={6} key={item.title}>
+                    <Grid item xs={12} sm={12} md={6} lg={6} key={item.title}>
                       <Card elevation={5}>
                         <CardContent>
                           <CustomTypography
@@ -195,7 +195,7 @@ export const Dashboard = () => {
               }
           </Grid>
         </Grid>
-        <Grid item xs={5}>
+        <Grid item xs={12} sm={12} md={5} lg={5}>
           <Card sx={{ maxWidth: 600 }} elevation={5}>
             <CardContent>
               <PolarArea data={polarAreaChartData} height={10} />

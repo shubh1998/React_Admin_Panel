@@ -3,6 +3,8 @@ import { Link as RouterLink } from 'react-router-dom'
 import { Collapse, List } from '@mui/material'
 import { StarBorder } from '@mui/icons-material'
 import { CustomListItem } from './CustomListItem'
+import { CustomTypography } from '../../../ui-kit/atoms/Typography/CustomTypography'
+import { colors } from '../../../../theme/colors/colors'
 
 export const CustomList = ({
   t,
@@ -15,9 +17,10 @@ export const CustomList = ({
     <List>
       {list.map((item, index) => {
         const NavIcon = item.icon
-        if (item.hasNavbar) {
+        if (item.hasSideBarOption) {
           return (
             <Fragment key={item.key}>
+              <CustomTypography align='left' value={(item.sectionName)} sx={{ fontWeight: 600, textTransform: 'uppercase', display: 'block', padding: '10px 0px 10px 18px' }} color={colors.cornflowerBlue} />
               <CustomListItem
                 to={item.subMenus.length ? '' : item.path}
                 component={RouterLink}
@@ -49,40 +52,41 @@ export const CustomList = ({
               />
               {item.subMenus.length
                 ? (
-                    item.subMenus.map((subItem) => (
-                      <Collapse
-                        in={expandedMenuItem.includes(item.label)}
-                        timeout='auto'
-                        unmountOnExit
-                        key={subItem.key}
-                      >
-                        <List component='div' disablePadding>
-                          <CustomListItem
-                            sx={{
-                              color: 'white',
-                              pl: 4,
-                              backgroundColor: (theme) => location.pathname.includes(item.path) ? `${theme.colors.majorelleBlue} !important` : 'none',
-                              '&:hover': {
-                                backgroundColor: (theme) =>
+                    item.subMenus.map((subItem) => {
+                      return (
+                        <Collapse
+                          in={expandedMenuItem.includes(item.label)}
+                          timeout='auto'
+                          unmountOnExit
+                          key={subItem.key}
+                        >
+                          <List component='div' disablePadding>
+                            <CustomListItem
+                              sx={{
+                                color: 'white',
+                                pl: 4,
+                                backgroundColor: (theme) => location.pathname.includes(subItem.path) ? `${theme.colors.majorelleBlue} !important` : 'none',
+                                '&:hover': {
+                                  backgroundColor: (theme) =>
                                 `${theme.colors.gunmetal} !important`
-                              }
-                            }}
-                            // selected={subItem.path === location.pathname}
-                            isbutton
-                            to={subItem.path}
-                            component={RouterLink}
-                            text={t(subItem.label)}
-                            icon={<StarBorder />}
-                            hasSubMenu={false}
-                            iconStyle={{
-                              '& .MuiSvgIcon-root': {
-                                fill: (theme) => theme.colors.white
-                              }
-                            }}
-                          />
-                        </List>
-                      </Collapse>
-                    ))
+                                }
+                              }}
+                              isbutton
+                              to={subItem.path}
+                              component={RouterLink}
+                              text={t(subItem.label)}
+                              icon={<StarBorder />}
+                              hasSubMenu={false}
+                              iconStyle={{
+                                '& .MuiSvgIcon-root': {
+                                  fill: (theme) => theme.colors.white
+                                }
+                              }}
+                            />
+                          </List>
+                        </Collapse>
+                      )
+                    })
                   )
                 : (
                   <></>

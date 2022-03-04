@@ -2,8 +2,8 @@ import { Button, Paper, styled, TextField } from '@mui/material'
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
-import { handleToaster } from '../redux-thunk/redux/Toaster/toasterSlice'
-import { ROUTE_PATHS, TOASTER_TYPE, TOKEN } from '../utils/constants/constants'
+import { handleToaster } from '../../../redux-thunk/redux/Toaster/toasterSlice'
+import { ROUTE_PATHS, TOASTER_TYPE, TOKEN } from '../../../utils/constants/constants'
 
 export const LoginContainer = styled('div')(({ theme }) => ({
   display: 'grid',

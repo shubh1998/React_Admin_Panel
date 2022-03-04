@@ -14,5 +14,6 @@ export const colors = {
   flamingo: '#EF4444',
   butterCup: '#F59E0B',
   lineChartTransparency: 'rgba(199, 240, 214, 0.5)',
-  mirage: '#1E293B'
+  mirage: '#1E293B',
+  cornflowerBlue: '#728CF8'
 }
