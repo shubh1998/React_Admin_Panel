@@ -21,7 +21,9 @@ export const MainLayout = ({ children }) => {
           height='100vh'
         >
           <Toolbar />
-          {children}
+          <div style={{ width: '85vw', padding: '30px' }}>
+            {children}
+          </div>
         </StyledBox>
       </StyledBox>
     </div>
