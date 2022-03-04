@@ -1,5 +1,6 @@
 import React from 'react'
 import { useTranslation } from 'react-i18next'
+import { CustomButton } from '../components/ui-kit/atoms/Button/CustomButton'
 import CustomCheckbox from '../components/ui-kit/atoms/CheckBox/CustomCheckBox'
 import CustomSelect from '../components/ui-kit/atoms/Select/CustomSelect'
 import { CustomSwitch } from '../components/ui-kit/atoms/Switch/CustomSwitch'
@@ -40,6 +41,10 @@ export const Home = () => {
   return (
     <div>
       {t('home')}
+      <div>
+        <CustomButton>Show Transaction</CustomButton>
+        <CustomButton variant='text'>Show Transaction</CustomButton>
+      </div>
       <CustomSwitch size='small' color='error' />
       <CustomSwitch size='medium' />
       <CustomSwitch size='large' />
@@ -69,7 +74,7 @@ export const Home = () => {
         <CustomCheckbox
           checked={checkedOne}
           onChange={handleCheckBoxOneChange}
-          label='checked start'
+          label='Checked start'
           labelPlacement='start'
         />
       </div>
@@ -78,8 +83,9 @@ export const Home = () => {
         <CustomCheckbox
           checked={checkedTwo}
           onChange={handleCheckBoxTwoChange}
-          label='checked end'
+          label='Checked end'
           labelPlacement='end'
+          size='small'
         />
       </div>
     </div>

@@ -5,6 +5,8 @@ import { useDispatch, useSelector } from 'react-redux'
 import { handleDrawerToggle } from '../../../../redux-thunk/redux/Ham/hamSlice'
 import { LANGUAGE, LANGUAGES, ROUTE_PATHS, TOASTER_TYPE, TOKEN } from '../../../../utils/constants/constants'
 import { handleToaster } from '../../../../redux-thunk/redux/Toaster/toasterSlice'
+import SettingsIcon from '@mui/icons-material/Settings'
+import LogoutIcon from '@mui/icons-material/Logout'
 
 const NAV_MENU_OPTIONS = {
   logout: 'Logout',
@@ -26,6 +28,7 @@ export const useHeaderController = () => {
   const menuItems = [
     {
       label: NAV_MENU_OPTIONS.profile,
+      icon: <SettingsIcon />,
       handler: () => {
         setAnchorElUser(null)
         navigate(ROUTE_PATHS.settings)
@@ -33,6 +36,7 @@ export const useHeaderController = () => {
     },
     {
       label: NAV_MENU_OPTIONS.logout,
+      icon: <LogoutIcon />,
       handler: () => {
         setAnchorElUser(null)
         localStorage.removeItem(TOKEN)

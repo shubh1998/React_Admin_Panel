@@ -5,7 +5,12 @@ export const StyledMenu = styled(Menu)(({ theme, mt }) => ({
 }))
 
 export const StyledMenuItem = styled(MenuItem)(({ theme, width }) => ({
-  width: width || 0
+  width: width || 0,
+  '&.MuiMenuItem-root': {
+    display: 'flex',
+    justifyContent: 'center',
+    color: theme.palette.primary.light
+  }
 }))
 
 export const StyledIconButton = styled(IconButton, {

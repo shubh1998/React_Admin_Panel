@@ -17,10 +17,10 @@ export const StyledMenuItem = styled(MenuItem)(({ theme, styled }) => ({
     display: 'flex',
     justifyContent: 'center',
     margin: '6px',
-    color: styled ? 'black' : theme.palette.primary.main,
+    color: styled ? 'black' : theme.palette.primary.light,
     '&:hover': {
       background: styled ? theme.palette.primary.main : 'white',
-      color: styled ? 'white' : theme.palette.primary.main,
+      color: styled ? 'white' : theme.palette.primary.light,
       borderRadius: '22px'
     }
   }

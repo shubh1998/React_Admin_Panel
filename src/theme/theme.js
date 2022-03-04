@@ -75,11 +75,11 @@ export const theme = createTheme({
         {
           props: { variant: 'outlined' },
           style: {
-            border: `3px solid ${colors.majorelleBlue}`,
+            border: `2px solid ${colors.majorelleBlue}`,
             color: colors.majorelleBlue,
             fontWeight: 800,
             '&:hover': {
-              border: `3px solid ${colors.majorelleBlue}`,
+              border: `2px solid ${colors.majorelleBlue}`,
               backgroundColor: colors.majorelleBlue,
               color: colors.white
             }
@@ -123,6 +123,7 @@ export const theme = createTheme({
   palette: {
     primary: {
       main: colors.majorelleBlue,
+      light: colors.lightBlue,
       dark: colors.majorelleBlue
     },
     error: {

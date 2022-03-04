@@ -52,7 +52,8 @@ export const ProfileMenu = () => {
             }}
             width='160px'
           >
-            <CustomTypography align='center' value={menuItem.label} />
+            {menuItem.icon}
+            <CustomTypography align='center' sx={{ ml: 1 }} value={menuItem.label} />
           </StyledMenuItem>
         ))}
       </StyledMenu>

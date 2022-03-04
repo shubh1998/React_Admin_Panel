@@ -8,5 +8,6 @@ export const colors = {
   black: '#000000',
   greyShadow: 'rgba(0, 0, 0, 0.35) 0px 5px 15px',
   majorelleBlue: '#4F46E5',
+  lightBlue: '#728CF8',
   disableGray: '#C6C8CC'
 }
