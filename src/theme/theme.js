@@ -19,6 +19,9 @@ export const theme = createTheme({
           style: {
             width: '64px',
             height: '45px',
+            '&.MuiSwitch-root': {
+              padding: 11
+            },
             '& .MuiSwitch-thumb': {
               width: 18,
               height: 18,
@@ -34,6 +37,9 @@ export const theme = createTheme({
           style: {
             width: '42px',
             height: '28px',
+            '&.MuiSwitch-root': {
+              padding: 6
+            },
             '& .MuiSwitch-thumb': {
               width: 10,
               height: 10,
