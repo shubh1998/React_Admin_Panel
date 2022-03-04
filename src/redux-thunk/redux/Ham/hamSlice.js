@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 const defaultState = {
-  open: true
+  openHam: true
 }
 
 const hamSlice = createSlice({
@@ -10,7 +10,7 @@ const hamSlice = createSlice({
   reducers: {
     handleDrawerToggle: (state) => {
       return {
-        open: !state.open
+        openHam: !state.openHam
       }
     }
   }

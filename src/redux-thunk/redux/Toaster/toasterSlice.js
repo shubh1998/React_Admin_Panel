@@ -1,9 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 const defaultState = {
-  open: false,
-  message: '',
-  type: 'success'
+  openToaster: false,
+  toasterMessage: '',
+  toasterType: 'success'
 }
 
 const toasterSlice = createSlice({

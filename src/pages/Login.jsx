@@ -1,18 +1,17 @@
-import styled from '@emotion/styled'
-import { Button, Paper, TextField } from '@mui/material'
+import { Button, Paper, styled, TextField } from '@mui/material'
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { handleToaster } from '../redux-thunk/redux/Toaster/toasterSlice'
-import { toasterTypes } from '../utils/constants/toaster'
+import { ROUTE_PATHS, TOASTER_TYPE, TOKEN } from '../utils/constants/constants'
 
-export const GamesContainer = styled.div({
+export const LoginContainer = styled('div')(({ theme }) => ({
   display: 'grid',
   padding: '4%',
   margin: '10%',
   justifyContent: 'center',
   textAlign: 'center'
-})
+}))
 
 export const Login = () => {
   const navigate = useNavigate()
@@ -23,13 +22,17 @@ export const Login = () => {
   const loginHandler = () => {
     if (email && password) {
       const jwtToken = encodeURIComponent(email + password)
-      localStorage.setItem('token', jwtToken)
-      dispatch(handleToaster({
-        open: true,
-        message: 'Logged in successfully !',
-        type: toasterTypes.success
-      }))
-      navigate('/dashboard/reports', { replace: true })
+      localStorage.setItem(TOKEN, jwtToken)
+      dispatch(
+        handleToaster({
+          openToaster: true,
+          toasterMessage: 'Logged in successfully !!',
+          toasterType: TOASTER_TYPE.success
+        })
+      )
+      navigate(ROUTE_PATHS.dashboardReports, {
+        replace: true
+      })
     }
   }
 
@@ -43,7 +46,7 @@ export const Login = () => {
         display: 'flex'
       }}
     >
-      <GamesContainer className='games-container'>
+      <LoginContainer>
         <h1> Login </h1>
         <TextField
           sx={{ marginBottom: '10px' }}
@@ -63,7 +66,7 @@ export const Login = () => {
         >
           Login
         </Button>
-      </GamesContainer>
+      </LoginContainer>
     </Paper>
   )
 }

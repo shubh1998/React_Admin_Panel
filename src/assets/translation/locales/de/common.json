@@ -2,5 +2,6 @@
   "adminPanel": "Administrationsmenü",
   "settings": "die Einstellungen",
   "home": "Profil",
-  "reports": "Berichte"
+  "reports": "Berichte",
+  "users":"Benutzer"
 }

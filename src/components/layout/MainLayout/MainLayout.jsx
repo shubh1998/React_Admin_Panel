@@ -1,32 +1,38 @@
-import { Box, CssBaseline, Toolbar } from '@mui/material'
-import React from 'react'
+import PropTypes from 'prop-types'
+import { CssBaseline, Toolbar } from '@mui/material'
 import { useSelector } from 'react-redux'
 import { Header } from '../Header/Header'
 import { Sidebar } from '../Sidebar/Sidebar'
-import { Main } from './main.styles'
+import { Main, StyledBox } from './styles/MainLayout.styles'
 
 export const MainLayout = ({ children }) => {
-  const open = useSelector((state) => state.ham.open)
+  const openHam = useSelector((state) => state.ham.openHam)
   return (
     <div className='App'>
-      <Box sx={{ display: 'flex' }}>
+      <StyledBox display='flex'>
         <CssBaseline />
         <Header />
         <Sidebar />
-        <Box
+        <StyledBox
           component={Main}
-          open={open}
-          sx={{
-            flexGrow: 1,
-            p: 3,
-            height: '100vh',
-            backgroundColor: (theme) => theme.colors.layout
-          }}
+          open={openHam}
+          flexGrow={1}
+          padding={3}
+          height='100vh'
         >
           <Toolbar />
           {children}
-        </Box>
-      </Box>
+        </StyledBox>
+      </StyledBox>
     </div>
   )
+}
+
+MainLayout.defaultProps = {
+  children: 'null'
+
+}
+
+MainLayout.propTypes = {
+  children: PropTypes.element
 }
