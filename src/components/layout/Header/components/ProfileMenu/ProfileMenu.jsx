@@ -1,8 +1,7 @@
-import { Button } from '@mui/material'
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp'
 import { useHeaderController } from '../../controller/useHeaderController'
-import { StyledMenu, StyledMenuItem } from '../../styles/Header.styles'
+import { StyledMenu, StyledMenuItem, StyledProfileDiv } from '../../styles/Header.styles'
 import { CustomTypography } from '../../../../ui-kit/atoms/Typography/CustomTypography'
 import { ProfileIcon } from '../../../../ui-kit/atoms/icons/iconComponents/ProfileIcon'
 
@@ -15,23 +14,15 @@ export const ProfileMenu = () => {
 
   return (
     <>
-      <Button
-        color='primary'
-        variant='outlined'
-        sx={{
-          border: 'none',
-          '&:hover': {
-            border: 'none'
-          }
-        }}
+      <StyledProfileDiv
         onClick={toggleUserMenu}
-        startIcon={<ProfileIcon style={{ width: 20, height: 20 }} />}
-        endIcon={
-          !anchorElUser ? <KeyboardArrowDownIcon /> : <KeyboardArrowUpIcon />
-        }
       >
-        User Admin
-      </Button>
+        <>
+          <ProfileIcon style={{ width: 20, height: 20 }} />
+          User Admin
+          {!anchorElUser ? <KeyboardArrowDownIcon /> : <KeyboardArrowUpIcon />}
+        </>
+      </StyledProfileDiv>
       <StyledMenu
         mt='45px'
         anchorEl={anchorElUser}

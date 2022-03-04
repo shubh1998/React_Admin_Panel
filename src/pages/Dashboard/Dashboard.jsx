@@ -160,7 +160,7 @@ export const Dashboard = () => {
                       <Card elevation={5}>
                         <CardContent>
                           <CustomTypography
-                            variant='h6' color={colors.mirage}
+                            color={colors.mirage}
                             value={item.title}
                             sx={{
                               fontWeight: 600,
@@ -171,7 +171,7 @@ export const Dashboard = () => {
                           <hr style={{ width: '100px' }} />
                           <br />
                           <CustomTypography
-                            variant='h6' color={bgColor}
+                            color={bgColor}
                             value={item.value}
                             sx={{
                               fontWeight: 700,
@@ -180,7 +180,6 @@ export const Dashboard = () => {
                           />
                           <br />
                           <CustomTypography
-                            variant='h6' color={bgColor}
                             value={item.text}
                             sx={{
                               fontWeight: 500,
@@ -196,10 +195,10 @@ export const Dashboard = () => {
           </Grid>
         </Grid>
         <Grid item xs={12} sm={12} md={5} lg={5}>
-          <Card sx={{ maxWidth: 600 }} elevation={5}>
-            <CardContent>
-              <PolarArea data={polarAreaChartData} height={10} />
-            </CardContent>
+          <Card elevation={5}>
+            <div>
+              <PolarArea data={polarAreaChartData} />
+            </div>
           </Card>
         </Grid>
       </Grid>
