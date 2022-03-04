@@ -12,6 +12,58 @@ export const theme = createTheme({
         }
       }
     },
+    MuiSwitch: {
+      variants: [
+        {
+          props: { size: 'medium' },
+          style: {
+            width: '64px',
+            height: '45px',
+            '& .MuiSwitch-thumb': {
+              width: 18,
+              height: 18,
+              margin: '4px'
+            },
+            '& .MuiSwitch-track': {
+              borderRadius: 10
+            }
+          }
+        },
+        {
+          props: { size: 'small' },
+          style: {
+            width: '42px',
+            height: '28px',
+            '& .MuiSwitch-thumb': {
+              width: 10,
+              height: 10,
+              margin: '5px'
+            },
+            '& .MuiSwitch-track': {
+              borderRadius: 15
+            }
+          }
+        },
+        {
+          props: { size: 'large' },
+          style: {
+            width: '80px',
+            height: '62px',
+            '&.MuiSwitch-root': {
+              padding: 17
+            },
+            '& .MuiSwitch-thumb': {
+              width: 23,
+              height: 23,
+              margin: '10px'
+            },
+            '& .MuiSwitch-track': {
+              borderRadius: 16
+            }
+          }
+        }
+      ]
+    },
     MuiButton: {
       variants: [
         {
@@ -66,13 +118,13 @@ export const theme = createTheme({
     primary: {
       main: colors.majorelleBlue,
       dark: colors.majorelleBlue
+    },
+    error: {
+      main: '#FF0000'
+    },
+    success: {
+      main: '#4BC500'
     }
-    // error: {
-    //   main: '#0F172A'
-    // },
-    // success: {
-    //   main: '#0F172A'
-    // },
   },
   typography: {
     button: {

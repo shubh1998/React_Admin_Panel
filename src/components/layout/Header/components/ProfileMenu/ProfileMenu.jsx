@@ -17,11 +17,13 @@ export const ProfileMenu = () => {
     <>
       <Button
         color='primary'
-        variant='outlined'
+        variant='text'
         sx={{
           border: 'none',
+          color: 'black',
           '&:hover': {
-            border: 'none'
+            border: 'none',
+            boxShadow: 'none'
           }
         }}
         onClick={toggleUserMenu}
