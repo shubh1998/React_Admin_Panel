@@ -51,13 +51,12 @@ export const Home = () => {
       <CustomSwitch size='small' disabled />
       <div>
         <CustomSelect
-          size='small'
           value={age}
           onChange={handleChange}
           items={items}
+          type='filter'
         />
         <CustomSelect
-          size='medium'
           value={age}
           onChange={handleChange}
           items={items}
