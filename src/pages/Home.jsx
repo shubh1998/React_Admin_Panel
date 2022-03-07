@@ -86,6 +86,7 @@ export const Home = () => {
           label='Checked end'
           labelPlacement='end'
           size='small'
+          circle
         />
       </div>
     </div>
