@@ -21,7 +21,7 @@ export const MainLayout = ({ children }) => {
           height='100vh'
         >
           <Toolbar />
-          <div style={{ width: openHam ? '85vw' : '100vw', padding: '30px' }}>
+          <div style={{ width: '100%', padding: '30px' }}>
             {children}
           </div>
         </StyledBox>

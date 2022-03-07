@@ -13,10 +13,10 @@ import {
   RadialLinearScale,
   ArcElement
 } from 'chart.js'
-import { Bar, Line, PolarArea } from 'react-chartjs-2'
+import { Bar, Line, Pie } from 'react-chartjs-2'
 import faker from 'faker'
-import { colors } from '../../theme/colors/colors'
 import { Card, CardContent, Grid } from '@mui/material'
+import { colors } from '../../theme/colors/colors'
 import { CustomTypography } from '../../components/ui-kit/atoms/Typography/CustomTypography'
 
 ChartJS.register(
@@ -96,13 +96,13 @@ const barChartData = {
   ]
 }
 
-// Polar Area Chart
-const polarAreaChartData = {
-  labels: ['Red', 'Blue', 'Yellow'],
+// Pie Area Chart
+const PieChartData = {
+  labels: ['Roulette', 'Baccarat', 'Black Jack'],
   datasets: [
     {
       label: '# of Votes',
-      data: [12, 13, 3, 5, 2, 3],
+      data: [77, 32, 50],
       backgroundColor: [
         'rgba(255, 99, 132, 0.5)',
         'rgba(54, 162, 235, 0.5)',
@@ -196,8 +196,8 @@ export const Dashboard = () => {
         </Grid>
         <Grid item xs={12} sm={12} md={5} lg={5}>
           <Card elevation={5}>
-            <div>
-              <PolarArea data={polarAreaChartData} />
+            <div style={{ display: 'block', height: '460px', width: '460px', padding: '20px', margin: 'auto' }}>
+              <Pie data={PieChartData} />
             </div>
           </Card>
         </Grid>
