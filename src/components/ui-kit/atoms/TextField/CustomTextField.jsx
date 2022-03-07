@@ -65,6 +65,7 @@ const CustomTextField = ({
         rows={rows}
         onChange={onChange}
         value={value}
+        labelType={labelType}
         InputProps={{
           endAdornment:
             enableValidation ? (value && <Adornment error={error} tooltipTitle={helperText} />) : <></>

@@ -3,7 +3,7 @@ import { Box, styled } from '@mui/material'
 export const FilterContainer = styled(Box)(({ theme, type }) => ({
   display: 'flex',
   alignItems: 'baseline',
-  padding: '1% 2% 1.5% 2%',
+  padding: '1% 2% 1% 2%',
   border: '1px solid',
   justifyContent: 'space-around',
   borderColor: theme.palette.primary.main,

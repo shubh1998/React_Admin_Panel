@@ -18,7 +18,7 @@ export const theme = createTheme({
           props: { size: 'small' },
           style: {
             width: 103,
-            height: 31,
+            // height: 31,
             borderRadius: 3
           }
         },
@@ -26,7 +26,7 @@ export const theme = createTheme({
           props: { size: 'medium' },
           style: {
             width: 317,
-            height: 46,
+            // height: 46,
             borderRadius: 5
           }
         }

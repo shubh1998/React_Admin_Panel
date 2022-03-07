@@ -10,5 +10,6 @@ export const colors = {
   majorelleBlue: '#4F46E5',
   lightBlue: '#728CF8',
   disableGray: '#C6C8CC',
+  textFieldGray: '#EDEDED',
   loginTextColor: '#334155'
 }

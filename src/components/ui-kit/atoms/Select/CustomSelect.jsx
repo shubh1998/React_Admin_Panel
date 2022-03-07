@@ -15,7 +15,10 @@ const CustomSelect = ({
           minWidth: labelType === 'filter' ? 157 : 317,
           minHeight: labelType === 'filter' ? 31 : 46,
           borderRadius: 3,
-          margin: 0
+          margin: 0,
+          backgroundColor: (theme) => labelType !== 'filter'
+            ? theme.colors.white
+            : theme.colors.textFieldGray
         })
       }
       size={size}
