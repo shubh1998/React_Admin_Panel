@@ -7,6 +7,8 @@ import { EnglishIcon } from './iconComponents/EnglishIcon'
 import { FrenchIcon } from './iconComponents/FrenchIcon'
 import { GameIcon } from './iconComponents/GameIcon'
 import { GermanIcon } from './iconComponents/GermanIcon'
+import { Login1Icon } from './iconComponents/Login1Icon'
+import { LoginBg2Icon } from './iconComponents/LoginBg2Icon'
 import { LogoutIcon } from './iconComponents/LogoutIcon'
 import { MailIcon } from './iconComponents/MailIcon'
 import { NotificationIcon } from './iconComponents/NotificationIcon'
@@ -44,6 +46,10 @@ export const icons = () => (
       <Cell><GameIcon title='GameIcon' width={40} height={40} /></Cell>
 
       <Cell><GermanIcon title='GermanIcon' width={40} height={40} /></Cell>
+
+      <Cell><Login1Icon title='Login1Icon' width={40} height={40} /></Cell>
+
+      <Cell><LoginBg2Icon title='LoginBg2Icon' width={40} height={40} /></Cell>
 
       <Cell><LogoutIcon title='LogoutIcon' width={40} height={40} /></Cell>
 
