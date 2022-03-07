@@ -46,7 +46,7 @@ const routerList = [
     subMenus: [
       {
         key: 6,
-        label: 'pre round report',
+        label: 'preRoundReports',
         sectionName: 'reports',
         path: ROUTE_PATHS.preRoundReportReports,
         component: PreRoundReport,
@@ -56,7 +56,7 @@ const routerList = [
       },
       {
         key: 7,
-        label: 'cancelled games',
+        label: 'cancelledGames',
         sectionName: 'reports',
         path: ROUTE_PATHS.cancelledGames,
         component: CancelledGames,

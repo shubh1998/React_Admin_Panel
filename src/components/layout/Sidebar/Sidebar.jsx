@@ -15,7 +15,7 @@ export const Sidebar = () => {
   } = useSidebarController()
 
   return (
-    <AppDrawer openDrawer={isSideBarOpen} handleDrawer={toggleSideNavbar}>
+    <AppDrawer openDrawer={isSideBarOpen} handleDrawer={toggleSideNavbar} text={t('admin')}>
       <CustomList
         t={t}
         location={location}

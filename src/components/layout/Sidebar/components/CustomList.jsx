@@ -19,7 +19,7 @@ export const CustomList = ({
         if (item.hasSideBarOption) {
           return (
             <Fragment key={item.key}>
-              <CustomTypography align='left' value={(item.sectionName)} sx={{ fontWeight: 600, textTransform: 'uppercase', display: 'block', padding: '10px 0px 10px 18px' }} color={colors.cornflowerBlue} />
+              <CustomTypography align='left' value={t(item.sectionName)} sx={{ fontWeight: 600, textTransform: 'uppercase', display: 'block', padding: '10px 0px 10px 18px' }} color={colors.cornflowerBlue} />
               <CustomListItem
                 to={item.subMenus.length ? '' : item.path}
                 component={RouterLink}

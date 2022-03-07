@@ -7,13 +7,13 @@ import { LANGUAGE, LANGUAGES, ROUTE_PATHS, TOASTER_TYPE, TOKEN } from '../../../
 import { handleToaster } from '../../../../redux-thunk/redux/Toaster/toasterSlice'
 
 const NAV_MENU_OPTIONS = {
-  logout: 'Logout',
-  settings: 'Settings',
-  profile: 'Profile'
+  logout: 'logout',
+  settings: 'settings',
+  profile: 'profile'
 }
 
 export const useHeaderController = () => {
-  const { i18n } = useTranslation()
+  const { i18n, t } = useTranslation()
   const navigate = useNavigate()
   const dispatch = useDispatch()
   const isSideNavOpen = useSelector((state) => state.ham.openHam)
@@ -26,21 +26,21 @@ export const useHeaderController = () => {
 
   const menuItems = [
     {
-      label: NAV_MENU_OPTIONS.profile,
+      label: t(NAV_MENU_OPTIONS.profile),
       handler: () => {
         setAnchorElUser(null)
         navigate(ROUTE_PATHS.profile)
       }
     },
     {
-      label: NAV_MENU_OPTIONS.settings,
+      label: t(NAV_MENU_OPTIONS.settings),
       handler: () => {
         setAnchorElUser(null)
         navigate(ROUTE_PATHS.settings)
       }
     },
     {
-      label: NAV_MENU_OPTIONS.logout,
+      label: t(NAV_MENU_OPTIONS.logout),
       handler: () => {
         setAnchorElUser(null)
         localStorage.removeItem(TOKEN)
