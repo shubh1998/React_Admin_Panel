@@ -16,3 +16,18 @@ export const StyledMenuItem = styled(MenuItem)(({ theme, width }) => ({
 export const StyledIconButton = styled(IconButton, {
   shouldForwardProp: (prop) => prop?.open !== 'open'
 })(({ theme, open, mr }) => ({ marginRight: mr || 0, ...(open && { display: 'none' }) }))
+
+export const StyledProfileDiv = styled('div')(({ theme }) => ({
+  width: '150px',
+  padding: 5,
+  border: 'none',
+  display: 'flex',
+  justifyContent: 'space-between',
+  alignItems: 'center',
+  borderRadius: '50px',
+  backgroundColor: 'none',
+  cursor: 'pointer',
+  '&:hover': {
+    backgroundColor: theme.colors.layout
+  }
+}))

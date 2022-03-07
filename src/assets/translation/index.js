@@ -3,6 +3,10 @@ import { initReactI18next } from 'react-i18next'
 
 import enCommon from './locales/en/common.json'
 import deCommon from './locales/de/common.json'
+import esCommon from './locales/es/common.json'
+import frCommon from './locales/fr/common.json'
+import ptCommon from './locales/pt/common.json'
+import ruCommon from './locales/ru/common.json'
 import { LANGUAGE, LANGUAGES } from '../../utils/constants/constants'
 
 i18n.use(initReactI18next).init({
@@ -12,6 +16,18 @@ i18n.use(initReactI18next).init({
     },
     de: {
       common: deCommon
+    },
+    es: {
+      common: esCommon
+    },
+    fr: {
+      common: frCommon
+    },
+    pt: {
+      common: ptCommon
+    },
+    ru: {
+      common: ruCommon
     }
   }, // languages available
   lng: localStorage.getItem(LANGUAGE) || LANGUAGES[0].languageCode, // by default english language

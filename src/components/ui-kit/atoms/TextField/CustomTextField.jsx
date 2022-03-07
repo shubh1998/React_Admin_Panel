@@ -26,7 +26,8 @@ const CustomTextField = ({
   onChange,
   value,
   enableValidation,
-  labelType
+  labelType,
+  ...otherProps
 }) => {
   const Adornment = ({ error, tooltipTitle }) => {
     return (
@@ -70,6 +71,7 @@ const CustomTextField = ({
           endAdornment:
             enableValidation ? (value && <Adornment error={error} tooltipTitle={helperText} />) : <></>
         }}
+        {...otherProps}
       />
     </LabelContainer>
   )

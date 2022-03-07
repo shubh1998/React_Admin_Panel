@@ -1,6 +1,5 @@
 import { MenuItem } from '@mui/material'
 import { LANGUAGES } from '../../../../../utils/constants/constants'
-import { CustomTypography } from '../../../../ui-kit/atoms/Typography/CustomTypography'
 import { useHeaderController } from '../../controller/useHeaderController'
 import { StyledIconButton, StyledMenu } from '../../styles/Header.styles'
 
@@ -11,11 +10,12 @@ export const LanguageMenu = () => {
     toggleLanguageMenu,
     changeLanguage
   } = useHeaderController()
+  const SelectedFlag = LANGUAGES.find(item => item.languageCode === selectedLanguage).flag
 
   return (
     <>
       <StyledIconButton onClick={toggleLanguageMenu}>
-        <CustomTypography align='center' value={selectedLanguage} />
+        <SelectedFlag height={20} width={30} />
       </StyledIconButton>
       <StyledMenu
         mt='45px'
@@ -33,15 +33,18 @@ export const LanguageMenu = () => {
         open={Boolean(anchorElLanguage)}
         onClose={(e) => toggleLanguageMenu(e, true)}
       >
-        {LANGUAGES.map((language) => (
-          <MenuItem
-            key={language.label}
-            onClick={() => changeLanguage(language.languageCode)}
-            selected={language.languageCode === selectedLanguage}
-          >
-            <CustomTypography align='center' value={language.label} />
-          </MenuItem>
-        ))}
+        {LANGUAGES.map((language) => {
+          const Flag = language.flag
+          return (
+            <MenuItem
+              key={language.label}
+              onClick={() => changeLanguage(language.languageCode)}
+              selected={language.languageCode === selectedLanguage}
+            >
+              <Flag height={20} width={30} />
+            </MenuItem>
+          )
+        })}
       </StyledMenu>
     </>
   )

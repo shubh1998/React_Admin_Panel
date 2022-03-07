@@ -11,5 +11,13 @@ export const colors = {
   lightBlue: '#728CF8',
   disableGray: '#C6C8CC',
   textFieldGray: '#EDEDED',
-  loginTextColor: '#334155'
+  loginTextColor: '#334155',
+  frenchGray: '#C6C8CC',
+  mountainMeadow: '#22C55E',
+  dodgerBlue: '#3B82F6',
+  flamingo: '#EF4444',
+  butterCup: '#F59E0B',
+  lineChartTransparency: 'rgba(199, 240, 214, 0.5)',
+  mirage: '#1E293B',
+  cornflowerBlue: '#728CF8'
 }

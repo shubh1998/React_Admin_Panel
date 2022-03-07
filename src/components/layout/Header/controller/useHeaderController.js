@@ -9,12 +9,13 @@ import SettingsIcon from '@mui/icons-material/Settings'
 import LogoutIcon from '@mui/icons-material/Logout'
 
 const NAV_MENU_OPTIONS = {
-  logout: 'Logout',
-  profile: 'Profile'
+  logout: 'logout',
+  settings: 'settings',
+  profile: 'profile'
 }
 
 export const useHeaderController = () => {
-  const { i18n } = useTranslation()
+  const { i18n, t } = useTranslation()
   const navigate = useNavigate()
   const dispatch = useDispatch()
   const isSideNavOpen = useSelector((state) => state.ham.openHam)
@@ -27,7 +28,7 @@ export const useHeaderController = () => {
 
   const menuItems = [
     {
-      label: NAV_MENU_OPTIONS.profile,
+      label: t(NAV_MENU_OPTIONS.settings),
       icon: <SettingsIcon />,
       handler: () => {
         setAnchorElUser(null)
@@ -35,7 +36,7 @@ export const useHeaderController = () => {
       }
     },
     {
-      label: NAV_MENU_OPTIONS.logout,
+      label: t(NAV_MENU_OPTIONS.logout),
       icon: <LogoutIcon />,
       handler: () => {
         setAnchorElUser(null)
