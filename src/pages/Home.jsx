@@ -4,6 +4,7 @@ import { CustomButton } from '../components/ui-kit/atoms/Button/CustomButton'
 import CustomCheckbox from '../components/ui-kit/atoms/CheckBox/CustomCheckBox'
 import CustomSelect from '../components/ui-kit/atoms/Select/CustomSelect'
 import { CustomSwitch } from '../components/ui-kit/atoms/Switch/CustomSwitch'
+import CustomTextField from '../components/ui-kit/atoms/TextField/CustomTextField'
 
 const items = [
   {
@@ -87,6 +88,23 @@ export const Home = () => {
           size='small'
           circle
         />
+      </div>
+      <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+        <CustomTextField
+          label='User Name'
+          enableValidation
+          error='error'
+          value='sdfas'
+          helperText='error'
+        />
+        <CustomTextField
+          label='User Name'
+          enableValidation
+          value='sdfas'
+          helperText='no error'
+        />
+        <CustomTextField size='small' />
+        <CustomTextField />
       </div>
     </div>
   )

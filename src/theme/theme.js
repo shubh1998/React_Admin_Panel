@@ -12,6 +12,26 @@ export const theme = createTheme({
         }
       }
     },
+    MuiTextField: {
+      variants: [
+        {
+          props: { size: 'small' },
+          style: {
+            width: 103,
+            height: 31,
+            borderRadius: 3
+          }
+        },
+        {
+          props: { size: 'medium' },
+          style: {
+            width: 317,
+            height: 46,
+            borderRadius: 5
+          }
+        }
+      ]
+    },
     MuiSwitch: {
       variants: [
         {

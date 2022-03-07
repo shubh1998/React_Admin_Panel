@@ -40,7 +40,8 @@ CustomSelect.defaultProps = {
   items: null,
   size: 'small',
   styled: true,
-  type: 'default'
+  type: 'default',
+  formControlStyle: null
 }
 
 CustomSelect.propTypes = {
