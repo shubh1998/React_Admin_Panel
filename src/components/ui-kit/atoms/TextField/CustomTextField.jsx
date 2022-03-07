@@ -1,10 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { StyledTextField, StyledTooltip } from './CustomTextField.styles'
-import { CustomTypography } from '../Typography/CustomTypography'
 import { InputAdornment } from '@mui/material'
 import ErrorOutlineIcon from '@mui/icons-material/ErrorOutline'
 import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline'
+import { LabelContainer } from '../LabelContainer/LabelContainer'
 
 const CustomTextField = ({
   name,
@@ -25,7 +25,8 @@ const CustomTextField = ({
   rows,
   onChange,
   value,
-  enableValidation
+  enableValidation,
+  labelType
 }) => {
   const Adornment = ({ error, tooltipTitle }) => {
     return (
@@ -46,13 +47,7 @@ const CustomTextField = ({
     )
   }
   return (
-    <div>
-      {
-        label && (
-          <div style={{ textAlign: 'start' }}>
-            <CustomTypography sx={{ color: (theme) => theme.colors.loginTextColor }} variant='subtitle1' value={`${label}*`} />
-          </div>)
-      }
+    <LabelContainer type={labelType} label={label}>
       <StyledTextField
         defaultValue={defaultValue}
         inputRef={inputRef}
@@ -75,7 +70,7 @@ const CustomTextField = ({
             enableValidation ? (value && <Adornment error={error} tooltipTitle={helperText} />) : <></>
         }}
       />
-    </div>
+    </LabelContainer>
   )
 }
 
@@ -97,7 +92,8 @@ CustomTextField.defaultProps = {
   rows: null,
   onChange: () => null,
   value: undefined,
-  name: ''
+  name: '',
+  labelType: 'default'
 }
 
 CustomTextField.propTypes = {
@@ -121,7 +117,8 @@ CustomTextField.propTypes = {
   rows: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   onChange: PropTypes.func,
   value: PropTypes.string,
-  enableValidation: PropTypes.bool
+  enableValidation: PropTypes.bool,
+  labelType: PropTypes.oneOf(['filter', 'default'])
 }
 
 export default CustomTextField

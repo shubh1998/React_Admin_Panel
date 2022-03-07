@@ -55,12 +55,14 @@ export const Home = () => {
           value={age}
           onChange={handleChange}
           items={items}
-          type='filter'
+          labelType='filter'
+          label='label'
         />
         <CustomSelect
           value={age}
           onChange={handleChange}
           items={items}
+          label='label'
         />
         <CustomSelect
           size='small'
@@ -68,6 +70,7 @@ export const Home = () => {
           onChange={handleChange}
           items={items}
           styled={false}
+          label='label'
         />
       </div>
       <div>
@@ -103,8 +106,15 @@ export const Home = () => {
           value='sdfas'
           helperText='no error'
         />
-        <CustomTextField size='small' />
         <CustomTextField />
+      </div>
+      <div>
+        <br /><br />
+        <CustomTextField
+          labelType='filter'
+          size='small'
+          label='User Name'
+        />
       </div>
     </div>
   )

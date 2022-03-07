@@ -1,7 +1,6 @@
 import { styled, TextField, Tooltip, tooltipClasses } from '@mui/material'
 
 export const StyledTextField = styled(TextField)(({ theme, error }) => ({
-  fontWeight: '800px',
   '& .MuiOutlinedInput-root': {
     '&:hover fieldset': {
       borderColor: error ? theme.palette.primary.error : theme.palette.primary.main,
