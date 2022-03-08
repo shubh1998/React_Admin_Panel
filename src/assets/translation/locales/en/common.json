@@ -8,5 +8,8 @@
   "cancelledGames": "Cancelled Games",
   "settings": "Settings",
   "profile": "Profile",
-  "logout": "Logout"
+  "logout": "Logout",
+  "currentPassword": "Current Password",
+  "newPassword": "New Password",
+  "confirmPassword": "Confirm Password"
 }

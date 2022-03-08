@@ -8,5 +8,8 @@
   "cancelledGames": "Jogos cancelados",
   "settings": "Configurações",
   "profile": "Perfil",
-  "logout": "Sair"
+  "logout": "Sair",
+  "currentPassword": "Senha atual",
+  "newPassword": "Nova Senha",
+  "confirmPassword": "Confirme a Senha"
 }

@@ -8,5 +8,8 @@
   "cancelledGames": "Jeux annulés",
   "settings": "Réglages",
   "profile": "Profil",
-  "logout": "Se déconnecter"
+  "logout": "Se déconnecter",
+  "currentPassword": "Mot de passe actuel",
+  "newPassword": "nouveau mot de passe",
+  "confirmPassword": "Confirmez le mot de passe"
 }
