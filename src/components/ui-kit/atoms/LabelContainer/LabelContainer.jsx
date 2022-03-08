@@ -4,7 +4,7 @@ import { FilterContainer } from './LabelContainer.styles'
 
 export const LabelContainer = ({ children, type, label }) => {
   return (
-    type !== 'filter'
+    type !== 'filter' && type !== 'dateFilter'
       ? (
         <div style={{ width: 'fit-content' }}>
           <div style={{ textAlign: 'start' }}>
@@ -14,7 +14,7 @@ export const LabelContainer = ({ children, type, label }) => {
         </div>)
       : (
         <FilterContainer>
-          <div style={{ marginRight: '20px' }}>
+          <div style={{ marginRight: '10px', width: 'max-content' }}>
             <CustomTypography sx={{ color: (theme) => theme.colors.loginTextColor }} variant='subtitle1' value={`${label}`} />
           </div>
           {children}
@@ -29,7 +29,7 @@ LabelContainer.defaultProps = {
 }
 
 LabelContainer.propTypes = {
-  type: PropTypes.oneOf(['filter', 'default']),
+  type: PropTypes.oneOf(['filter', 'default', 'dateFilter']),
   label: PropTypes.string.isRequired,
   children: PropTypes.element.isRequired
 }

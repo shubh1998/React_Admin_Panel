@@ -14,7 +14,6 @@ export const CustomButton = ({
   startIcon,
   endIcon,
   disableElevation,
-  round,
   ...otherProps
 }) => {
   return (
@@ -28,7 +27,6 @@ export const CustomButton = ({
       startIcon={startIcon}
       endIcon={endIcon}
       disableElevation={disableElevation}
-      round={round}
       {...otherProps}
     >
       {children}
@@ -46,8 +44,7 @@ CustomButton.defaultProps = {
   classes: {},
   startIcon: null,
   endIcon: null,
-  disableElevation: false,
-  round: true
+  disableElevation: false
 }
 
 CustomButton.propTypes = {
