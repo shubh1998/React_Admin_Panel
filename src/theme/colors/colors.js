@@ -19,5 +19,6 @@ export const colors = {
   butterCup: '#F59E0B',
   lineChartTransparency: 'rgba(199, 240, 214, 0.5)',
   mirage: '#1E293B',
-  cornflowerBlue: '#728CF8'
+  cornflowerBlue: '#728CF8',
+  tableGray: '#CECECE'
 }
