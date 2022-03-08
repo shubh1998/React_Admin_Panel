@@ -1,5 +1,6 @@
 import { MenuItem } from '@mui/material'
 import { LANGUAGES } from '../../../../../utils/constants/constants'
+import { StyledTooltip } from '../../../../ui-kit/atoms/Tooltip/CustomTooltip.styles'
 import { useHeaderController } from '../../controller/useHeaderController'
 import { StyledIconButton, StyledMenu } from '../../styles/Header.styles'
 
@@ -41,7 +42,13 @@ export const LanguageMenu = () => {
               onClick={() => changeLanguage(language.languageCode)}
               selected={language.languageCode === selectedLanguage}
             >
-              <Flag height={20} width={30} />
+              <StyledTooltip
+                placement='right-start'
+                title={language.label}
+                arrow
+              >
+                <Flag height={20} width={30} />
+              </StyledTooltip>
             </MenuItem>
           )
         })}

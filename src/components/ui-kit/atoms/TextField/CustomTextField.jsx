@@ -1,10 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { StyledTextField, StyledTooltip } from './CustomTextField.styles'
+import { StyledTextField } from './CustomTextField.styles'
 import { InputAdornment } from '@mui/material'
 import ErrorOutlineIcon from '@mui/icons-material/ErrorOutline'
 import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline'
 import { LabelContainer } from '../LabelContainer/LabelContainer'
+import { StyledTooltip } from '../Tooltip/CustomTooltip.styles'
 
 const CustomTextField = ({
   name,
@@ -39,6 +40,7 @@ const CustomTextField = ({
                 title={tooltipTitle}
                 placement='top'
                 arrow
+                type='error'
               >
                 <ErrorOutlineIcon color='error' />
               </StyledTooltip>)
