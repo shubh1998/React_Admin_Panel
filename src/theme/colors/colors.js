@@ -7,5 +7,17 @@ export const colors = {
   lightGreen: '#b2e75d',
   black: '#000000',
   greyShadow: 'rgba(0, 0, 0, 0.35) 0px 5px 15px',
-  majorelleBlue: '#4F46E5'
+  majorelleBlue: '#4F46E5',
+  lightBlue: '#728CF8',
+  disableGray: '#C6C8CC',
+  textFieldGray: '#EDEDED',
+  loginTextColor: '#334155',
+  frenchGray: '#C6C8CC',
+  mountainMeadow: '#22C55E',
+  dodgerBlue: '#3B82F6',
+  flamingo: '#EF4444',
+  butterCup: '#F59E0B',
+  lineChartTransparency: 'rgba(199, 240, 214, 0.5)',
+  mirage: '#1E293B',
+  cornflowerBlue: '#728CF8'
 }

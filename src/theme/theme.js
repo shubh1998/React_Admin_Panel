@@ -12,16 +12,94 @@ export const theme = createTheme({
         }
       }
     },
+    MuiTextField: {
+      variants: [
+        {
+          props: { size: 'small' },
+          style: {
+            width: 103,
+            // height: 31,
+            borderRadius: 3
+          }
+        },
+        {
+          props: { size: 'medium' },
+          style: {
+            width: 317,
+            // height: 46,
+            borderRadius: 5
+          }
+        }
+      ]
+    },
+    MuiSwitch: {
+      variants: [
+        {
+          props: { size: 'medium' },
+          style: {
+            width: '64px',
+            height: '45px',
+            '&.MuiSwitch-root': {
+              padding: 11
+            },
+            '& .MuiSwitch-thumb': {
+              width: 18,
+              height: 18,
+              margin: '4px'
+            },
+            '& .MuiSwitch-track': {
+              borderRadius: 10
+            }
+          }
+        },
+        {
+          props: { size: 'small' },
+          style: {
+            width: '42px',
+            height: '28px',
+            '&.MuiSwitch-root': {
+              padding: 6
+            },
+            '& .MuiSwitch-thumb': {
+              width: 10,
+              height: 10,
+              margin: '5px'
+            },
+            '& .MuiSwitch-track': {
+              borderRadius: 15
+            }
+          }
+        },
+        {
+          props: { size: 'large' },
+          style: {
+            width: '80px',
+            height: '62px',
+            '&.MuiSwitch-root': {
+              padding: 17
+            },
+            '& .MuiSwitch-thumb': {
+              width: 23,
+              height: 23,
+              margin: '10px'
+            },
+            '& .MuiSwitch-track': {
+              borderRadius: 16
+            }
+          }
+        }
+      ]
+    },
     MuiButton: {
       variants: [
         {
           props: { variant: 'outlined' },
           style: {
-            border: `3px solid ${colors.majorelleBlue}`,
+            border: `2px solid ${colors.majorelleBlue}`,
             color: colors.majorelleBlue,
             fontWeight: 800,
             '&:hover': {
-              border: `3px solid ${colors.majorelleBlue}`,
+              border: `2px solid ${colors.majorelleBlue}`,
               backgroundColor: colors.majorelleBlue,
               color: colors.white
             }
@@ -65,14 +143,15 @@ export const theme = createTheme({
   palette: {
     primary: {
       main: colors.majorelleBlue,
+      light: colors.lightBlue,
       dark: colors.majorelleBlue
+    },
+    error: {
+      main: '#FF0000'
+    },
+    success: {
+      main: '#4BC500'
     }
-    // error: {
-    //   main: '#0F172A'
-    // },
-    // success: {
-    //   main: '#0F172A'
-    // },
   },
   typography: {
     button: {
@@ -83,5 +162,5 @@ export const theme = createTheme({
     width: 240
   },
   colors: colors,
-  drawerWidth: 240
+  drawerWidth: 265
 })

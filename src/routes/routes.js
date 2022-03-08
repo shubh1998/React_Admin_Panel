@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react'
 import { Route, Routes } from 'react-router-dom'
-import { NotFound } from '../pages/NotFound'
+import { NotFound } from '../pages/NotFound/NotFound'
 import routes from './routerList'
 import RouteValidator from './RouteValidator'
 

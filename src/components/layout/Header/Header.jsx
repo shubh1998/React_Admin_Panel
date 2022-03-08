@@ -29,11 +29,11 @@ export const Header = () => {
           : <></>
       }
       right={
-        <>
+        <div style={{ display: 'flex', justifyContent: 'space-between' }}>
           <LanguageMenu />
           <Notification />
           <ProfileMenu />
-        </>
+        </div>
       }
     />
   )

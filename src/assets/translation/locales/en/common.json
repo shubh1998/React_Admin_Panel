@@ -1,7 +1,12 @@
 {
-  "adminPanel": "Admin Panel",
-  "settings": "Settings",
+  "admin": "Admin",
   "home": "Home",
   "reports": "Reports",
-  "users": "Users"
+  "dashboard": "Dashboard",
+  "games": "Games",
+  "preRoundReports": "Pre Round Reports",
+  "cancelledGames": "Cancelled Games",
+  "settings": "Settings",
+  "profile": "Profile",
+  "logout": "Logout"
 }

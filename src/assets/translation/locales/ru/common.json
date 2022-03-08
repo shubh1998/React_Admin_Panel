@@ -1,0 +1,12 @@
+{
+  "admin": "Админ",
+  "home": "Главная",
+  "reports": "Отчеты",
+  "dashboard": "Панель инструментов",
+  "games": "Игры",
+  "preRoundReports": "Предраундовые отчеты",
+  "cancelledGames": "Отмененные игры",
+  "settings": "Настройки",
+  "profile": "Профиль",
+  "logout": "Выйти"
+}

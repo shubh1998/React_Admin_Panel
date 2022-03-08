@@ -62,5 +62,6 @@ CustomButton.propTypes = {
   onClick: PropTypes.func,
   startIcon: PropTypes.element,
   endIcon: PropTypes.element,
-  disableElevation: PropTypes.bool
+  disableElevation: PropTypes.bool,
+  round: PropTypes.bool
 }
