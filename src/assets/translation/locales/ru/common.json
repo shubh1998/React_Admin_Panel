@@ -8,5 +8,8 @@
   "cancelledGames": "Отмененные игры",
   "settings": "Настройки",
   "profile": "Профиль",
-  "logout": "Выйти"
+  "logout": "Выйти",
+  "currentPassword": "Текущий пароль",
+  "newPassword": "новый пароль",
+  "confirmPassword": "Подтвердить Пароль"
 }

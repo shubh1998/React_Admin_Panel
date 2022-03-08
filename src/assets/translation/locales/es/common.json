@@ -8,5 +8,8 @@
   "cancelledGames": "Juegos cancelados",
   "settings": "Ajustes",
   "profile": "Perfil",
-  "logout": "Cerrar sesión"
+  "logout": "Cerrar sesión",
+  "currentPassword": "Contraseña actual",
+  "newPassword": "Nueva contraseña",
+  "confirmPassword": "Confirmar contraseña"
 }

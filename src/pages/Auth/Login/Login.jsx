@@ -66,9 +66,19 @@ export const Login = () => {
               textAlign: 'left'
             }}
           >
-            <div style={{ borderBottom: '4px solid lightgrey', width: 'fit-content', marginBottom: 15, paddingBottom: 10 }}>
-              <CustomTypography value='Log in' variant='h3' sx={{ fontWeight: 'bold' }} />
-
+            <div
+              style={{
+                borderBottom: '4px solid lightgrey',
+                width: 'fit-content',
+                marginBottom: 15,
+                paddingBottom: 10
+              }}
+            >
+              <CustomTypography
+                value='Log in'
+                variant='h3'
+                sx={{ fontWeight: 'bold' }}
+              />
             </div>
             <CustomTextField
               sx={{ marginBottom: '20px' }}
@@ -111,11 +121,7 @@ export const Login = () => {
               disabled={!(email && password)}
               onClick={loginHandler}
             >
-              <CustomTypography
-                sx={{ fontWeight: 'bold' }}
-                value='Login'
-              />
-
+              <CustomTypography sx={{ fontWeight: 'bold' }} value='Login' />
             </CustomButton>
           </LoginContainer>
         </div>
