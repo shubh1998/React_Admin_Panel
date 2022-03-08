@@ -2,6 +2,9 @@ import { MenuItem, Select, styled } from '@mui/material'
 
 export const StyledSelect = styled(Select)(({ theme, type }) => ({
   borderRadius: '3px',
+  '& .MuiInputBase-input': {
+    padding: type !== 'filter' ? 12 : 4
+  },
   '& .MuiSelect-select': {
     fontSize: type === 'filter' ? 12 : 16
   },

@@ -17,7 +17,7 @@ export const theme = createTheme({
         {
           props: { size: 'small' },
           style: {
-            width: 103,
+            width: 200,
             // height: 31,
             borderRadius: 3
           }

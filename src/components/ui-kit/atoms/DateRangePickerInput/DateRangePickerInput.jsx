@@ -23,10 +23,10 @@ export const DateRangePickerInput = ({ title = 'Demo Title', type = 'default' })
             return (
               <CustomTextField
                 label={title}
-                // {...startProps}
                 inputProps={inputProps}
                 value={startValue ? `${startValue}-${endProps.inputProps.value}` : ''}
                 labeltype={type}
+                size='small'
               />
             )
           }}

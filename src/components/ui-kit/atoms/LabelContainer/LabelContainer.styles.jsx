@@ -3,7 +3,7 @@ import { Box, styled } from '@mui/material'
 export const FilterContainer = styled(Box)(({ theme, type }) => ({
   display: 'flex',
   alignItems: 'baseline',
-  padding: '1%',
+  padding: type !== 'dateFilter' ? '0.5% 1%' : '3%',
   border: '1px solid',
   justifyContent: 'space-around',
   borderColor: theme.palette.primary.main,

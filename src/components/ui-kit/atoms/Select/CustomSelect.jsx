@@ -14,7 +14,6 @@ const CustomSelect = ({
           m: 1,
           minWidth: labeltype === 'filter' ? 157 : 317,
           minHeight: labeltype === 'filter' ? 31 : 46,
-          borderRadius: 3,
           margin: 0,
           backgroundColor: (theme) => labeltype !== 'filter'
             ? theme.colors.white

@@ -13,7 +13,7 @@ export const LabelContainer = ({ children, type, label }) => {
           {children}
         </div>)
       : (
-        <FilterContainer>
+        <FilterContainer type={type}>
           <div style={{ marginRight: '10px', width: 'max-content' }}>
             <CustomTypography sx={{ color: (theme) => theme.colors.loginTextColor }} variant='subtitle1' value={`${label}`} />
           </div>

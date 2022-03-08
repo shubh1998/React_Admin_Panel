@@ -4,6 +4,9 @@ export const StyledTextField = styled(TextField)(({ theme, error, labeltype }) =
   backgroundColor: labeltype !== 'filter'
     ? theme.colors.white
     : theme.colors.textFieldGray,
+  '& .MuiInputBase-input': {
+    padding: labeltype !== 'filter' && labeltype !== 'dateFilter' ? 12 : 4
+  },
   '& .MuiOutlinedInput-root': {
     '&:hover fieldset': {
       borderColor: error ? theme.palette.primary.error : theme.palette.primary.main,
