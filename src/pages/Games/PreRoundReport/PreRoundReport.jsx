@@ -40,22 +40,15 @@ const sampleData = {
     },
     {
       id: 6,
-      label: 'Status',
-      value: 'status',
-      type: 'status',
-      isMobFullWidRow: true
-    },
-    {
-      id: 7,
       label: 'Payment date',
       value: 'payment_date',
       type: 'paymentDate'
     },
     {
       id: 8,
-      label: 'Review',
-      value: 'reviews',
-      type: 'interactiveReview'
+      label: 'Status',
+      value: 'status',
+      type: 'status'
     }
   ],
   salesRows: [
@@ -67,9 +60,9 @@ const sampleData = {
       price: '$89',
       due_by: '11-11-2020',
       incomingMessage: 1,
-      status: 'Waiting for details',
       payment_date: '11-11-2020',
-      reviews: 4
+      reviews: 4,
+      status: true
     },
     {
       id: 2,
@@ -78,9 +71,9 @@ const sampleData = {
       buyer: 'Ada Reynolds',
       price: '$89',
       due_by: '11-11-2020',
-      status: 'Waiting for details',
       payment_date: '11-11-2020',
-      reviews: 4
+      reviews: 4,
+      status: false
     },
     {
       id: 3,
@@ -89,9 +82,9 @@ const sampleData = {
       buyer: 'Ada Reynolds',
       price: '$89',
       due_by: '11-11-2020',
-      status: 'Waiting for details',
       payment_date: '11-11-2020',
-      reviews: 4
+      reviews: 4,
+      status: true
     },
     {
       id: 4,
@@ -100,9 +93,9 @@ const sampleData = {
       buyer: 'Ada Reynolds',
       price: '$89',
       due_by: '11-11-2020',
-      status: 'Waiting for details',
       payment_date: '11-11-2020',
-      reviews: 4
+      reviews: 4,
+      status: false
     },
     {
       id: 5,
@@ -111,9 +104,9 @@ const sampleData = {
       buyer: 'Ada Reynolds',
       price: '$89',
       due_by: '11-11-2020',
-      status: 'Waiting for details',
       payment_date: '11-11-2020',
-      reviews: 4
+      reviews: 4,
+      status: true
     },
     {
       id: 6,
@@ -122,9 +115,9 @@ const sampleData = {
       buyer: 'Ada Reynolds',
       price: '$89',
       due_by: '11-11-2020',
-      status: 'Waiting for details',
       payment_date: '11-11-2020',
-      reviews: 4
+      reviews: 4,
+      status: false
     },
     {
       id: 7,
@@ -133,9 +126,9 @@ const sampleData = {
       buyer: 'Ada Reynolds',
       price: '$89',
       due_by: '11-11-2020',
-      status: 'Waiting for details',
       payment_date: '11-11-2020',
-      reviews: 4
+      reviews: 4,
+      status: true
     }
   ]
 }

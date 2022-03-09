@@ -2,6 +2,7 @@ import PropTypes from 'prop-types'
 import { Paper, Table, TableBody } from '@mui/material'
 import { CustomTableHeader } from './TableHead/CustomTableHeader'
 import { StyledTableCell, StyledTableContainer, StyledTableRow } from './CustomTable.styles'
+import { CellType } from './CellTable/CellTable'
 
 export const CustomTable = ({ header, rows, type, containerStyles }) => {
   return (
@@ -27,7 +28,7 @@ export const CustomTable = ({ header, rows, type, containerStyles }) => {
                     align='center'
                     key={head.value}
                   >
-                    {row[head.value]}
+                    <CellType column={head} row={row} />
                   </StyledTableCell>
                 ))}
               </StyledTableRow>
