@@ -61,8 +61,8 @@ export const theme = createTheme({
               padding: 6
             },
             '& .MuiSwitch-thumb': {
-              width: 10,
-              height: 10,
+              width: 9,
+              height: 9,
               margin: '5px'
             },
             '& .MuiSwitch-track': {
@@ -76,11 +76,11 @@ export const theme = createTheme({
             width: '80px',
             height: '62px',
             '&.MuiSwitch-root': {
-              padding: 17
+              padding: 16
             },
             '& .MuiSwitch-thumb': {
-              width: 23,
-              height: 23,
+              width: 24,
+              height: 24,
               margin: '10px'
             },
             '& .MuiSwitch-track': {
