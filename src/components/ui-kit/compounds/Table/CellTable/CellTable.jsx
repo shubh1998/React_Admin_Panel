@@ -21,7 +21,7 @@ export const CellType = ({ column, row }) => {
             }} size='small' color={cellData ? 'success' : 'error'}
           />
           <CustomTypography
-            align='start'
+            align='left'
             sx={{ fontSize: 16, width: '60px' }}
             value={cellData ? 'Active' : 'Inactive'}
           />
@@ -29,7 +29,6 @@ export const CellType = ({ column, row }) => {
         </div>
       )
     case 'switch':
-      console.log('dsfsdfs', cellData.switchValue)
       return (
         <div>
           <CustomSwitch
@@ -46,11 +45,11 @@ export const CellType = ({ column, row }) => {
 }
 
 CellType.defaultProps = {
-  column: [],
-  rows: []
+  column: {},
+  rows: {}
 }
 
 CellType.propTypes = {
-  column: PropTypes.array.isRequired,
-  rows: PropTypes.array.isRequired
+  column: PropTypes.object.isRequired,
+  rows: PropTypes.object.isRequired
 }

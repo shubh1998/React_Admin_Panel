@@ -10,9 +10,9 @@ export const CustomTableHeader = ({ header, type }) => {
         {header.map((head) => (
           <StyledTableCell
             align='center'
-            key={header.label}
+            key={head.label}
             type={type}
-            header
+            cellin='header'
           >
             {head.label}
           </StyledTableCell>

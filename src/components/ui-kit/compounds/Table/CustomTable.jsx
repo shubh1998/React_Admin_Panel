@@ -21,7 +21,7 @@ export const CustomTable = ({ header, rows, type, containerStyles }) => {
           {
             rows.map((row) => (
               <StyledTableRow
-                key={row}
+                key={row.id}
               >
                 {header.map((head) => (
                   <StyledTableCell

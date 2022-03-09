@@ -4,13 +4,11 @@ import { StyledSwitch } from './CustomSwitch.styles'
 
 export const CustomSwitch = ({
   checked,
-  defaultChecked,
   ...otherProps
 }) => {
   return (
     <StyledSwitch
       checked={checked}
-      defaultChecked={defaultChecked}
       color={checked ? 'success' : 'error'}
       {...otherProps}
     />
@@ -19,8 +17,7 @@ export const CustomSwitch = ({
 CustomSwitch.defaultProps = {
   checked: false,
   size: 'medium',
-  disabled: false,
-  defaultChecked: false
+  disabled: false
 }
 
 CustomSwitch.propTypes = {

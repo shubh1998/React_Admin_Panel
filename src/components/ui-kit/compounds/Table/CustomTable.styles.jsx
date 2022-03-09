@@ -7,16 +7,16 @@ export const StyledTableContainer = styled(TableContainer)(({ theme, type }) => 
     : 0
 }))
 
-export const StyledTableCell = styled(TableCell)(({ theme, header = false, type = 'default' }) => ({
+export const StyledTableCell = styled(TableCell)(({ theme, cellin = 'body', type = 'default' }) => ({
   borderRight: `1px solid ${theme.colors.tableGray}`,
-  fontWeight: header ? 500 : 300,
+  fontWeight: cellin === 'header' ? 500 : 300,
   maxWidth: '150px',
   overflow: 'hidden',
   borderBottom: 0,
   textOverflow: 'ellipsis',
   whiteSpace: 'nowrap',
-  ...(header && type === 'static' && { borderBottom: `2px solid ${theme.colors.tableHeaderBottomBorder}` }),
-  ...(!header && { color: theme.colors.mirage })
+  ...(cellin === 'header' && type === 'static' && { borderBottom: `2px solid ${theme.colors.tableHeaderBottomBorder}` }),
+  ...(cellin !== 'header' && { color: theme.colors.mirage })
 
 }))
 
