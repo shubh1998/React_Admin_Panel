@@ -11,5 +11,17 @@
   "logout": "Cerrar sesión",
   "currentPassword": "Contraseña actual",
   "newPassword": "Nueva contraseña",
-  "confirmPassword": "Confirmar contraseña"
+  "confirmPassword": "Confirmar contraseña",
+  "players": "Jugadores",
+  "allPlayers": "Todos los jugadores",
+  "activePlayers": "Jugadores Activos",
+  "blockedPlayers": "Jugadores bloqueados",
+  "performance": "Rendimiento",
+  "gamingRevenue": "Ingresos del juego",
+  "tipsReceived": "Consejos recibidos",
+  "gamingRevenueByGameType": "Ingresos de juegos por tipo de juego",
+  "administrator": "Administrador",
+  "addNewUser": "Agregar nuevo usuario",
+  "usersList": "Lista de usuarios",
+  "customerSupport": "Atención al cliente"
 }

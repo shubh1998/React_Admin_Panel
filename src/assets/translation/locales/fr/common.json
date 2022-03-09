@@ -11,5 +11,17 @@
   "logout": "Se déconnecter",
   "currentPassword": "Mot de passe actuel",
   "newPassword": "nouveau mot de passe",
-  "confirmPassword": "Confirmez le mot de passe"
+  "confirmPassword": "Confirmez le mot de passe",
+  "players": "Joueurs",
+  "allPlayers": "Tous les joueurs",
+  "activePlayers": "Joueurs actifs",
+  "blockedPlayers": "Joueurs bloqués",
+  "performance": "Performances",
+  "gamingRevenue": "Revenus des jeux",
+  "tipsReceived": "Conseils reçus",
+  "gamingRevenueByGameType": "Revenus des jeux par type de jeu",
+  "administrator": "Administrateur",
+  "addNewUser": "Ajouter un nouvel utilisateur",
+  "usersList": "Liste des utilisateurs",
+  "customerSupport": "Service client"
 }
