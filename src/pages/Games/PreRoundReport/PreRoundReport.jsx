@@ -1,8 +1,7 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { CustomTable } from '../../../components/ui-kit/compounds/Table/CustomTable'
 
 const sampleData = {
-
   salesColumns: [
     {
       id: 1,
@@ -161,14 +160,31 @@ const sampleData = {
 }
 
 export const PreRoundReport = () => {
+  const rowsPerPage = 5
+  const [currentPageRows, setCurrentPageRows] = useState(
+    sampleData.salesRows.slice(0, rowsPerPage)
+  )
+  const [currentPage, setCurrentPage] = useState(1)
+
+  const pageChangeHandler = (event, value) => {
+    const firstIndex = (value - 1) * rowsPerPage
+    const lastIndex = value * rowsPerPage
+    const currentTodos = sampleData.salesRows.slice(firstIndex, lastIndex)
+    setCurrentPage(value)
+    setCurrentPageRows(currentTodos)
+  }
+
   return (
     <>
-
       <CustomTable
-        rows={sampleData.salesRows}
+        rows={currentPageRows}
         header={sampleData.salesColumns}
+        currentPage={currentPage}
+        totalPage={Math.ceil(sampleData.salesRows.length / rowsPerPage)}
+        onPageChange={pageChangeHandler}
       />
-      <br /><br />
+      <br />
+      <br />
       <CustomTable
         rows={sampleData.salesRows}
         header={sampleData.salesColumns}

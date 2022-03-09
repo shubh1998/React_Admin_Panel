@@ -3,7 +3,7 @@ import { CssBaseline, Toolbar } from '@mui/material'
 import { useSelector } from 'react-redux'
 import { Header } from '../Header/Header'
 import { Sidebar } from '../Sidebar/Sidebar'
-import { Main, StyledBox } from './styles/MainLayout.styles'
+import { Main, StyledBox, StyledMainLayoutChildren } from './styles/MainLayout.styles'
 
 export const MainLayout = ({ children }) => {
   const openHam = useSelector((state) => state.ham.openHam)
@@ -21,9 +21,9 @@ export const MainLayout = ({ children }) => {
           height='100vh'
         >
           <Toolbar />
-          <div style={{ width: '100%', padding: '30px' }}>
+          <StyledMainLayoutChildren>
             {children}
-          </div>
+          </StyledMainLayoutChildren>
         </StyledBox>
       </StyledBox>
     </div>
