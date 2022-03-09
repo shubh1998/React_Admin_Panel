@@ -1,4 +1,5 @@
 import LoginIcon from '@mui/icons-material/Login'
+import { v4 as uuidv4 } from 'uuid'
 import { ROUTE_PATHS } from '../utils/constants/constants'
 import { Login } from '../pages/Auth/Login/Login'
 import { PreRoundReport } from '../pages/Games/PreRoundReport/PreRoundReport'
@@ -10,84 +11,354 @@ import { DashboardIcon } from '../components/ui-kit/atoms/icons/iconComponents/D
 import { GameIcon } from '../components/ui-kit/atoms/icons/iconComponents/GameIcon'
 import { EllipseIcon } from '../components/ui-kit/atoms/icons/iconComponents/EllipseIcon'
 import { ProfileIcon } from '../components/ui-kit/atoms/icons/iconComponents/ProfileIcon'
+import { PlayersIcon } from '../components/ui-kit/atoms/icons/iconComponents/PlayersIcon'
+import { AddUserIcon } from '../components/ui-kit/atoms/icons/iconComponents/AddUserIcon'
+import { UserListIcon } from '../components/ui-kit/atoms/icons/iconComponents/UserListIcon'
+import { PhoneIcon } from '../components/ui-kit/atoms/icons/iconComponents/PhoneIcon'
+import { MailIcon } from '../components/ui-kit/atoms/icons/iconComponents/MailIcon'
+import { PerformanceIcon } from '../components/ui-kit/atoms/icons/iconComponents/PerformanceIcon'
 
-const routerList = [
+// export const routerListOld = [
+//   {
+//     key: uuidv4(),
+//     label: 'dashboard',
+//     sectionName: 'home',
+//     path: ROUTE_PATHS.dashboard,
+//     component: Dashboard,
+//     hasAuth: true,
+//     hasSideBarOption: true,
+//     icon: DashboardIcon,
+//     subMenus: []
+//   },
+//   {
+//     key: uuidv4(),
+//     label: 'login',
+//     sectionName: 'login',
+//     path: ROUTE_PATHS.login,
+//     component: Login,
+//     hasAuth: false,
+//     hasSideBarOption: false,
+//     icon: LoginIcon,
+//     subMenus: []
+//   },
+//   {
+//     key: uuidv4(),
+//     label: 'settings',
+//     sectionName: 'settings',
+//     path: ROUTE_PATHS.settings,
+//     component: Settings,
+//     hasAuth: true,
+//     hasSideBarOption: false,
+//     icon: EllipseIcon,
+//     subMenus: []
+//   },
+//   {
+//     key: uuidv4(),
+//     label: 'profile',
+//     sectionName: 'profile',
+//     path: ROUTE_PATHS.profile,
+//     component: Profile,
+//     hasAuth: true,
+//     hasSideBarOption: false,
+//     icon: ProfileIcon,
+//     subMenus: []
+//   },
+//   {
+//     key: uuidv4(),
+//     label: 'games',
+//     sectionName: 'reports',
+//     path: ROUTE_PATHS.games,
+//     component: PreRoundReport,
+//     hasAuth: true,
+//     hasSideBarOption: true,
+//     icon: GameIcon,
+//     subMenus: [
+//       {
+//         key: uuidv4(),
+//         label: 'preRoundReports',
+//         sectionName: 'reports',
+//         path: ROUTE_PATHS.preRoundReportReports,
+//         component: PreRoundReport,
+//         hasAuth: true,
+//         hasSideBarOption: true,
+//         icon: EllipseIcon
+//       },
+//       {
+//         key: uuidv4(),
+//         label: 'cancelledGames',
+//         sectionName: 'reports',
+//         path: ROUTE_PATHS.cancelledGames,
+//         component: CancelledGames,
+//         hasAuth: true,
+//         hasSideBarOption: true,
+//         icon: EllipseIcon
+//       }
+//     ]
+//   },
+//   {
+//     key: uuidv4(),
+//     label: 'players',
+//     sectionName: 'reports',
+//     path: ROUTE_PATHS.games,
+//     component: PreRoundReport,
+//     hasAuth: true,
+//     hasSideBarOption: true,
+//     icon: PlayersIcon,
+//     subMenus: [
+//       {
+//         key: uuidv4(),
+//         label: 'allPlayers',
+//         sectionName: 'reports',
+//         path: ROUTE_PATHS.allPlayers,
+//         component: PreRoundReport,
+//         hasAuth: true,
+//         hasSideBarOption: true,
+//         icon: EllipseIcon
+//       },
+//       {
+//         key: uuidv4(),
+//         label: 'activePlayers',
+//         sectionName: 'reports',
+//         path: ROUTE_PATHS.activePlayers,
+//         component: CancelledGames,
+//         hasAuth: true,
+//         hasSideBarOption: true,
+//         icon: EllipseIcon
+//       },
+//       {
+//         key: uuidv4(),
+//         label: 'blockedPlayers',
+//         sectionName: 'reports',
+//         path: ROUTE_PATHS.blockedPlayers,
+//         component: CancelledGames,
+//         hasAuth: true,
+//         hasSideBarOption: true,
+//         icon: EllipseIcon
+//       }
+//     ]
+//   }
+// ]
+
+export const routerList = [
   {
-    key: 1,
-    label: 'dashboard',
+    id: uuidv4(),
     sectionName: 'home',
-    path: ROUTE_PATHS.dashboard,
-    component: Dashboard,
-    hasAuth: true,
-    hasSideBarOption: true,
-    icon: DashboardIcon,
-    subMenus: []
-  },
-  {
-    key: 3,
-    label: 'login',
-    sectionName: 'login',
-    path: ROUTE_PATHS.login,
-    component: Login,
-    hasAuth: false,
-    hasSideBarOption: false,
-    icon: LoginIcon,
-    subMenus: []
-  },
-  {
-    key: 4,
-    label: 'games',
-    sectionName: 'reports',
-    path: ROUTE_PATHS.games,
-    component: PreRoundReport,
-    hasAuth: true,
-    hasSideBarOption: true,
-    icon: GameIcon,
-    subMenus: [
+    sectionChilds: [
       {
-        key: 6,
-        label: 'preRoundReports',
-        sectionName: 'reports',
-        path: ROUTE_PATHS.preRoundReportReports,
-        component: PreRoundReport,
+        key: uuidv4(),
+        label: 'dashboard',
+        path: ROUTE_PATHS.dashboard,
+        component: Dashboard,
         hasAuth: true,
         hasSideBarOption: true,
-        icon: EllipseIcon
-      },
-      {
-        key: 7,
-        label: 'cancelledGames',
-        sectionName: 'reports',
-        path: ROUTE_PATHS.cancelledGames,
-        component: CancelledGames,
-        hasAuth: true,
-        hasSideBarOption: true,
-        icon: EllipseIcon
+        icon: DashboardIcon,
+        subMenus: []
       }
     ]
   },
   {
-    key: 5,
-    label: 'settings',
-    sectionName: 'settings',
-    path: ROUTE_PATHS.settings,
-    component: Settings,
-    hasAuth: true,
-    hasSideBarOption: false,
-    icon: EllipseIcon,
-    subMenus: []
+    id: uuidv4(),
+    sectionName: null,
+    sectionChilds: [
+      {
+        key: uuidv4(),
+        label: 'login',
+        path: ROUTE_PATHS.login,
+        component: Login,
+        hasAuth: false,
+        hasSideBarOption: false,
+        icon: LoginIcon,
+        subMenus: []
+      }
+    ]
   },
   {
-    key: 6,
-    label: 'profile',
-    sectionName: 'profile',
-    path: ROUTE_PATHS.profile,
-    component: Profile,
-    hasAuth: true,
-    hasSideBarOption: false,
-    icon: ProfileIcon,
-    subMenus: []
+    id: uuidv4(),
+    sectionName: null,
+    sectionChilds: [
+      {
+        key: uuidv4(),
+        label: 'profile',
+        path: ROUTE_PATHS.profile,
+        component: Profile,
+        hasAuth: true,
+        hasSideBarOption: false,
+        icon: ProfileIcon,
+        subMenus: []
+      },
+      {
+        key: uuidv4(),
+        label: 'settings',
+        path: ROUTE_PATHS.settings,
+        component: Settings,
+        hasAuth: true,
+        hasSideBarOption: false,
+        icon: EllipseIcon,
+        subMenus: []
+      }
+    ]
+  },
+  {
+    id: uuidv4(),
+    sectionName: 'reports',
+    sectionChilds: [
+      {
+        key: uuidv4(),
+        label: 'games',
+        path: ROUTE_PATHS.games,
+        component: PreRoundReport,
+        hasAuth: true,
+        hasSideBarOption: true,
+        icon: GameIcon,
+        subMenus: [
+          {
+            key: uuidv4(),
+            label: 'preRoundReports',
+            path: ROUTE_PATHS.preRoundReportReports,
+            component: PreRoundReport,
+            hasAuth: true,
+            hasSideBarOption: true,
+            icon: EllipseIcon
+          },
+          {
+            key: uuidv4(),
+            label: 'cancelledGames',
+            path: ROUTE_PATHS.cancelledGames,
+            component: CancelledGames,
+            hasAuth: true,
+            hasSideBarOption: true,
+            icon: EllipseIcon
+          }
+        ]
+      },
+      {
+        key: uuidv4(),
+        label: 'players',
+        path: ROUTE_PATHS.games,
+        component: PreRoundReport,
+        hasAuth: true,
+        hasSideBarOption: true,
+        icon: PlayersIcon,
+        subMenus: [
+          {
+            key: uuidv4(),
+            label: 'allPlayers',
+            path: ROUTE_PATHS.allPlayers,
+            component: PreRoundReport,
+            hasAuth: true,
+            hasSideBarOption: true,
+            icon: EllipseIcon
+          },
+          {
+            key: uuidv4(),
+            label: 'activePlayers',
+            path: ROUTE_PATHS.activePlayers,
+            component: CancelledGames,
+            hasAuth: true,
+            hasSideBarOption: true,
+            icon: EllipseIcon
+          },
+          {
+            key: uuidv4(),
+            label: 'blockedPlayers',
+            path: ROUTE_PATHS.blockedPlayers,
+            component: CancelledGames,
+            hasAuth: true,
+            hasSideBarOption: true,
+            icon: EllipseIcon
+          }
+        ]
+      },
+      {
+        key: uuidv4(),
+        label: 'performance',
+        path: ROUTE_PATHS.performance,
+        component: PreRoundReport,
+        hasAuth: true,
+        hasSideBarOption: true,
+        icon: PerformanceIcon,
+        subMenus: [
+          {
+            key: uuidv4(),
+            label: 'gamingRevenue',
+            path: ROUTE_PATHS.gamingRevenue,
+            component: PreRoundReport,
+            hasAuth: true,
+            hasSideBarOption: true,
+            icon: EllipseIcon
+          },
+          {
+            key: uuidv4(),
+            label: 'tipsReceived',
+            path: ROUTE_PATHS.tipsReceived,
+            component: CancelledGames,
+            hasAuth: true,
+            hasSideBarOption: true,
+            icon: EllipseIcon
+          },
+          {
+            key: uuidv4(),
+            label: 'gamingRevenueByGameType',
+            path: ROUTE_PATHS.gamingRevenueByGameType,
+            component: CancelledGames,
+            hasAuth: true,
+            hasSideBarOption: true,
+            icon: EllipseIcon
+          }
+        ]
+      }
+    ]
+  },
+  {
+    id: uuidv4(),
+    sectionName: 'administrator',
+    sectionChilds: [
+      {
+        key: uuidv4(),
+        label: 'addNewUser',
+        path: ROUTE_PATHS.addNewUser,
+        component: PreRoundReport,
+        hasAuth: true,
+        hasSideBarOption: true,
+        icon: AddUserIcon,
+        subMenus: []
+      },
+      {
+        key: uuidv4(),
+        label: 'usersList',
+        path: ROUTE_PATHS.usersList,
+        component: PreRoundReport,
+        hasAuth: true,
+        hasSideBarOption: true,
+        icon: UserListIcon,
+        subMenus: []
+      }
+    ]
+  },
+  {
+    id: uuidv4(),
+    sectionName: 'customerSupport',
+    sectionChilds: [
+      {
+        key: uuidv4(),
+        label: '+1-888-000-999',
+        path: ROUTE_PATHS.phone,
+        component: PreRoundReport,
+        hasAuth: true,
+        hasSideBarOption: true,
+        icon: PhoneIcon,
+        subMenus: []
+      },
+      {
+        key: uuidv4(),
+        label: 'support@fg.com',
+        path: ROUTE_PATHS.support,
+        component: PreRoundReport,
+        hasAuth: true,
+        hasSideBarOption: true,
+        icon: MailIcon,
+        subMenus: []
+      }
+    ]
   }
 ]
-
-export default routerList

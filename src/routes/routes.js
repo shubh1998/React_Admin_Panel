@@ -1,16 +1,17 @@
 import React, { Fragment } from 'react'
 import { Route, Routes } from 'react-router-dom'
 import { NotFound } from '../pages/NotFound/NotFound'
-import routes from './routerList'
+import { routerList } from './routerList'
 import RouteValidator from './RouteValidator'
 
 let allRoutes = []
-routes.forEach(a => {
-  const route = a
-  if (a.subMenus.length) {
-    allRoutes = [...allRoutes, ...a.subMenus]
-  }
-  allRoutes.push(route)
+routerList.forEach(section => {
+  section.sectionChilds.forEach(route => {
+    if (route.subMenus.length) {
+      allRoutes = [...allRoutes, ...route.subMenus]
+    }
+    allRoutes.push(route)
+  })
 })
 
 const CustomRoutes = () => (
