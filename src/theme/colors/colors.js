@@ -1,7 +1,7 @@
 export const colors = {
   darkJungleGreen: '#0F172A',
   white: '#fff',
-  layout: '#E5E5E5',
+  layout: '#F1F5F9',
   gunmetal: '#2C3344',
   red: '#FF0000',
   lightGreen: '#b2e75d',
@@ -19,5 +19,8 @@ export const colors = {
   butterCup: '#F59E0B',
   lineChartTransparency: 'rgba(199, 240, 214, 0.5)',
   mirage: '#1E293B',
-  cornflowerBlue: '#728CF8'
+  cornflowerBlue: '#728CF8',
+  tableGray: '#CECECE',
+  tableHeaderStatic: '#F1F5F9',
+  tableHeaderBottomBorder: '#0D0D0D'
 }

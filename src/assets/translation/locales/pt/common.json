@@ -11,5 +11,17 @@
   "logout": "Sair",
   "currentPassword": "Senha atual",
   "newPassword": "Nova Senha",
-  "confirmPassword": "Confirme a Senha"
+  "confirmPassword": "Confirme a Senha",
+  "players": "Jogadores",
+  "allPlayers": "Todos os jogadores",
+  "activePlayers": "Jogadores ativos",
+  "blockedPlayers": "Jogadores bloqueados",
+  "performance": "Desempenho",
+  "gamingRevenue": "Receita de jogos",
+  "tipsReceived": "Dicas Recebidas",
+  "gamingRevenueByGameType": "Receita de jogos por tipo de jogo ",
+  "administrator": "Administrador",
+  "addNewUser": "Adicionar novo usuário",
+  "usersList": "Lista de usuários",
+  "customerSupport": "Suporte ao cliente"
 }

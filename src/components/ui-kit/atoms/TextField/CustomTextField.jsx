@@ -15,7 +15,6 @@ const CustomTextField = ({
   inputRef,
   fullWidth,
   variant,
-  defaultValue,
   type,
   disabled,
   required,
@@ -27,7 +26,7 @@ const CustomTextField = ({
   onChange,
   value,
   enableValidation,
-  labelType,
+  labeltype,
   ...otherProps
 }) => {
   const Adornment = ({ error, tooltipTitle }) => {
@@ -50,9 +49,8 @@ const CustomTextField = ({
     )
   }
   return (
-    <LabelContainer type={labelType} label={label}>
+    <LabelContainer type={labeltype} label={label}>
       <StyledTextField
-        defaultValue={defaultValue}
         inputRef={inputRef}
         fullWidth={!!fullWidth}
         name={name}
@@ -68,7 +66,7 @@ const CustomTextField = ({
         rows={rows}
         onChange={onChange}
         value={value}
-        labelType={labelType}
+        labeltype={labeltype}
         InputProps={{
           endAdornment:
             enableValidation ? (value && <Adornment error={error} tooltipTitle={helperText} />) : <></>
@@ -88,7 +86,6 @@ CustomTextField.defaultProps = {
   variant: 'outlined',
   inputRef: null,
   required: false,
-  defaultValue: '',
   placeholder: null,
   error: null,
   helperText: null,
@@ -98,7 +95,7 @@ CustomTextField.defaultProps = {
   onChange: () => null,
   value: undefined,
   name: '',
-  labelType: 'default'
+  labeltype: 'default'
 }
 
 CustomTextField.propTypes = {
@@ -110,7 +107,6 @@ CustomTextField.propTypes = {
     PropTypes.shape({ current: PropTypes.instanceOf(Element) })]),
   fullWidth: PropTypes.bool,
   variant: PropTypes.oneOf(['filled', 'outlined', 'standard']),
-  defaultValue: PropTypes.string,
   type: PropTypes.string,
   disabled: PropTypes.bool,
   required: PropTypes.bool,
@@ -123,7 +119,7 @@ CustomTextField.propTypes = {
   onChange: PropTypes.func,
   value: PropTypes.string,
   enableValidation: PropTypes.bool,
-  labelType: PropTypes.oneOf(['filter', 'default'])
+  labeltype: PropTypes.oneOf(['filter', 'default', 'dateFilter'])
 }
 
 export default CustomTextField

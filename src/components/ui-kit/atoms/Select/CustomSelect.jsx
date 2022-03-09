@@ -5,18 +5,17 @@ import { StyledMenuItem, StyledSelect } from './CustomSelect.styles'
 import { LabelContainer } from '../LabelContainer/LabelContainer'
 
 const CustomSelect = ({
-  label, onChange, items, value, size, styled, labelType, formControlStyle
+  label, onChange, items, value, size, styled, labeltype, formControlStyle
 }) => (
-  <LabelContainer type={labelType} label={label}>
+  <LabelContainer type={labeltype} label={label}>
     <FormControl
       sx={
         formControlStyle || ({
           m: 1,
-          minWidth: labelType === 'filter' ? 157 : 317,
-          minHeight: labelType === 'filter' ? 31 : 46,
-          borderRadius: 3,
+          minWidth: labeltype === 'filter' ? 157 : 317,
+          minHeight: labeltype === 'filter' ? 31 : 46,
           margin: 0,
-          backgroundColor: (theme) => labelType !== 'filter'
+          backgroundColor: (theme) => labeltype !== 'filter'
             ? theme.colors.white
             : theme.colors.textFieldGray
         })
@@ -28,10 +27,10 @@ const CustomSelect = ({
         onChange={onChange}
         displayEmpty
         inputProps={{ 'aria-label': 'Without label' }}
-        type={labelType}
+        type={labeltype}
       >
         {items?.map((item) => (
-          <StyledMenuItem type={labelType} styled={styled} key={item.id} value={item.value}>
+          <StyledMenuItem type={labeltype} styled={styled} key={item.id} value={item.value}>
             {item.label}
           </StyledMenuItem>
         ))}
@@ -46,7 +45,7 @@ CustomSelect.defaultProps = {
   items: null,
   size: 'small',
   styled: true,
-  labelType: 'default',
+  labeltype: 'default',
   formControlStyle: null
 }
 
@@ -56,7 +55,7 @@ CustomSelect.propTypes = {
   items: PropTypes.arrayOf(PropTypes.object),
   value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   size: PropTypes.oneOf(['small', 'medium']),
-  labelType: PropTypes.oneOf(['filter', 'default']),
+  labeltype: PropTypes.oneOf(['filter', 'default']),
   formControlStyle: PropTypes.object
 }
 

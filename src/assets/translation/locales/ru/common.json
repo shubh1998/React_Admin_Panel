@@ -11,5 +11,17 @@
   "logout": "Выйти",
   "currentPassword": "Текущий пароль",
   "newPassword": "новый пароль",
-  "confirmPassword": "Подтвердить Пароль"
+  "confirmPassword": "Подтвердить Пароль",
+  "players": "Игроки",
+  "allPlayers": "Все игроки",
+  "activePlayers": "Активные игроки",
+  "blockedPlayers": "Заблокированные игроки",
+  "performance": "Производительность",
+  "gamingRevenue": "Доход от игр",
+  "tipsReceived": "Полученные советы",
+  "gamingRevenueByGameType": "Доход от игр по типу игры",
+  "administrator": "Администратор",
+  "addNewUser": "Добавить нового пользователя",
+  "usersList": "Список пользователей",
+  "customerSupport": "Служба поддержки"
 }

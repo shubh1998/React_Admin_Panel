@@ -17,7 +17,7 @@ export const theme = createTheme({
         {
           props: { size: 'small' },
           style: {
-            width: 103,
+            width: 200,
             // height: 31,
             borderRadius: 3
           }
@@ -61,8 +61,8 @@ export const theme = createTheme({
               padding: 6
             },
             '& .MuiSwitch-thumb': {
-              width: 10,
-              height: 10,
+              width: 9,
+              height: 9,
               margin: '5px'
             },
             '& .MuiSwitch-track': {
@@ -76,11 +76,11 @@ export const theme = createTheme({
             width: '80px',
             height: '62px',
             '&.MuiSwitch-root': {
-              padding: 17
+              padding: 16
             },
             '& .MuiSwitch-thumb': {
-              width: 23,
-              height: 23,
+              width: 24,
+              height: 24,
               margin: '10px'
             },
             '& .MuiSwitch-track': {
@@ -138,6 +138,33 @@ export const theme = createTheme({
           }
         }
       ]
+    },
+    MuiCssBaseline: {
+      styleOverrides: {
+        body: {
+          '&::-webkit-scrollbar, & *::-webkit-scrollbar': {
+            width: '0.4em'
+          },
+          '&::-webkit-scrollbar-thumb, & *::-webkit-scrollbar-thumb': {
+            backgroundColor: '#888',
+            height: '50px',
+            border: '6px solid transparent',
+            borderRadius: '15px'
+          },
+          '&::-webkit-scrollbar-thumb:focus, & *::-webkit-scrollbar-thumb:focus': {
+            backgroundColor: '#888'
+          },
+          '&::-webkit-scrollbar-thumb:active, & *::-webkit-scrollbar-thumb:active': {
+            backgroundColor: '#888'
+          },
+          '&::-webkit-scrollbar-thumb:hover, & *::-webkit-scrollbar-thumb:hover': {
+            backgroundColor: '#555'
+          },
+          '&::-webkit-scrollbar-corner, & *::-webkit-scrollbar-corner': {
+            backgroundColor: '#888'
+          }
+        }
+      }
     }
   },
   palette: {

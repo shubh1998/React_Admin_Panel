@@ -2,12 +2,16 @@ import { Switch, styled } from '@mui/material'
 
 export const StyledSwitch = styled((props) => (
   <Switch focusVisibleClassName='.Mui-focusVisible' disableRipple {...props} />
-))(({ theme }) => ({
+))(({ theme, checked }) => ({
   '& .MuiSwitch-thumb': {
     boxSizing: 'border-box',
     backgroundColor: 'white'
   },
   '& .MuiSwitch-switchBase': {
+    '& + .MuiSwitch-track': {
+      opacity: 1,
+      ...(!checked && { backgroundColor: theme.palette.error.main })
+    },
     '&.Mui-checked': {
       '& + .MuiSwitch-track': {
         opacity: 1

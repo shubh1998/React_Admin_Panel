@@ -3,24 +3,25 @@ import PropTypes from 'prop-types'
 import { StyledSwitch } from './CustomSwitch.styles'
 
 export const CustomSwitch = ({
-  defaultChecked,
+  checked,
   ...otherProps
 }) => {
   return (
     <StyledSwitch
-      defaultChecked={defaultChecked}
+      checked={checked}
+      color={checked ? 'success' : 'error'}
       {...otherProps}
     />
   )
 }
 CustomSwitch.defaultProps = {
-  color: 'success',
+  checked: false,
   size: 'medium',
-  disabled: false,
-  defaultChecked: false
+  disabled: false
 }
 
 CustomSwitch.propTypes = {
+  checked: PropTypes.bool,
   color: PropTypes.string,
   size: PropTypes.oneOf(['large', 'medium', 'small'])
 }

@@ -28,3 +28,11 @@ export const StyledBox = styled(Box)(
     backgroundColor: (theme) => theme.colors.layout || 'none'
   })
 )
+
+export const StyledMainLayoutChildren = styled('div')(
+  ({ theme }) => ({
+    width: '100%',
+    padding: '30px',
+    backgroundColor: theme.colors.layout
+  })
+)
