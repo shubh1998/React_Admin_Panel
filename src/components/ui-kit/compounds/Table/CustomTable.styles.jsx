@@ -11,13 +11,12 @@ export const StyledTableCell = styled(TableCell)(({ theme, cellin = 'body', type
   borderRight: `1px solid ${theme.colors.tableGray}`,
   fontWeight: cellin === 'header' ? 500 : 300,
   maxWidth: '150px',
-  padding: '5px 10px',
   overflow: 'hidden',
   borderBottom: 0,
   textOverflow: 'ellipsis',
   whiteSpace: 'nowrap',
   ...(cellin === 'header' && type === 'static' && { borderBottom: `2px solid ${theme.colors.tableHeaderBottomBorder}` }),
-  ...(cellin !== 'header' && { color: theme.colors.mirage })
+  ...(cellin !== 'header' && { color: theme.colors.mirage, padding: '5px 10px' })
 
 }))
 

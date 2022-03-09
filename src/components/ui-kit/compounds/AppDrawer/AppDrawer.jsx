@@ -7,17 +7,19 @@ import { SideArrowIcon } from '../../atoms/icons/iconComponents/SideArrowIcon'
 export const AppDrawer = ({ children, openDrawer = true, handleDrawer = () => {}, text = 'Default' }) => {
   return (
     <StyledDrawer anchor='left' variant='persistent' open={openDrawer}>
-      <Box sx={{ overflow: 'auto' }}>
+      <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
         <DrawerHeader>
           <CustomTypography
             sx={{ paddingLeft: '15px' }}
             variant='h4'
             value={text}
           />
-          <StyledIconButton padding='0px' onClick={handleDrawer}>
-            <SideArrowIcon />
-          </StyledIconButton>
         </DrawerHeader>
+        <StyledIconButton padding='0px' onClick={handleDrawer}>
+          <SideArrowIcon />
+        </StyledIconButton>
+      </Box>
+      <Box sx={{ overflow: 'auto' }}>
         <Divider />
         {children}
       </Box>

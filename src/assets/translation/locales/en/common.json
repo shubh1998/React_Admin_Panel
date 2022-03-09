@@ -11,5 +11,17 @@
   "logout": "Logout",
   "currentPassword": "Current Password",
   "newPassword": "New Password",
-  "confirmPassword": "Confirm Password"
+  "confirmPassword": "Confirm Password",
+  "players": "Players",
+  "allPlayers": "All Players",
+  "activePlayers": "Active Players",
+  "blockedPlayers": "Blocked Players",
+  "performance": "Performance",
+  "gamingRevenue": "Gaming Revenue",
+  "tipsReceived": "Tips Received",
+  "gamingRevenueByGameType": "Gaming Revenue By Game Type",
+  "administrator": "Administrator",
+  "addNewUser": "Add New User",
+  "usersList": "Users List",
+  "customerSupport": "Customer Support"
 }

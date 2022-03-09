@@ -37,16 +37,33 @@ const TOASTER_TYPE = {
 /* ==========================================================================
   All the navigation route Paths
 ========================================================================== */
+const gamesSectionParentRoute = '/games'
+const playersSectionParentRoute = '/parent'
+const performanceSectionParentRoute = '/performance'
+
 const ROUTE_PATHS = {
   // ----single routes------------
   login: '/login',
   settings: '/settings',
   dashboard: '/dashboard',
   profile: '/profile',
-  // ----parent child routes------------
-  games: '/games',
-  preRoundReportReports: '/games/pre-round-reports',
-  cancelledGames: '/games/cancelled-games'
-
+  addNewUser: '/add-user',
+  usersList: '/users-list',
+  phone: '/phone',
+  support: '/support',
+  // ----games section parent child routes------------
+  games: gamesSectionParentRoute,
+  preRoundReportReports: `${gamesSectionParentRoute}/pre-round-reports`,
+  cancelledGames: `${gamesSectionParentRoute}/cancelled-games`,
+  // ----players section parent child routes------------
+  players: playersSectionParentRoute,
+  allPlayers: `${playersSectionParentRoute}/all`,
+  activePlayers: `${playersSectionParentRoute}/active`,
+  blockedPlayers: `${playersSectionParentRoute}/blocked`,
+  // ----performance section parent child routes------------
+  performance: performanceSectionParentRoute,
+  gamingRevenue: `${performanceSectionParentRoute}/gaming-revenue`,
+  tipsReceived: `${performanceSectionParentRoute}/tips-received`,
+  gamingRevenueByGameType: `${performanceSectionParentRoute}/gaming-revenue-by-game-type`
 }
 export { TOASTER_TYPE, LANGUAGES, TOKEN, LANGUAGE, USERNAME, ROUTE_PATHS }
