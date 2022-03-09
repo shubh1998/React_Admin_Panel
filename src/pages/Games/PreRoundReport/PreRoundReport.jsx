@@ -49,6 +49,12 @@ const sampleData = {
       label: 'Status',
       value: 'status',
       type: 'status'
+    },
+    {
+      id: 9,
+      label: 'Switch',
+      value: 'switch',
+      type: 'switch'
     }
   ],
   salesRows: [
@@ -62,7 +68,10 @@ const sampleData = {
       incomingMessage: 1,
       payment_date: '11-11-2020',
       reviews: 4,
-      status: true
+      status: true,
+      switch: {
+        switchValue: false
+      }
     },
     {
       id: 2,
@@ -73,7 +82,10 @@ const sampleData = {
       due_by: '11-11-2020',
       payment_date: '11-11-2020',
       reviews: 4,
-      status: false
+      status: false,
+      switch: {
+        switchValue: true
+      }
     },
     {
       id: 3,
@@ -84,7 +96,10 @@ const sampleData = {
       due_by: '11-11-2020',
       payment_date: '11-11-2020',
       reviews: 4,
-      status: true
+      status: true,
+      switch: {
+        switchValue: false
+      }
     },
     {
       id: 4,
@@ -95,7 +110,10 @@ const sampleData = {
       due_by: '11-11-2020',
       payment_date: '11-11-2020',
       reviews: 4,
-      status: false
+      status: false,
+      switch: {
+        switchValue: true
+      }
     },
     {
       id: 5,
@@ -106,7 +124,10 @@ const sampleData = {
       due_by: '11-11-2020',
       payment_date: '11-11-2020',
       reviews: 4,
-      status: true
+      status: true,
+      switch: {
+        switchValue: false
+      }
     },
     {
       id: 6,
@@ -117,7 +138,10 @@ const sampleData = {
       due_by: '11-11-2020',
       payment_date: '11-11-2020',
       reviews: 4,
-      status: false
+      status: false,
+      switch: {
+        switchValue: true
+      }
     },
     {
       id: 7,
@@ -128,7 +152,10 @@ const sampleData = {
       due_by: '11-11-2020',
       payment_date: '11-11-2020',
       reviews: 4,
-      status: true
+      status: true,
+      switch: {
+        switchValue: false
+      }
     }
   ]
 }
@@ -136,7 +163,6 @@ const sampleData = {
 export const PreRoundReport = () => {
   return (
     <>
-      <div>PreRoundReport</div>
 
       <CustomTable
         rows={sampleData.salesRows}

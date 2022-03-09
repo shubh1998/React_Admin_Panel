@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types'
 import { CustomTypography } from '../../../atoms/Typography/CustomTypography'
 import CircleIcon from '@mui/icons-material/Circle'
+import { CustomSwitch } from '../../../atoms/Switch/CustomSwitch'
 
 export const CellType = ({ column, row }) => {
   const cellData = row[column.value]
@@ -25,6 +26,18 @@ export const CellType = ({ column, row }) => {
             value={cellData ? 'Active' : 'Inactive'}
           />
 
+        </div>
+      )
+    case 'switch':
+      console.log('dsfsdfs', cellData.switchValue)
+      return (
+        <div>
+          <CustomSwitch
+            inputProps={{ 'aria-label': 'controlled' }}
+            checked={cellData.switchValue} onChange={() => {
+              cellData.onChange()
+            }}
+          />
         </div>
       )
     default:

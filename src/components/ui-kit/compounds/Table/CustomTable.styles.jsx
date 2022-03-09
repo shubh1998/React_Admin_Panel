@@ -12,6 +12,7 @@ export const StyledTableCell = styled(TableCell)(({ theme, header = false, type 
   fontWeight: header ? 500 : 300,
   maxWidth: '150px',
   overflow: 'hidden',
+  borderBottom: 0,
   textOverflow: 'ellipsis',
   whiteSpace: 'nowrap',
   ...(header && type === 'static' && { borderBottom: `2px solid ${theme.colors.tableHeaderBottomBorder}` }),
