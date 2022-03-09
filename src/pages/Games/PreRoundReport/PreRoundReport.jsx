@@ -149,6 +149,12 @@ export const PreRoundReport = () => {
         rows={sampleData.salesRows}
         header={sampleData.salesColumns}
       />
+      <br /><br />
+      <CustomTable
+        rows={sampleData.salesRows}
+        header={sampleData.salesColumns}
+        type='static'
+      />
     </>
   )
 }

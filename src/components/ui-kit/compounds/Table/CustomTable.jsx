@@ -1,43 +1,21 @@
-import { Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@mui/material'
-import { styled } from '@mui/system'
+import PropTypes from 'prop-types'
+import { Paper, Table, TableBody } from '@mui/material'
+import { CustomTableHeader } from './TableHead/CustomTableHeader'
+import { StyledTableCell, StyledTableContainer, StyledTableRow } from './CustomTable.styles'
 
-const StyledTableRow = styled(TableRow)(({ theme }) => ({
-  '&:nth-of-type(even)': {
-    backgroundColor: theme.palette.action.hover
-  }
-}))
-
-export const CustomTable = ({ header, rows }) => {
+export const CustomTable = ({ header, rows, type, containerStyles }) => {
   return (
-    <TableContainer
-      sx={{
-        borderRadius: '15px 15px 0px 0px'
-      }} component={Paper} size='small'
+    <StyledTableContainer
+      type={type}
+      component={Paper}
+      size='small'
+      sx={containerStyles}
     >
       <Table aria-label='simple table'>
-        <TableHead
-          sx={{
-            backgroundColor: (theme) => theme.colors.loginTextColor,
-            '& .MuiTableCell-root': {
-              color: (theme) => theme.colors.white,
-              fontWeight: 500
-            }
-          }}
-        >
-          <TableRow>
-            {header.map((head) => (
-              <TableCell
-                sx={{
-                  borderRight: (theme) => `1px solid ${theme.colors.tableGray}`
-                }}
-                align='center'
-                key={header.label}
-              >
-                {head.label}
-              </TableCell>
-            ))}
-          </TableRow>
-        </TableHead>
+        <CustomTableHeader
+          header={header}
+          type={type}
+        />
         <TableBody>
           {
             rows.map((row) => (
@@ -45,21 +23,32 @@ export const CustomTable = ({ header, rows }) => {
                 key={row}
               >
                 {header.map((head) => (
-                  <TableCell
-                    sx={{
-                      borderRight: (theme) => `1px solid ${theme.colors.tableGray}`
-                    }}
+                  <StyledTableCell
                     align='center'
                     key={head.value}
                   >
                     {row[head.value]}
-                  </TableCell>
+                  </StyledTableCell>
                 ))}
               </StyledTableRow>
             ))
           }
         </TableBody>
       </Table>
-    </TableContainer>
+    </StyledTableContainer>
   )
+}
+
+CustomTable.defaultProps = {
+  header: [],
+  rows: [],
+  type: 'default',
+  containerStyles: {}
+}
+
+CustomTable.propTypes = {
+  header: PropTypes.array.isRequired,
+  rows: PropTypes.array.isRequired,
+  type: PropTypes.oneOf(['static', 'default']),
+  containerStyles: PropTypes.object
 }

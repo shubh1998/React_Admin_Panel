@@ -20,5 +20,7 @@ export const colors = {
   lineChartTransparency: 'rgba(199, 240, 214, 0.5)',
   mirage: '#1E293B',
   cornflowerBlue: '#728CF8',
-  tableGray: '#CECECE'
+  tableGray: '#CECECE',
+  tableHeaderStatic: '#F1F5F9',
+  tableHeaderBottomBorder: '#0D0D0D'
 }
