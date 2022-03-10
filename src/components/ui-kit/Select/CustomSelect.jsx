@@ -5,7 +5,7 @@ import { StyledMenuItem, StyledSelect } from './CustomSelect.styles'
 import { LabelContainer } from 'components/ui-kit/LabelContainer/LabelContainer'
 
 const CustomSelect = ({
-  label, onChange, items, value, size, styled, labeltype, formControlStyle
+  label, onChange, items, value, styled, labeltype, formControlStyle, disabled
 }) => (
   <LabelContainer type={labeltype} label={label}>
     <FormControl
@@ -20,7 +20,7 @@ const CustomSelect = ({
             : theme.colors.textFieldGray
         })
       }
-      size={size}
+      size='small'
     >
       <StyledSelect
         value={value}
@@ -28,6 +28,7 @@ const CustomSelect = ({
         displayEmpty
         inputProps={{ 'aria-label': 'Without label' }}
         type={labeltype}
+        disabled={disabled}
       >
         {items?.map((item) => (
           <StyledMenuItem type={labeltype} styled={styled} key={item.id} value={item.value}>
@@ -43,10 +44,10 @@ CustomSelect.defaultProps = {
   label: null,
   value: '',
   items: null,
-  size: 'small',
   styled: true,
   labeltype: 'default',
-  formControlStyle: null
+  formControlStyle: null,
+  disabled: false
 }
 
 CustomSelect.propTypes = {
@@ -54,9 +55,9 @@ CustomSelect.propTypes = {
   onChange: PropTypes.func.isRequired,
   items: PropTypes.arrayOf(PropTypes.object),
   value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  size: PropTypes.oneOf(['small', 'medium']),
   labeltype: PropTypes.oneOf(['filter', 'default']),
-  formControlStyle: PropTypes.object
+  formControlStyle: PropTypes.object,
+  disabled: PropTypes.bool
 }
 
 export default CustomSelect

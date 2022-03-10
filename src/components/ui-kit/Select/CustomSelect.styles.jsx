@@ -25,13 +25,13 @@ export const StyledMenuItem = styled(MenuItem)(({ theme, styled, type }) => ({
     margin: '6px',
     ml: type !== 'filter' ? 26 : 0,
     fontSize: type === 'filter' ? 12 : 16,
+    marginRight: type !== 'filter' ? 26 : 3,
+    marginLeft: type !== 'filter' ? 26 : 3,
+    borderRadius: '22px',
     color: styled ? 'black' : theme.palette.primary.light,
     '&:hover': {
-      marginRight: type !== 'filter' ? 26 : 3,
-      marginLeft: type !== 'filter' ? 26 : 3,
-      background: styled ? theme.palette.primary.main : 'white',
-      color: styled ? 'white' : theme.palette.primary.light,
-      borderRadius: '22px'
+      background: styled ? theme.palette.primary.main : 'rgba(0, 0, 0, 0.04)',
+      color: styled ? 'white' : theme.palette.primary.light
     }
   }
   // '&.MuiMenuItem-root.Mui-selected': {

@@ -6,7 +6,7 @@ import CheckBoxOutlineBlankRoundedIcon from '@mui/icons-material/CheckBoxOutline
 import CheckBoxRoundedIcon from '@mui/icons-material/CheckBoxRounded'
 
 const CustomCheckbox = ({
-  label, onChange, labelPlacement, checked, size, circle
+  label, onChange, labelPlacement, checked, size, circle, ...otherProps
 }) => {
   return (
     <FormControlLabel
@@ -21,6 +21,7 @@ const CustomCheckbox = ({
           checkedIcon={!circle
             ? <CheckBoxRoundedIcon />
             : <CircleIcon />}
+          {...otherProps}
         />
       )}
       label={label}
@@ -43,7 +44,7 @@ CustomCheckbox.propTypes = {
   onChange: PropTypes.func,
   labelPlacement: PropTypes.oneOf(['bottom', 'end', 'start', 'top']),
   checked: PropTypes.bool,
-  size: PropTypes.oneOf(['medium', 'small']),
+  size: PropTypes.oneOf(['small', 'medium', 'large']),
   circle: PropTypes.bool
 }
 
