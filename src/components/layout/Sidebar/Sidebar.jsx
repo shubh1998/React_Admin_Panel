@@ -1,8 +1,8 @@
 import React from 'react'
-import { routerList } from '../../../routes/routerList'
 import { useSidebarController } from './controller/useSidebarController'
-import { AppDrawer } from '../../ui-kit/compounds/AppDrawer/AppDrawer'
 import { CustomList } from './components/CustomList'
+import { AppDrawer } from 'components/ui-kit/AppDrawer/AppDrawer'
+import { routerList } from 'routes/routerList'
 
 export const Sidebar = () => {
   const {

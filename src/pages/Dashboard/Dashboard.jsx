@@ -16,8 +16,8 @@ import {
 import { Bar, Line, Pie } from 'react-chartjs-2'
 import faker from 'faker'
 import { Card, CardContent, Grid } from '@mui/material'
-import { colors } from '../../theme/colors/colors'
-import { CustomTypography } from '../../components/ui-kit/atoms/Typography/CustomTypography'
+import { CustomTypography } from 'components/ui-kit/Typography/CustomTypography'
+import { colors } from 'theme/colors/colors'
 
 ChartJS.register(
   CategoryScale,
@@ -157,8 +157,8 @@ export const Dashboard = () => {
                   }
                   return (
                     <Grid item xs={12} sm={12} md={6} lg={6} key={item.title}>
-                      <Card elevation={5}>
-                        <CardContent>
+                      <Card elevation={3}>
+                        <CardContent sx={{ textAlign: 'center' }}>
                           <CustomTypography
                             color={colors.mirage}
                             value={item.title}
@@ -166,7 +166,6 @@ export const Dashboard = () => {
                               fontWeight: 600,
                               fontSize: '20px'
                             }}
-                            align='center'
                           />
                           <hr style={{ width: '100px' }} />
                           <br />
@@ -195,21 +194,21 @@ export const Dashboard = () => {
           </Grid>
         </Grid>
         <Grid item xs={12} sm={12} md={5} lg={5}>
-          <Card elevation={5}>
+          <Card elevation={3}>
             <div style={{ display: 'block', height: '460px', width: '460px', padding: '20px', margin: 'auto' }}>
               <Pie data={PieChartData} />
             </div>
           </Card>
         </Grid>
       </Grid>
-      <Card elevation={5} sx={{ marginBottom: 5 }}>
-        <CardContent>
+      <Card elevation={3} sx={{ marginBottom: 5 }}>
+        <CardContent sx={{ textAlign: 'center' }}>
           <CustomTypography variant='h6' value='All & Unique Visitors' sx={{ fontWeight: 600 }} />
           <Bar options={barChartOptions} data={barChartData} height={70} />
         </CardContent>
       </Card>
-      <Card elevation={5}>
-        <CardContent>
+      <Card elevation={3}>
+        <CardContent sx={{ textAlign: 'center' }}>
           <CustomTypography variant='h6' value='NGR' sx={{ fontWeight: 600 }} />
           <Line options={lineChartOptions} data={lineChartData} height={70} />
         </CardContent>

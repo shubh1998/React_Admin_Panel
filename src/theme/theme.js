@@ -29,6 +29,14 @@ export const theme = createTheme({
             // height: 46,
             borderRadius: 5
           }
+        },
+        {
+          props: { size: 'large' },
+          style: {
+            width: 417,
+            // height: 46,
+            borderRadius: 5
+          }
         }
       ]
     },
@@ -109,9 +117,11 @@ export const theme = createTheme({
           props: { variant: 'text' },
           style: {
             color: colors.black,
+            backgroundColor: '#ffffff',
             boxShadow: '0px 2px 10px rgba(103, 103, 103, 0.12), inset 0px -6px 14px rgba(0, 0, 0, 0.12)',
             '&:hover': {
               color: colors.majorelleBlue,
+              backgroundColor: '#ffffff',
               boxShadow: 'inset 0px 0px 13px rgba(89, 80, 229, 0.27)'
             }
           }

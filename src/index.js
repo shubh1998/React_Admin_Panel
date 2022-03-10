@@ -1,10 +1,10 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import './assets//styles//index.css'
-import App from './App'
-import reportWebVitals from './reportWebVitals'
-import './assets/translation'
-import { appRoot } from './assets/domNodes'
+import 'assets/styles/index.css'
+import App from 'App'
+import reportWebVitals from 'reportWebVitals'
+import 'assets/translation'
+import { appRoot } from 'assets/domNodes'
 
 ReactDOM.render(
   <React.StrictMode>

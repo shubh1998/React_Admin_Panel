@@ -1,4 +1,4 @@
-import apiClient from '../axios/apiClient'
+import apiClient from 'API/axios/apiClient'
 
 export const loginRequest = (data) => {
   return apiClient.postRequest('/company/login', data)

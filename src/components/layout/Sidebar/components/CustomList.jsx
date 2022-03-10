@@ -2,8 +2,8 @@ import React, { Fragment } from 'react'
 import { Link as RouterLink } from 'react-router-dom'
 import { Collapse, List } from '@mui/material'
 import { CustomListItem } from './CustomListItem'
-import { CustomTypography } from '../../../ui-kit/atoms/Typography/CustomTypography'
-import { colors } from '../../../../theme/colors/colors'
+import { CustomTypography } from 'components/ui-kit/Typography/CustomTypography'
+import { colors } from 'theme/colors/colors'
 
 export const CustomList = ({
   t,

@@ -1,13 +1,13 @@
 import { Paper } from '@mui/material'
+import { CustomButton } from 'components/ui-kit/Button/CustomButton'
+import CustomTextField from 'components/ui-kit/TextField/CustomTextField'
+import { CustomTypography } from 'components/ui-kit/Typography/CustomTypography'
 import React from 'react'
 import { useTranslation } from 'react-i18next'
 import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
-import { CustomButton } from '../../components/ui-kit/atoms/Button/CustomButton'
-import CustomTextField from '../../components/ui-kit/atoms/TextField/CustomTextField'
-import { CustomTypography } from '../../components/ui-kit/atoms/Typography/CustomTypography'
-import { handleToaster } from '../../redux-thunk/redux/Toaster/toasterSlice'
-import { ROUTE_PATHS, TOASTER_TYPE, TOKEN } from '../../utils/constants/constants'
+import { handleToaster } from 'redux-thunk/redux/Toaster/toasterSlice'
+import { ROUTE_PATHS, TOASTER_TYPE, TOKEN } from 'utils/constants/constants'
 
 export const Settings = () => {
   const { t } = useTranslation()

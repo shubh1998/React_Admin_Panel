@@ -4,11 +4,13 @@ import { StyledSwitch } from './CustomSwitch.styles'
 
 export const CustomSwitch = ({
   checked,
+  onChange,
   ...otherProps
 }) => {
   return (
     <StyledSwitch
       checked={checked}
+      onChange={onChange}
       color={checked ? 'success' : 'error'}
       {...otherProps}
     />
@@ -17,11 +19,13 @@ export const CustomSwitch = ({
 CustomSwitch.defaultProps = {
   checked: false,
   size: 'medium',
-  disabled: false
+  disabled: false,
+  onChange: () => null
 }
 
 CustomSwitch.propTypes = {
   checked: PropTypes.bool,
-  color: PropTypes.string,
-  size: PropTypes.oneOf(['large', 'medium', 'small'])
+  disabled: PropTypes.bool,
+  size: PropTypes.oneOf(['large', 'medium', 'small']),
+  onChange: PropTypes.func
 }

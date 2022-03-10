@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
-import { CustomTypography } from '../../../atoms/Typography/CustomTypography'
 import CircleIcon from '@mui/icons-material/Circle'
-import { CustomSwitch } from '../../../atoms/Switch/CustomSwitch'
+import { CustomTypography } from 'components/ui-kit/Typography/CustomTypography'
+import { CustomSwitch } from 'components/ui-kit/Switch/CustomSwitch'
 
 export const CellType = ({ column, row }) => {
   const cellData = row[column.value]
@@ -33,9 +33,10 @@ export const CellType = ({ column, row }) => {
         <div>
           <CustomSwitch
             inputProps={{ 'aria-label': 'controlled' }}
-            checked={cellData.switchValue} onChange={() => {
-              cellData.onChange()
-            }}
+            checked={cellData.switchValue}
+          // onChange={() => {
+          //   cellData.onChange()
+          // }}
           />
         </div>
       )

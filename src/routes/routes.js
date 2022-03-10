@@ -1,8 +1,8 @@
+import { NotFound } from 'pages/NotFound/NotFound'
 import React, { Fragment } from 'react'
 import { Route, Routes } from 'react-router-dom'
-import { NotFound } from '../pages/NotFound/NotFound'
-import { routerList } from './routerList'
-import RouteValidator from './RouteValidator'
+import { routerList } from 'routes/routerList'
+import RouteValidator from 'routes/RouteValidator'
 
 let allRoutes = []
 routerList.forEach(section => {

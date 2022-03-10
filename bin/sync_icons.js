@@ -2,7 +2,7 @@ const { pascalize } = require('humps')
 const fs = require('fs')
 const glob = require('glob')
 
-const iconsBasePath = 'src/components/ui-kit/atoms/icons'
+const iconsBasePath = 'src/components/ui-kit/icons'
 
 const iconsSvgBasePath = `${iconsBasePath}/svg`
 const iconsComponentsBasePath = `${iconsBasePath}/iconComponents`

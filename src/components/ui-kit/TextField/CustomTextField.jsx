@@ -4,7 +4,7 @@ import { StyledTextField } from './CustomTextField.styles'
 import { InputAdornment } from '@mui/material'
 import ErrorOutlineIcon from '@mui/icons-material/ErrorOutline'
 import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline'
-import { LabelContainer } from '../LabelContainer/LabelContainer'
+import { LabelContainer } from 'components/ui-kit/LabelContainer/LabelContainer'
 import { StyledTooltip } from '../Tooltip/CustomTooltip.styles'
 
 const CustomTextField = ({
@@ -21,7 +21,6 @@ const CustomTextField = ({
   InputProps,
   error,
   size,
-  multiline,
   rows,
   onChange,
   value,
@@ -59,17 +58,24 @@ const CustomTextField = ({
         required={required}
         disabled={disabled}
         placeholder={placeholder}
-        helperText={error || helperText}
-        error={!!error}
+        helperText={
+          labeltype !== 'filter'
+            ? error || helperText
+            : undefined
+        }
+        error={
+          labeltype !== 'filter'
+            ? !!error
+            : undefined
+        }
         size={size}
-        multiline={multiline}
         rows={rows}
         onChange={onChange}
         value={value}
         labeltype={labeltype}
         InputProps={{
           endAdornment:
-            enableValidation ? (value && <Adornment error={error} tooltipTitle={helperText} />) : <></>
+            enableValidation && labeltype !== 'filter' ? (value && <Adornment error={error} tooltipTitle={helperText} />) : <></>
         }}
         {...otherProps}
       />

@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
-import { ROUTE_PATHS, TOKEN } from '../../constants/constants'
+import { ROUTE_PATHS, TOKEN } from 'utils/constants/constants'
 
 export const useAuthGuard = () => {
   const navigate = useNavigate()

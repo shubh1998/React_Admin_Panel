@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
-import { userLogin, userLogout, userRegister } from '../../thunk/User'
+import { userLogin, userLogout, userRegister } from 'redux-thunk/thunk/User'
 const defaultState = {
   name: localStorage.getItem('name') || 'loading...',
   isLoggedIn: !!localStorage.getItem('authtoken')

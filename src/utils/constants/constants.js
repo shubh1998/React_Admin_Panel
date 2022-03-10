@@ -1,9 +1,9 @@
-import { EnglishIcon } from '../../components/ui-kit/atoms/icons/iconComponents/EnglishIcon'
-import { FrenchIcon } from '../../components/ui-kit/atoms/icons/iconComponents/FrenchIcon'
-import { GermanIcon } from '../../components/ui-kit/atoms/icons/iconComponents/GermanIcon'
-import { PortugalIcon } from '../../components/ui-kit/atoms/icons/iconComponents/PortugalIcon'
-import { RussianIcon } from '../../components/ui-kit/atoms/icons/iconComponents/RussianIcon'
-import { SpanishIcon } from '../../components/ui-kit/atoms/icons/iconComponents/SpanishIcon'
+import { EnglishIcon } from 'components/ui-kit/icons/iconComponents/EnglishIcon'
+import { FrenchIcon } from 'components/ui-kit/icons/iconComponents/FrenchIcon'
+import { GermanIcon } from 'components/ui-kit/icons/iconComponents/GermanIcon'
+import { PortugalIcon } from 'components/ui-kit/icons/iconComponents/PortugalIcon'
+import { RussianIcon } from 'components/ui-kit/icons/iconComponents/RussianIcon'
+import { SpanishIcon } from 'components/ui-kit/icons/iconComponents/SpanishIcon'
 
 /* ==========================================================================
   LANGUAGES

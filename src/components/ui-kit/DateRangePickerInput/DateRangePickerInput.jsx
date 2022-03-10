@@ -2,9 +2,9 @@ import React from 'react'
 import AdapterDateFns from '@mui/lab/AdapterDateFns'
 import LocalizationProvider from '@mui/lab/LocalizationProvider'
 import DateRangePicker from '@mui/lab/DateRangePicker'
-import CustomTextField from '../TextField/CustomTextField'
+import CustomTextField from 'components/ui-kit/TextField/CustomTextField'
 
-export const DateRangePickerInput = ({ title = 'Demo Title', type = 'default' }) => {
+export const DateRangePickerInput = ({ title = 'Demo Title', type = 'default', ...otherProps }) => {
   const [value, setValue] = React.useState([null, null])
 
   return (
@@ -30,6 +30,7 @@ export const DateRangePickerInput = ({ title = 'Demo Title', type = 'default' })
               />
             )
           }}
+          {...otherProps}
         />
       </div>
     </LocalizationProvider>

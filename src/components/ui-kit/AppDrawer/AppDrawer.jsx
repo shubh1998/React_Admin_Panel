@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types'
 import { Box, Divider } from '@mui/material'
-import { CustomTypography } from '../../atoms/Typography/CustomTypography'
 import { DrawerHeader, StyledDrawer, StyledIconButton } from './AppDrawer.styles'
-import { SideArrowIcon } from '../../atoms/icons/iconComponents/SideArrowIcon'
+import { CustomTypography } from 'components/ui-kit/Typography/CustomTypography'
+import { SideArrowIcon } from 'components/ui-kit/icons/iconComponents/SideArrowIcon'
 
 export const AppDrawer = ({ children, openDrawer = true, handleDrawer = () => {}, text = 'Default' }) => {
   return (

@@ -56,12 +56,14 @@ CustomTable.defaultProps = {
   header: [],
   rows: [],
   type: 'default',
-  containerStyles: {}
+  containerStyles: {},
+  onPageChange: () => null
 }
 
 CustomTable.propTypes = {
   header: PropTypes.array.isRequired,
   rows: PropTypes.array.isRequired,
   type: PropTypes.oneOf(['static', 'default']),
+  onPageChange: PropTypes.func,
   containerStyles: PropTypes.object
 }

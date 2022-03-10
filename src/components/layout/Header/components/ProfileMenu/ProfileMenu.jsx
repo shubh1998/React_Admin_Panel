@@ -1,9 +1,9 @@
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp'
+import { ProfileIcon } from 'components/ui-kit/icons/iconComponents/ProfileIcon'
+import { CustomTypography } from 'components/ui-kit/Typography/CustomTypography'
 import { useHeaderController } from '../../controller/useHeaderController'
 import { StyledMenu, StyledMenuItem, StyledProfileDiv } from '../../styles/Header.styles'
-import { CustomTypography } from '../../../../ui-kit/atoms/Typography/CustomTypography'
-import { ProfileIcon } from '../../../../ui-kit/atoms/icons/iconComponents/ProfileIcon'
 
 export const ProfileMenu = () => {
   const {
