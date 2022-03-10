@@ -33,9 +33,10 @@ export const CellType = ({ column, row }) => {
         <div>
           <CustomSwitch
             inputProps={{ 'aria-label': 'controlled' }}
-            checked={cellData.switchValue} onChange={() => {
-              cellData.onChange()
-            }}
+            checked={cellData.switchValue}
+          // onChange={() => {
+          //   cellData.onChange()
+          // }}
           />
         </div>
       )

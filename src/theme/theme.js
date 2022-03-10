@@ -29,6 +29,14 @@ export const theme = createTheme({
             // height: 46,
             borderRadius: 5
           }
+        },
+        {
+          props: { size: 'large' },
+          style: {
+            width: 417,
+            // height: 46,
+            borderRadius: 5
+          }
         }
       ]
     },
