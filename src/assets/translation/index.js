@@ -7,7 +7,7 @@ import esCommon from './locales/es/common.json'
 import frCommon from './locales/fr/common.json'
 import ptCommon from './locales/pt/common.json'
 import ruCommon from './locales/ru/common.json'
-import { LANGUAGE, LANGUAGES } from '../../utils/constants/constants'
+import { LANGUAGE, LANGUAGES } from 'utils/constants/constants'
 
 i18n.use(initReactI18next).init({
   resources: {

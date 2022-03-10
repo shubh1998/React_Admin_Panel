@@ -1,19 +1,15 @@
 import { Grid } from '@mui/material'
+import { CustomButton } from 'components/ui-kit/Button/CustomButton'
+import CustomCheckbox from 'components/ui-kit/CheckBox/CustomCheckBox'
+import { Login1Icon } from 'components/ui-kit/icons/iconComponents/Login1Icon'
+import { LoginBg2Icon } from 'components/ui-kit/icons/iconComponents/LoginBg2Icon'
+import CustomTextField from 'components/ui-kit/TextField/CustomTextField'
+import { CustomTypography } from 'components/ui-kit/Typography/CustomTypography'
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { Link, useNavigate } from 'react-router-dom'
-import { CustomButton } from '../../../components/ui-kit/atoms/Button/CustomButton'
-import CustomCheckbox from '../../../components/ui-kit/atoms/CheckBox/CustomCheckBox'
-import { Login1Icon } from '../../../components/ui-kit/atoms/icons/iconComponents/Login1Icon'
-import { LoginBg2Icon } from '../../../components/ui-kit/atoms/icons/iconComponents/LoginBg2Icon'
-import CustomTextField from '../../../components/ui-kit/atoms/TextField/CustomTextField'
-import { CustomTypography } from '../../../components/ui-kit/atoms/Typography/CustomTypography'
-import { handleToaster } from '../../../redux-thunk/redux/Toaster/toasterSlice'
-import {
-  ROUTE_PATHS,
-  TOASTER_TYPE,
-  TOKEN
-} from '../../../utils/constants/constants'
+import { handleToaster } from 'redux-thunk/redux/Toaster/toasterSlice'
+import { ROUTE_PATHS, TOASTER_TYPE, TOKEN } from 'utils/constants/constants'
 import { LoginContainer } from './Login.styles'
 
 export const Login = () => {

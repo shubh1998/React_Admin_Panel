@@ -1,4 +1,4 @@
-import { NotificationIcon } from '../../../../ui-kit/atoms/icons/iconComponents/NotificationIcon'
+import { NotificationIcon } from 'components/ui-kit/icons/iconComponents/NotificationIcon'
 import { useHeaderController } from '../../controller/useHeaderController'
 import { StyledIconButton } from '../../styles/Header.styles'
 

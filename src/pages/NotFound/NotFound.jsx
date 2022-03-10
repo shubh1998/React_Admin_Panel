@@ -1,8 +1,8 @@
 import { Box } from '@mui/material'
 import React, { useEffect } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
-import { ROUTE_PATHS } from '../../utils/constants/constants'
-import { useAuthGuard } from '../../utils/custom-hooks/guards/useAuthGuard'
+import { ROUTE_PATHS } from 'utils/constants/constants'
+import { useAuthGuard } from 'utils/custom-hooks/guards/useAuthGuard'
 
 export const NotFound = () => {
   const auth = useAuthGuard()

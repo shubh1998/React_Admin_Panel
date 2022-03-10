@@ -16,8 +16,8 @@ import {
 import { Bar, Line, Pie } from 'react-chartjs-2'
 import faker from 'faker'
 import { Card, CardContent, Grid } from '@mui/material'
-import { colors } from '../../theme/colors/colors'
-import { CustomTypography } from '../../components/ui-kit/atoms/Typography/CustomTypography'
+import { CustomTypography } from 'components/ui-kit/Typography/CustomTypography'
+import { colors } from 'theme/colors/colors'
 
 ChartJS.register(
   CategoryScale,
@@ -158,7 +158,7 @@ export const Dashboard = () => {
                   return (
                     <Grid item xs={12} sm={12} md={6} lg={6} key={item.title}>
                       <Card elevation={5}>
-                        <CardContent>
+                        <CardContent sx={{ textAlign: 'center' }}>
                           <CustomTypography
                             color={colors.mirage}
                             value={item.title}
@@ -166,7 +166,6 @@ export const Dashboard = () => {
                               fontWeight: 600,
                               fontSize: '20px'
                             }}
-                            align='center'
                           />
                           <hr style={{ width: '100px' }} />
                           <br />

@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { FormControl } from '@mui/material'
 import { StyledMenuItem, StyledSelect } from './CustomSelect.styles'
-import { LabelContainer } from '../LabelContainer/LabelContainer'
+import { LabelContainer } from 'components/ui-kit/LabelContainer/LabelContainer'
 
 const CustomSelect = ({
   label, onChange, items, value, size, styled, labeltype, formControlStyle

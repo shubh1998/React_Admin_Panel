@@ -4,7 +4,7 @@ import { StyledTextField } from './CustomTextField.styles'
 import { InputAdornment } from '@mui/material'
 import ErrorOutlineIcon from '@mui/icons-material/ErrorOutline'
 import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline'
-import { LabelContainer } from '../LabelContainer/LabelContainer'
+import { LabelContainer } from 'components/ui-kit/LabelContainer/LabelContainer'
 import { StyledTooltip } from '../Tooltip/CustomTooltip.styles'
 
 const CustomTextField = ({

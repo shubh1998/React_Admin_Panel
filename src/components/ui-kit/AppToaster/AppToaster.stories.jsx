@@ -1,4 +1,3 @@
-// import { TOASTER_TYPE } from '../../../utils/constants/constants'
 import { Toaster } from './AppToaster'
 
 export default {

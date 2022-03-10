@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useLocation } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
-import { handleDrawerToggle } from '../../../../redux-thunk/redux/Ham/hamSlice'
+import { handleDrawerToggle } from 'redux-thunk/redux/Ham/hamSlice'
 
 export const useSidebarController = () => {
   const location = useLocation()

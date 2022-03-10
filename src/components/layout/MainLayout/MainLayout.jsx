@@ -8,25 +8,23 @@ import { Main, StyledBox, StyledMainLayoutChildren } from './styles/MainLayout.s
 export const MainLayout = ({ children }) => {
   const openHam = useSelector((state) => state.ham.openHam)
   return (
-    <div className='App'>
-      <StyledBox display='flex'>
-        <CssBaseline />
-        <Header />
-        <Sidebar />
-        <StyledBox
-          component={Main}
-          open={openHam}
-          flexGrow={1}
-          padding={3}
-          height='100vh'
-        >
-          <Toolbar />
-          <StyledMainLayoutChildren>
-            {children}
-          </StyledMainLayoutChildren>
-        </StyledBox>
+    <StyledBox display='flex'>
+      <CssBaseline />
+      <Header />
+      <Sidebar />
+      <StyledBox
+        component={Main}
+        open={openHam}
+        flexGrow={1}
+        padding={3}
+        height='100vh'
+      >
+        <Toolbar />
+        <StyledMainLayoutChildren>
+          {children}
+        </StyledMainLayoutChildren>
       </StyledBox>
-    </div>
+    </StyledBox>
   )
 }
 

@@ -1,4 +1,4 @@
-import apiClient from '../axios/apiClient'
+import apiClient from 'API/axios/apiClient'
 
 export const placeBetApi = (data) => {
   return apiClient.postRequest('/demo/place-bet', data)

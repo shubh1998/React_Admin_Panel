@@ -1,6 +1,6 @@
 import { MenuItem } from '@mui/material'
-import { LANGUAGES } from '../../../../../utils/constants/constants'
-import { StyledTooltip } from '../../../../ui-kit/atoms/Tooltip/CustomTooltip.styles'
+import { StyledTooltip } from 'components/ui-kit/Tooltip/CustomTooltip.styles'
+import { LANGUAGES } from 'utils/constants/constants'
 import { useHeaderController } from '../../controller/useHeaderController'
 import { StyledIconButton, StyledMenu } from '../../styles/Header.styles'
 

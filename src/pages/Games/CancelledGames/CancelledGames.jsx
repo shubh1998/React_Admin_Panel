@@ -1,10 +1,10 @@
+import { CustomButton } from 'components/ui-kit/Button/CustomButton'
+import CustomCheckbox from 'components/ui-kit/CheckBox/CustomCheckBox'
+import { DateRangePickerInput } from 'components/ui-kit/DateRangePickerInput/DateRangePickerInput'
+import CustomSelect from 'components/ui-kit/Select/CustomSelect'
+import { CustomSwitch } from 'components/ui-kit/Switch/CustomSwitch'
+import CustomTextField from 'components/ui-kit/TextField/CustomTextField'
 import React from 'react'
-import { CustomButton } from '../../../components/ui-kit/atoms/Button/CustomButton'
-import CustomCheckbox from '../../../components/ui-kit/atoms/CheckBox/CustomCheckBox'
-import { DateRangePickerInput } from '../../../components/ui-kit/atoms/DateRangePickerInput/DateRangePickerInput'
-import CustomSelect from '../../../components/ui-kit/atoms/Select/CustomSelect'
-import { CustomSwitch } from '../../../components/ui-kit/atoms/Switch/CustomSwitch'
-import CustomTextField from '../../../components/ui-kit/atoms/TextField/CustomTextField'
 
 export const CancelledGames = () => {
   const [age, setAge] = React.useState('12')

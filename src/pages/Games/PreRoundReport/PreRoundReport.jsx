@@ -1,5 +1,5 @@
+import { CustomTable } from 'components/ui-kit/Table/CustomTable'
 import React, { useState } from 'react'
-import { CustomTable } from '../../../components/ui-kit/compounds/Table/CustomTable'
 
 const sampleData = {
   salesColumns: [

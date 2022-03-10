@@ -1,6 +1,6 @@
+import { MainLayout } from 'components/layout/MainLayout/MainLayout'
 import PropTypes from 'prop-types'
-import { MainLayout } from '../components/layout/MainLayout/MainLayout'
-import { useAuthGuard } from '../utils/custom-hooks/guards/useAuthGuard'
+import { useAuthGuard } from 'utils/custom-hooks/guards/useAuthGuard'
 
 const RouteValidator = ({ hasAuth, component: Component, ...props }) => {
   const auth = useAuthGuard()
