@@ -8,6 +8,7 @@ export const StyledTooltip = styled(({ className, ...props }) => (
   },
   [`& .${tooltipClasses.tooltip}`]: {
     backgroundColor: theme.palette.common.white,
+    boxShadow: theme.shadows[1],
     color: type === 'error'
       ? theme.palette.error.main
       : theme.palette.primary.main
