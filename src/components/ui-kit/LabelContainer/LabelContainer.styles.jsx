@@ -9,5 +9,6 @@ export const FilterContainer = styled(Box)(({ theme, type }) => ({
   borderColor: theme.palette.primary.main,
   borderRadius: 5,
   width: 'fit-content',
-  boxShadow: '0px 3px 6px rgba(0, 0, 0, 0.1)'
+  boxShadow: '0px 3px 6px rgba(0, 0, 0, 0.1)',
+  background: theme.colors.white
 }))
