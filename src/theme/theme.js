@@ -6,9 +6,9 @@ export const theme = createTheme({
     MuiDrawer: {
       styleOverrides: {
         paper: {
-          background: '#0F172A',
-          color: '#fff',
-          fill: '#fff'
+          background: colors.darkJungleGreen,
+          color: colors.white,
+          fill: colors.white
         }
       }
     },
@@ -18,7 +18,6 @@ export const theme = createTheme({
           props: { size: 'small' },
           style: {
             width: 200,
-            // height: 31,
             borderRadius: 3
           }
         },
@@ -26,7 +25,6 @@ export const theme = createTheme({
           props: { size: 'medium' },
           style: {
             width: 317,
-            // height: 46,
             borderRadius: 5
           }
         },
@@ -34,7 +32,6 @@ export const theme = createTheme({
           props: { size: 'large' },
           style: {
             width: 417,
-            // height: 46,
             borderRadius: 5
           }
         }
@@ -117,11 +114,11 @@ export const theme = createTheme({
           props: { variant: 'text' },
           style: {
             color: colors.black,
-            backgroundColor: '#ffffff',
+            backgroundColor: colors.white,
             boxShadow: '0px 2px 10px rgba(103, 103, 103, 0.12), inset 0px -6px 14px rgba(0, 0, 0, 0.12)',
             '&:hover': {
               color: colors.majorelleBlue,
-              backgroundColor: '#ffffff',
+              backgroundColor: colors.white,
               boxShadow: 'inset 0px 0px 13px rgba(89, 80, 229, 0.27)'
             }
           }
@@ -153,25 +150,26 @@ export const theme = createTheme({
       styleOverrides: {
         body: {
           '&::-webkit-scrollbar, & *::-webkit-scrollbar': {
-            width: '0.4em'
+            width: '0.4em',
+            height: '0.2em'
           },
           '&::-webkit-scrollbar-thumb, & *::-webkit-scrollbar-thumb': {
-            backgroundColor: '#888',
+            backgroundColor: colors.scrollBarGray,
             height: '50px',
             border: '6px solid transparent',
             borderRadius: '15px'
           },
           '&::-webkit-scrollbar-thumb:focus, & *::-webkit-scrollbar-thumb:focus': {
-            backgroundColor: '#888'
+            backgroundColor: colors.scrollBarGray
           },
           '&::-webkit-scrollbar-thumb:active, & *::-webkit-scrollbar-thumb:active': {
-            backgroundColor: '#888'
+            backgroundColor: colors.scrollBarGray
           },
           '&::-webkit-scrollbar-thumb:hover, & *::-webkit-scrollbar-thumb:hover': {
             backgroundColor: '#555'
           },
           '&::-webkit-scrollbar-corner, & *::-webkit-scrollbar-corner': {
-            backgroundColor: '#888'
+            backgroundColor: colors.scrollBarGray
           }
         }
       }
@@ -184,16 +182,17 @@ export const theme = createTheme({
       dark: colors.majorelleBlue
     },
     error: {
-      main: '#FF0000'
+      main: colors.errorRed
     },
     success: {
-      main: '#4BC500'
+      main: colors.successGreen
     }
   },
   typography: {
     button: {
       textTransform: 'none'
-    }
+    },
+    fontFamily: ['Poppins', 'sans-serif'].join(',')
   },
   drawer: {
     width: 240

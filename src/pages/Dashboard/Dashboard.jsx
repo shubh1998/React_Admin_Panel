@@ -141,7 +141,7 @@ export const Dashboard = () => {
   return (
     <>
       <Grid container spacing={4} sx={{ marginBottom: 5 }}>
-        <Grid item xs={12} sm={12} md={7} lg={7}>
+        <Grid item xs={12} sm={12} md={12} lg={7}>
           <Grid container spacing={4}>
             {
                 cardData.map((item, index) => {
@@ -193,7 +193,7 @@ export const Dashboard = () => {
               }
           </Grid>
         </Grid>
-        <Grid item xs={12} sm={12} md={5} lg={5}>
+        <Grid item xs={12} sm={12} md={12} lg={5}>
           <Card elevation={3}>
             <div style={{ display: 'block', height: '460px', width: '460px', padding: '20px', margin: 'auto' }}>
               <Pie data={PieChartData} />
@@ -204,13 +204,17 @@ export const Dashboard = () => {
       <Card elevation={3} sx={{ marginBottom: 5 }}>
         <CardContent sx={{ textAlign: 'center' }}>
           <CustomTypography variant='h6' value='All & Unique Visitors' sx={{ fontWeight: 600 }} />
-          <Bar options={barChartOptions} data={barChartData} height={70} />
+          <div style={{ maxWidth: '96%', margin: 'auto' }}>
+            <Bar options={barChartOptions} data={barChartData} height={70} />
+          </div>
         </CardContent>
       </Card>
       <Card elevation={3}>
         <CardContent sx={{ textAlign: 'center' }}>
           <CustomTypography variant='h6' value='NGR' sx={{ fontWeight: 600 }} />
-          <Line options={lineChartOptions} data={lineChartData} height={70} />
+          <div style={{ maxWidth: '95%', margin: 'auto' }}>
+            <Line options={lineChartOptions} data={lineChartData} height={70} />
+          </div>
         </CardContent>
       </Card>
     </>

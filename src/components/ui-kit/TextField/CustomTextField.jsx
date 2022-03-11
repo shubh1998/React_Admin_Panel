@@ -31,7 +31,10 @@ const CustomTextField = ({
   const Adornment = ({ error, tooltipTitle }) => {
     return (
       <>
-        <InputAdornment position='end'>
+        <InputAdornment
+          position='end'
+          sx={{ backgroundColor: (theme) => theme.colors.white }}
+        >
           {error
             ? (
               <StyledTooltip
@@ -41,8 +44,11 @@ const CustomTextField = ({
                 type='error'
               >
                 <ErrorOutlineIcon color='error' />
-              </StyledTooltip>)
-            : <CheckCircleOutlineIcon color='success' />}
+              </StyledTooltip>
+              )
+            : (
+              <CheckCircleOutlineIcon color='success' />
+              )}
         </InputAdornment>
       </>
     )
@@ -58,16 +64,8 @@ const CustomTextField = ({
         required={required}
         disabled={disabled}
         placeholder={placeholder}
-        helperText={
-          labeltype !== 'filter'
-            ? error || helperText
-            : undefined
-        }
-        error={
-          labeltype !== 'filter'
-            ? !!error
-            : undefined
-        }
+        helperText={labeltype !== 'filter' ? error || helperText : undefined}
+        error={labeltype !== 'filter' ? !!error : undefined}
         size={size}
         rows={rows}
         onChange={onChange}
@@ -75,7 +73,13 @@ const CustomTextField = ({
         labeltype={labeltype}
         InputProps={{
           endAdornment:
-            enableValidation && labeltype !== 'filter' ? (value && <Adornment error={error} tooltipTitle={helperText} />) : <></>
+            enableValidation && labeltype !== 'filter'
+              ? (
+                  value && <Adornment error={error} tooltipTitle={helperText} />
+                )
+              : (
+                <></>
+                )
         }}
         {...otherProps}
       />
@@ -110,7 +114,8 @@ CustomTextField.propTypes = {
   label: PropTypes.string,
   inputRef: PropTypes.oneOfType([
     PropTypes.func,
-    PropTypes.shape({ current: PropTypes.instanceOf(Element) })]),
+    PropTypes.shape({ current: PropTypes.instanceOf(Element) })
+  ]),
   fullWidth: PropTypes.bool,
   variant: PropTypes.oneOf(['filled', 'outlined', 'standard']),
   type: PropTypes.string,

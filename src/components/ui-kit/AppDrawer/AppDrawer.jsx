@@ -4,9 +4,19 @@ import { DrawerHeader, StyledDrawer, StyledIconButton } from './AppDrawer.styles
 import { CustomTypography } from 'components/ui-kit/Typography/CustomTypography'
 import { SideArrowIcon } from 'components/ui-kit/icons/iconComponents/SideArrowIcon'
 
-export const AppDrawer = ({ children, openDrawer = true, handleDrawer = () => {}, text = 'Default' }) => {
+export const AppDrawer = ({
+  children,
+  openDrawer = true,
+  handleDrawer = () => {},
+  text = 'Default',
+  isMobileView
+}) => {
   return (
-    <StyledDrawer anchor='left' variant='persistent' open={openDrawer}>
+    <StyledDrawer
+      anchor='left'
+      variant={isMobileView ? 'temporary' : 'persistent'}
+      open={openDrawer}
+    >
       <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
         <DrawerHeader>
           <CustomTypography

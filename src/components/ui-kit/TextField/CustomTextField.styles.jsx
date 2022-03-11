@@ -1,13 +1,23 @@
 import { styled, TextField } from '@mui/material'
 
 export const StyledTextField = styled(TextField)(({ theme, error, labeltype }) => ({
-  backgroundColor: labeltype !== 'filter'
-    ? theme.colors.white
-    : theme.colors.textFieldGray,
+  '& .MuiInputBase-root': {
+    backgroundColor: labeltype !== 'filter' && labeltype !== 'dateFilter'
+      ? theme.colors.white
+      : theme.colors.textFieldGray
+  },
   '& .MuiInputBase-input': {
     padding: labeltype !== 'filter' && labeltype !== 'dateFilter' ? 12 : 4
   },
   '& .MuiOutlinedInput-root': {
+    ...(labeltype !== 'default' &&
+      {
+        '& fieldset': {
+          border: 'none'
+        }
+      }
+    ),
+
     '&:hover fieldset': {
       borderColor: error ? theme.palette.primary.error : theme.palette.primary.main,
       borderWidth: '1px'
@@ -17,5 +27,5 @@ export const StyledTextField = styled(TextField)(({ theme, error, labeltype }) =
       borderWidth: '1px'
     }
   },
-  ...(labeltype === 'dateFilter' ? { width: '200px', backgroundColor: theme.colors.textFieldGray } : {})
+  ...(labeltype === 'dateFilter' ? { width: '220px' } : {})
 }))
