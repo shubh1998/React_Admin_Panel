@@ -7,8 +7,8 @@ export const theme = createTheme({
       styleOverrides: {
         paper: {
           background: '#0F172A',
-          color: '#fff',
-          fill: '#fff'
+          color: colors.white,
+          fill: colors.white
         }
       }
     },
@@ -18,7 +18,6 @@ export const theme = createTheme({
           props: { size: 'small' },
           style: {
             width: 200,
-            // height: 31,
             borderRadius: 3
           }
         },
@@ -26,7 +25,6 @@ export const theme = createTheme({
           props: { size: 'medium' },
           style: {
             width: 317,
-            // height: 46,
             borderRadius: 5
           }
         },
@@ -34,7 +32,6 @@ export const theme = createTheme({
           props: { size: 'large' },
           style: {
             width: 417,
-            // height: 46,
             borderRadius: 5
           }
         }
@@ -153,25 +150,26 @@ export const theme = createTheme({
       styleOverrides: {
         body: {
           '&::-webkit-scrollbar, & *::-webkit-scrollbar': {
-            width: '0.4em'
+            width: '0.4em',
+            height: '0.2em'
           },
           '&::-webkit-scrollbar-thumb, & *::-webkit-scrollbar-thumb': {
-            backgroundColor: '#888',
+            backgroundColor: colors.scrollBarGray,
             height: '50px',
             border: '6px solid transparent',
             borderRadius: '15px'
           },
           '&::-webkit-scrollbar-thumb:focus, & *::-webkit-scrollbar-thumb:focus': {
-            backgroundColor: '#888'
+            backgroundColor: colors.scrollBarGray
           },
           '&::-webkit-scrollbar-thumb:active, & *::-webkit-scrollbar-thumb:active': {
-            backgroundColor: '#888'
+            backgroundColor: colors.scrollBarGray
           },
           '&::-webkit-scrollbar-thumb:hover, & *::-webkit-scrollbar-thumb:hover': {
             backgroundColor: '#555'
           },
           '&::-webkit-scrollbar-corner, & *::-webkit-scrollbar-corner': {
-            backgroundColor: '#888'
+            backgroundColor: colors.scrollBarGray
           }
         }
       }
@@ -184,10 +182,10 @@ export const theme = createTheme({
       dark: colors.majorelleBlue
     },
     error: {
-      main: '#FF0000'
+      main: colors.errorRed
     },
     success: {
-      main: '#4BC500'
+      main: colors.successGreen
     }
   },
   typography: {

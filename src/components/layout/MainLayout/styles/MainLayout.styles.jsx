@@ -25,6 +25,7 @@ export const StyledBox = styled(Box)(
     flexGrow: flexGrow || 0,
     padding: padding || 0,
     height: height || 'auto',
+    width: '100%',
     backgroundColor: (theme) => theme.colors.layout || 'none'
   })
 )

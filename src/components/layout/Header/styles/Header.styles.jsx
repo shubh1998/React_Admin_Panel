@@ -28,6 +28,6 @@ export const StyledProfileDiv = styled('div')(({ theme }) => ({
   backgroundColor: 'none',
   cursor: 'pointer',
   '&:hover': {
-    backgroundColor: theme.colors.layout
+    backgroundColor: theme.colors.lightGray
   }
 }))

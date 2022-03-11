@@ -22,5 +22,9 @@ export const colors = {
   cornflowerBlue: '#728CF8',
   tableGray: '#CECECE',
   tableHeaderStatic: '#F1F5F9',
-  tableHeaderBottomBorder: '#0D0D0D'
+  tableHeaderBottomBorder: '#0D0D0D',
+  lightGray: '#e8e8e8',
+  successGreen: '#4BC500',
+  errorRed: '#FF0000',
+  scrollBarGray: '#888'
 }
