@@ -12,10 +12,15 @@ const hamSlice = createSlice({
       return {
         openHam: !state.openHam
       }
+    },
+    handleDrawerHamValue: (state, { payload }) => {
+      return {
+        openHam: payload
+      }
     }
   }
 })
 
-export const { handleDrawerToggle } = hamSlice.actions
+export const { handleDrawerToggle, handleDrawerHamValue } = hamSlice.actions
 
 export default hamSlice.reducer
