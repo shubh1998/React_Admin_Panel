@@ -1,4 +1,4 @@
-import CustomCheckbox from './CustomCheckBox'
+import { CustomCheckbox } from './CustomCheckBox'
 
 export default {
   title: 'atoms/Checkbox',

@@ -4,7 +4,7 @@ import { FormControl } from '@mui/material'
 import { StyledMenuItem, StyledSelect } from './CustomSelect.styles'
 import { LabelContainer } from 'components/ui-kit/LabelContainer/LabelContainer'
 
-const CustomSelect = ({
+export const CustomSelect = ({
   label, onChange, items, value, styled, labeltype, formControlStyle, disabled
 }) => (
   <LabelContainer type={labeltype} label={label}>
@@ -59,5 +59,3 @@ CustomSelect.propTypes = {
   formControlStyle: PropTypes.object,
   disabled: PropTypes.bool
 }
-
-export default CustomSelect

@@ -1,9 +1,9 @@
 import { CustomButton } from 'components/ui-kit/Button/CustomButton'
-import CustomCheckbox from 'components/ui-kit/CheckBox/CustomCheckBox'
+import { CustomCheckbox } from 'components/ui-kit/CheckBox/CustomCheckBox'
 import { DateRangePickerInput } from 'components/ui-kit/DateRangePickerInput/DateRangePickerInput'
-import CustomSelect from 'components/ui-kit/Select/CustomSelect'
+import { CustomSelect } from 'components/ui-kit/Select/CustomSelect'
 import { CustomSwitch } from 'components/ui-kit/Switch/CustomSwitch'
-import CustomTextField from 'components/ui-kit/TextField/CustomTextField'
+import { CustomTextField } from 'components/ui-kit/TextField/CustomTextField'
 import React from 'react'
 
 export const CancelledGames = () => {

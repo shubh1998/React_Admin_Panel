@@ -5,7 +5,7 @@ import CircleIcon from '@mui/icons-material/Circle'
 import CheckBoxOutlineBlankRoundedIcon from '@mui/icons-material/CheckBoxOutlineBlankRounded'
 import CheckBoxRoundedIcon from '@mui/icons-material/CheckBoxRounded'
 
-const CustomCheckbox = ({
+export const CustomCheckbox = ({
   label, onChange, labelPlacement, checked, size, circle, ...otherProps
 }) => {
   return (
@@ -47,5 +47,3 @@ CustomCheckbox.propTypes = {
   size: PropTypes.oneOf(['small', 'medium', 'large']),
   circle: PropTypes.bool
 }
-
-export default CustomCheckbox

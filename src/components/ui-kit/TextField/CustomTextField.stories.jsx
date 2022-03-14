@@ -1,4 +1,4 @@
-import CustomTextField from './CustomTextField'
+import { CustomTextField } from './CustomTextField'
 
 export default {
   title: 'atoms/TextField',

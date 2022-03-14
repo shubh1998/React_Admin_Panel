@@ -1,4 +1,4 @@
-import CustomSelect from './CustomSelect'
+import { CustomSelect } from './CustomSelect'
 
 export default {
   title: 'atoms/Select',

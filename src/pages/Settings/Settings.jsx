@@ -1,6 +1,6 @@
 import { Paper } from '@mui/material'
 import { CustomButton } from 'components/ui-kit/Button/CustomButton'
-import CustomTextField from 'components/ui-kit/TextField/CustomTextField'
+import { CustomTextField } from 'components/ui-kit/TextField/CustomTextField'
 import { CustomTypography } from 'components/ui-kit/Typography/CustomTypography'
 import React from 'react'
 import { useTranslation } from 'react-i18next'

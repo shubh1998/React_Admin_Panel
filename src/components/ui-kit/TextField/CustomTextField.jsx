@@ -7,7 +7,7 @@ import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline'
 import { LabelContainer } from 'components/ui-kit/LabelContainer/LabelContainer'
 import { StyledTooltip } from '../Tooltip/CustomTooltip.styles'
 
-const CustomTextField = ({
+export const CustomTextField = ({
   name,
   helperText,
   label,
@@ -132,5 +132,3 @@ CustomTextField.propTypes = {
   enableValidation: PropTypes.bool,
   labeltype: PropTypes.oneOf(['filter', 'default', 'dateFilter'])
 }
-
-export default CustomTextField
