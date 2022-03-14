@@ -38,7 +38,7 @@ const TOASTER_TYPE = {
   All the navigation route Paths
 ========================================================================== */
 const gamesSectionParentRoute = '/games'
-const playersSectionParentRoute = '/parent'
+const playersSectionParentRoute = '/players'
 const performanceSectionParentRoute = '/performance'
 
 const ROUTE_PATHS = {
