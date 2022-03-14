@@ -27,14 +27,22 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "prestart": "node bin/restrictNodeVersion",
+    "preinstall": "node bin/restrictNodeVersion",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public",
+    "prepare": "husky install",
     "lint": "standard",
     "lint:fix": "standard --fix",
     "sync-icons": "node bin/sync_icons.js"
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,ts,tsx}": [
+      "npm run lint:fix"
+    ]
   },
   "eslintConfig": {
     "extends": [
@@ -103,6 +111,8 @@
     "glob": "7.1.6",
     "humps": "2.0.1",
     "standard": "16.0.4",
-    "webpack": "5.69.1"
+    "webpack": "5.69.1",
+    "husky": "7.0.4",
+    "lint-staged": "12.1.2"
   }
 }
