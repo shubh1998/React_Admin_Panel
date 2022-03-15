@@ -40,7 +40,11 @@ export const AppToaster = () => {
   const dispatch = useDispatch()
 
   const handleToasterClose = () => {
-    dispatch(handleToaster({ openToaster: false }))
+    dispatch(handleToaster({
+      openToaster: false,
+      toasterMessage,
+      toasterType
+    }))
   }
 
   return notificationRoot
