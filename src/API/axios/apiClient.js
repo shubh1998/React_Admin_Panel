@@ -38,8 +38,7 @@ axiosInst.interceptors.request.use(
     return request
   },
   (error) => {
-    console.log(error)
-    Promise.reject(error)
+    return Promise.reject(error)
   }
 )
 
@@ -47,8 +46,7 @@ axiosInst.interceptors.request.use(
 axiosInst.interceptors.response.use(
   (res) => res.data.data,
   (error) => {
-    console.log(error)
-    Promise.reject(error)
+    return Promise.reject(error.response.data.errors)
   }
 )
 

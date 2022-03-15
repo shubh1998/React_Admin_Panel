@@ -8,13 +8,8 @@ const userSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder
-      .addCase(operatorLogin.fulfilled, (state, action) => {
-        state.isLoggedin = true
-      })
-      .addCase(operatorLogout.fulfilled, (state, action) => {
-        state.isLoggedin = false
-        localStorage.clear()
-      })
+      .addCase(operatorLogin.fulfilled, (state, action) => {})
+      .addCase(operatorLogout.fulfilled, (state, action) => {})
   }
 })
 
