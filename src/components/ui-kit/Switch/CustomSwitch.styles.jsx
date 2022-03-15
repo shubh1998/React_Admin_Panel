@@ -5,7 +5,7 @@ export const StyledSwitch = styled((props) => (
 ))(({ theme, checked }) => ({
   '& .MuiSwitch-thumb': {
     boxSizing: 'border-box',
-    backgroundColor: 'white'
+    backgroundColor: (theme) => theme.colors.white
   },
   '& .MuiSwitch-switchBase': {
     '& + .MuiSwitch-track': {

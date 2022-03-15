@@ -1,11 +1,11 @@
 import { Grid } from '@mui/material'
+import { AppLoader } from 'components/ui-kit/AppLoader/AppLoader'
 import { CustomButton } from 'components/ui-kit/Button/CustomButton'
-import { CustomCheckbox } from 'components/ui-kit/CheckBox/CustomCheckBox'
 import { Login1Icon } from 'components/ui-kit/icons/iconComponents/Login1Icon'
 import { LoginBg2Icon } from 'components/ui-kit/icons/iconComponents/LoginBg2Icon'
 import { CustomTextField } from 'components/ui-kit/TextField/CustomTextField'
 import { CustomTypography } from 'components/ui-kit/Typography/CustomTypography'
-import { Link } from 'react-router-dom'
+import { LOADER_TYPE } from 'utils/constants/constants'
 import { useLoginController } from './controller/useLoginController'
 import { LoginContainer } from './Login.styles'
 
@@ -14,7 +14,8 @@ export const Login = () => {
     handleSubmit,
     values,
     handleChange,
-    errors
+    errors,
+    loginLoading
   } = useLoginController()
 
   return (
@@ -82,39 +83,15 @@ export const Login = () => {
               enableValidation={Boolean(values.password || errors.password)}
             />
 
-            <div
-              style={{
-                display: 'flex',
-                justifyContent: 'space-between',
-                alignItems: 'center',
-                marginBottom: '10px'
-              }}
-            >
-              <CustomCheckbox
-                circle
-                size='small'
-                label='Remember me'
-                labelPlacement='end'
-                name='remember'
-                id='remember'
-                checked={values.remember}
-                onChange={handleChange}
-              />
-              <Link to='#' style={{ textDecoration: 'none' }}>
-                {' '}
-                <CustomTypography
-                  value='Forget Password ?'
-                  sx={{ fontSize: 14 }}
-                />
-              </Link>
-            </div>
-
             <CustomButton
-              disabled={Boolean(errors.username) ||
-                Boolean(errors.password) || !values.username.length}
+              disabled={Boolean(errors.username) || Boolean(errors.password) || !values.username.length || loginLoading}
               onClick={handleSubmit}
             >
-              <CustomTypography sx={{ fontWeight: 'bold' }} value='Login' />
+              {
+                loginLoading
+                  ? <AppLoader variant={LOADER_TYPE.PULSE} size={5} />
+                  : <CustomTypography sx={{ fontWeight: 'bold' }} value='Login' />
+              }
             </CustomButton>
           </LoginContainer>
         </div>
@@ -148,7 +125,7 @@ export const Login = () => {
             variant='h2'
             align='center'
             value='Welcome to our community'
-            sx={{ color: 'white', padding: '20px' }}
+            sx={{ color: (theme) => theme.colors.white, padding: '20px' }}
           />
         </div>
 

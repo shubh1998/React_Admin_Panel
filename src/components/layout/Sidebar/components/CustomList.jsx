@@ -30,7 +30,7 @@ export const CustomList = ({
                        onClick={() => handleDrawerOptions(item.label)}
                        selected={item.path === location.pathname}
                        sx={{
-                         color: 'white',
+                         color: (theme) => theme.colors.white,
                          backgroundColor: (theme) =>
                            item.path === location.pathname
                              ? `${theme.colors.majorelleBlue} !important`
@@ -66,7 +66,7 @@ export const CustomList = ({
                                  <List component='div' disablePadding>
                                    <CustomListItem
                                      sx={{
-                                       color: 'white',
+                                       color: (theme) => theme.colors.white,
                                        pl: 4,
                                        backgroundColor: (theme) => location.pathname.includes(subItem.path) ? `${theme.colors.majorelleBlue} !important` : 'none',
                                        '&:hover': {

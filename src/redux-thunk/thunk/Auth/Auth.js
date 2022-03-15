@@ -1,7 +1,7 @@
 import { createAsyncThunk } from '@reduxjs/toolkit'
 import { loginService, logoutService } from 'API/services/auth.service'
 import { handleToaster } from 'redux-thunk/redux/Toaster/toasterSlice'
-import { REMEMBER_ME, ROUTE_PATHS, TOASTER_TYPE, TOKEN } from 'utils/constants/constants'
+import { ROUTE_PATHS, TOASTER_TYPE, TOKEN } from 'utils/constants/constants'
 
 /**
  * Operator Login Thunk
@@ -36,7 +36,6 @@ export const operatorLogout = createAsyncThunk('operator/logout', async ({ navig
   try {
     const res = await logoutService()
     localStorage.removeItem(TOKEN)
-    localStorage.removeItem(REMEMBER_ME)
     navigate(ROUTE_PATHS.login, {
       replace: true
     })

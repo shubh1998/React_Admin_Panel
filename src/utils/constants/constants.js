@@ -23,7 +23,14 @@ LocalStorage data
 const TOKEN = 'authtoken'
 const LANGUAGE = 'language'
 const USERNAME = 'username'
-const REMEMBER_ME = 'remember_me'
+
+/* ==========================================================================
+Loader types
+========================================================================== */
+const LOADER_TYPE = {
+  SCALE: 'scale',
+  PULSE: 'pulse'
+}
 
 /* ==========================================================================
   TOASTER / NOTIFICATION
@@ -67,4 +74,4 @@ const ROUTE_PATHS = {
   tipsReceived: `${performanceSectionParentRoute}/tips-received`,
   gamingRevenueByGameType: `${performanceSectionParentRoute}/gaming-revenue-by-game-type`
 }
-export { TOASTER_TYPE, LANGUAGES, TOKEN, LANGUAGE, USERNAME, ROUTE_PATHS, REMEMBER_ME }
+export { TOASTER_TYPE, LANGUAGES, TOKEN, LANGUAGE, USERNAME, ROUTE_PATHS, LOADER_TYPE }

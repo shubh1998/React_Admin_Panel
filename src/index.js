@@ -5,10 +5,18 @@ import App from 'App'
 import reportWebVitals from 'reportWebVitals'
 import 'assets/translation'
 import { appRoot } from 'assets/domNodes'
+import { Provider } from 'react-redux'
+import { theme } from 'theme/theme'
+import { store } from 'redux-thunk/store'
+import { ThemeProvider } from '@mui/material'
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <ThemeProvider theme={theme}>
+      <Provider store={store}>
+        <App />
+      </Provider>
+    </ThemeProvider>
   </React.StrictMode>,
   appRoot
 )
