@@ -7,7 +7,7 @@ import { useTranslation } from 'react-i18next'
 import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { handleToaster } from 'redux-thunk/redux/Toaster/toasterSlice'
-import { ROUTE_PATHS, TOASTER_TYPE, TOKEN } from 'utils/constants/constants'
+import { ROUTE_PATHS, TOASTER_TYPE } from 'utils/constants/constants'
 
 export const Settings = () => {
   const { t } = useTranslation()
@@ -20,7 +20,6 @@ export const Settings = () => {
       toasterMessage: 'Password changed successfully, please re-login !!',
       toasterType: TOASTER_TYPE.success
     }))
-    localStorage.removeItem(TOKEN)
     navigate(ROUTE_PATHS.login)
   }
 

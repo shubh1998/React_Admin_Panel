@@ -1,7 +1,7 @@
 import { createAsyncThunk } from '@reduxjs/toolkit'
 import { loginService, logoutService } from 'API/services/auth.service'
 import { handleToaster } from 'redux-thunk/redux/Toaster/toasterSlice'
-import { ROUTE_PATHS, TOASTER_TYPE, TOKEN } from 'utils/constants/constants'
+import { REMEMBER_ME, ROUTE_PATHS, TOASTER_TYPE, TOKEN } from 'utils/constants/constants'
 
 /**
  * Operator Login Thunk
@@ -20,13 +20,12 @@ export const operatorLogin = createAsyncThunk('operator/login', async ({ usernam
     })
     return res
   } catch (error) {
-    console.log(error)
     thunkApi.dispatch(handleToaster({
       openToaster: true,
       toasterMessage: error[0].description,
       toasterType: TOASTER_TYPE.error
     }))
-    return thunkApi.rejectWithValue(error.response.data)
+    return thunkApi.rejectWithValue(error[0].description)
   }
 })
 
@@ -36,7 +35,8 @@ export const operatorLogin = createAsyncThunk('operator/login', async ({ usernam
 export const operatorLogout = createAsyncThunk('operator/logout', async ({ navigate }, thunkApi) => {
   try {
     const res = await logoutService()
-    localStorage.clear()
+    localStorage.removeItem(TOKEN)
+    localStorage.removeItem(REMEMBER_ME)
     navigate(ROUTE_PATHS.login, {
       replace: true
     })
@@ -47,6 +47,6 @@ export const operatorLogout = createAsyncThunk('operator/logout', async ({ navig
       toasterMessage: error[0].description,
       toasterType: TOASTER_TYPE.error
     }))
-    return thunkApi.rejectWithValue(error.response.data)
+    return thunkApi.rejectWithValue(error[0].description)
   }
 })

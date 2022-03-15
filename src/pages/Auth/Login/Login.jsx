@@ -14,9 +14,7 @@ export const Login = () => {
     handleSubmit,
     values,
     handleChange,
-    errors,
-    checkedOne,
-    handleCheckBoxOneChange
+    errors
   } = useLoginController()
 
   return (
@@ -97,8 +95,10 @@ export const Login = () => {
                 size='small'
                 label='Remember me'
                 labelPlacement='end'
-                checked={checkedOne}
-                onChange={handleCheckBoxOneChange}
+                name='remember'
+                id='remember'
+                checked={values.remember}
+                onChange={handleChange}
               />
               <Link to='#' style={{ textDecoration: 'none' }}>
                 {' '}

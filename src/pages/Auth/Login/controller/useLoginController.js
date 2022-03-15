@@ -1,9 +1,9 @@
 import * as yup from 'yup'
-import { useState } from 'react'
 import { useFormik } from 'formik'
 import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { operatorLogin } from 'redux-thunk/thunk/Auth/Auth'
+import { REMEMBER_ME } from 'utils/constants/constants'
 
 const loginSchema = yup.object({
   username: yup
@@ -17,27 +17,25 @@ const loginSchema = yup.object({
     .label('password')
     .min(4, 'Password must be atleast 4 characters')
     .max(32, 'Password cannot exceed 32 characters')
-    .required('Password is required')
+    .required('Password is required'),
+  remember: yup.boolean()
 })
 
 export const useLoginController = () => {
   const navigate = useNavigate()
-  const [checkedOne, setCheckedOne] = useState(true)
   const dispatch = useDispatch()
-
-  const handleCheckBoxOneChange = (event) => {
-    setCheckedOne(event.target.checked)
-  }
 
   const { handleSubmit, values, handleChange, errors } = useFormik({
     initialValues: {
       username: '',
-      password: ''
+      password: '',
+      remember: false
     },
     validationSchema: loginSchema,
-    onSubmit: async ({ username, password }) => {
-      // const jwtToken = encodeURIComponent(username + password)
-      // localStorage.setItem(TOKEN, jwtToken)
+    onSubmit: async ({ username, password, remember }) => {
+      if (remember) {
+        localStorage.setItem(REMEMBER_ME, remember)
+      }
       dispatch(operatorLogin({
         username,
         password,
@@ -50,8 +48,6 @@ export const useLoginController = () => {
     handleSubmit,
     values,
     handleChange,
-    errors,
-    checkedOne,
-    handleCheckBoxOneChange
+    errors
   }
 }
