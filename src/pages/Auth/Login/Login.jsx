@@ -5,40 +5,20 @@ import { Login1Icon } from 'components/ui-kit/icons/iconComponents/Login1Icon'
 import { LoginBg2Icon } from 'components/ui-kit/icons/iconComponents/LoginBg2Icon'
 import { CustomTextField } from 'components/ui-kit/TextField/CustomTextField'
 import { CustomTypography } from 'components/ui-kit/Typography/CustomTypography'
-import React, { useState } from 'react'
-import { useDispatch } from 'react-redux'
-import { Link, useNavigate } from 'react-router-dom'
-import { handleToaster } from 'redux-thunk/redux/Toaster/toasterSlice'
-import { ROUTE_PATHS, TOASTER_TYPE, TOKEN } from 'utils/constants/constants'
+import { Link } from 'react-router-dom'
+import { useLoginController } from './controller/useLoginController'
 import { LoginContainer } from './Login.styles'
 
 export const Login = () => {
-  const navigate = useNavigate()
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
-  const [checkedOne, setCheckedOne] = React.useState(true)
-  const dispatch = useDispatch()
-
-  const loginHandler = () => {
-    if (email && password) {
-      const jwtToken = encodeURIComponent(email + password)
-      localStorage.setItem(TOKEN, jwtToken)
-      dispatch(
-        handleToaster({
-          openToaster: true,
-          toasterMessage: 'Logged in successfully !!',
-          toasterType: TOASTER_TYPE.success
-        })
-      )
-      navigate(ROUTE_PATHS.dashboard, {
-        replace: true
-      })
-    }
-  }
-
-  const handleCheckBoxOneChange = (event) => {
-    setCheckedOne(event.target.checked)
-  }
+  const {
+    email,
+    password,
+    setEmail,
+    setPassword,
+    checkedOne,
+    loginHandler,
+    handleCheckBoxOneChange
+  } = useLoginController()
 
   return (
     <Grid container>
