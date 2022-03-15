@@ -20,7 +20,7 @@ const LANGUAGES = [
 /* ==========================================================================
 LocalStorage data
 ========================================================================== */
-const TOKEN = 'token'
+const TOKEN = 'authtoken'
 const LANGUAGE = 'language'
 const USERNAME = 'username'
 

@@ -1,10 +1,9 @@
+import * as yup from 'yup'
 import { useState } from 'react'
+import { useFormik } from 'formik'
 import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { operatorLogin } from 'redux-thunk/thunk/Auth/Auth'
-import { ROUTE_PATHS, TOKEN } from 'utils/constants/constants'
-import { useFormik } from 'formik'
-import * as yup from 'yup'
 
 const loginSchema = yup.object({
   username: yup
@@ -37,16 +36,13 @@ export const useLoginController = () => {
     },
     validationSchema: loginSchema,
     onSubmit: async ({ username, password }) => {
-      console.log('username password', username, password)
-      const jwtToken = encodeURIComponent(username + password)
-      localStorage.setItem(TOKEN, jwtToken)
+      // const jwtToken = encodeURIComponent(username + password)
+      // localStorage.setItem(TOKEN, jwtToken)
       dispatch(operatorLogin({
         username,
-        password
+        password,
+        navigate
       }))
-      navigate(ROUTE_PATHS.dashboard, {
-        replace: true
-      })
     }
   })
 

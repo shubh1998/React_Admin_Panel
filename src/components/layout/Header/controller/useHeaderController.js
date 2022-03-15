@@ -4,9 +4,10 @@ import { useTranslation } from 'react-i18next'
 import { useDispatch, useSelector } from 'react-redux'
 import SettingsIcon from '@mui/icons-material/Settings'
 import LogoutIcon from '@mui/icons-material/Logout'
-import { LANGUAGE, LANGUAGES, ROUTE_PATHS, TOASTER_TYPE, TOKEN } from 'utils/constants/constants'
+import { LANGUAGE, LANGUAGES, ROUTE_PATHS, TOASTER_TYPE } from 'utils/constants/constants'
 import { handleDrawerToggle } from 'redux-thunk/redux/Ham/hamSlice'
 import { handleToaster } from 'redux-thunk/redux/Toaster/toasterSlice'
+import { operatorLogout } from 'redux-thunk/thunk/Auth/Auth'
 
 const NAV_MENU_OPTIONS = {
   logout: 'logout',
@@ -40,8 +41,7 @@ export const useHeaderController = () => {
       icon: <LogoutIcon />,
       handler: () => {
         setAnchorElUser(null)
-        localStorage.removeItem(TOKEN)
-        navigate(ROUTE_PATHS.login)
+        handleLogout()
       }
     }
   ]
@@ -79,6 +79,10 @@ export const useHeaderController = () => {
     }))
   }
 
+  const handleLogout = () => {
+    dispatch(operatorLogout({ navigate }))
+  }
+
   return {
     anchorElUser,
     anchorElLanguage,
@@ -89,6 +93,7 @@ export const useHeaderController = () => {
     toggleUserMenu,
     toggleLanguageMenu,
     toggleSideNavbar,
-    showNotification
+    showNotification,
+    handleLogout
   }
 }
