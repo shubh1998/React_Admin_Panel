@@ -3,8 +3,23 @@ import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { operatorLogin } from 'redux-thunk/thunk/Auth/Auth'
 import { ROUTE_PATHS, TOKEN } from 'utils/constants/constants'
-import validationSchema from 'assets/schemas/loginSchema'
 import { useFormik } from 'formik'
+import * as yup from 'yup'
+
+const loginSchema = yup.object({
+  username: yup
+    .string()
+    .label('username')
+    .min(4, 'Username must be atleast 4 characters')
+    .max(32, 'Username cannot exceed 32 characters')
+    .required('Username is required'),
+  password: yup
+    .string()
+    .label('password')
+    .min(4, 'Password must be atleast 4 characters')
+    .max(32, 'Password cannot exceed 32 characters')
+    .required('Password is required')
+})
 
 export const useLoginController = () => {
   const navigate = useNavigate()
@@ -20,7 +35,7 @@ export const useLoginController = () => {
       username: '',
       password: ''
     },
-    validationSchema: validationSchema,
+    validationSchema: loginSchema,
     onSubmit: async ({ username, password }) => {
       console.log('username password', username, password)
       const jwtToken = encodeURIComponent(username + password)
