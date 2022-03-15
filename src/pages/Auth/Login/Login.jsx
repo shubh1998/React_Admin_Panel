@@ -11,12 +11,11 @@ import { LoginContainer } from './Login.styles'
 
 export const Login = () => {
   const {
-    email,
-    password,
-    setEmail,
-    setPassword,
+    handleSubmit,
+    values,
+    handleChange,
+    errors,
     checkedOne,
-    loginHandler,
     handleCheckBoxOneChange
   } = useLoginController()
 
@@ -59,13 +58,30 @@ export const Login = () => {
             <CustomTextField
               sx={{ marginBottom: '20px' }}
               label='Username'
-              onChange={(e) => setEmail(e.target.value)}
+              placeholder='Username'
+              variant='outlined'
+              fullWidth
+              id='username'
+              name='username'
+              value={values.username}
+              onChange={handleChange}
+              error={errors.username}
+              helperText={errors.username}
+              enableValidation={Boolean(values.username || errors.username)}
             />
             <CustomTextField
               sx={{ marginBottom: '20px' }}
               label='Password'
               type='password'
-              onChange={(e) => setPassword(e.target.value)}
+              placeholder='password'
+              variant='outlined'
+              name='password'
+              id='password'
+              value={values.password}
+              onChange={handleChange}
+              error={errors.password}
+              helperText={errors.password}
+              enableValidation={Boolean(values.password || errors.password)}
             />
 
             <div
@@ -94,8 +110,9 @@ export const Login = () => {
             </div>
 
             <CustomButton
-              disabled={!(email && password)}
-              onClick={loginHandler}
+              disabled={Boolean(errors.username) ||
+                Boolean(errors.password) || !values.username.length}
+              onClick={handleSubmit}
             >
               <CustomTypography sx={{ fontWeight: 'bold' }} value='Login' />
             </CustomButton>
