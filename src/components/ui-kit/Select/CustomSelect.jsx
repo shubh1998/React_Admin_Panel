@@ -30,6 +30,9 @@ export const CustomSelect = ({
         type={labeltype}
         disabled={disabled}
       >
+        <StyledMenuItem type={labeltype} styled={styled} key={0} value='' disabled>
+          Please Select
+        </StyledMenuItem>
         {items?.map((item) => (
           <StyledMenuItem type={labeltype} styled={styled} key={item.id} value={item.value}>
             {item.label}

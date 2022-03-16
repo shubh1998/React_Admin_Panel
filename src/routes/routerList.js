@@ -9,6 +9,7 @@ import { PhoneIcon } from 'components/ui-kit/icons/iconComponents/PhoneIcon'
 import { PlayersIcon } from 'components/ui-kit/icons/iconComponents/PlayersIcon'
 import { ProfileIcon } from 'components/ui-kit/icons/iconComponents/ProfileIcon'
 import { UserListIcon } from 'components/ui-kit/icons/iconComponents/UserListIcon'
+import { AddUser } from 'pages/AddUser/AddUser'
 import { Login } from 'pages/Auth/Login/Login'
 import { Dashboard } from 'pages/Dashboard/Dashboard'
 import { CancelledGames } from 'pages/Games/CancelledGames/CancelledGames'
@@ -196,7 +197,7 @@ export const routerList = [
         key: uuidv4(),
         label: 'addNewUser',
         path: ROUTE_PATHS.addNewUser,
-        component: PreRoundReport,
+        component: AddUser,
         hasAuth: true,
         hasSideBarOption: true,
         icon: AddUserIcon,
