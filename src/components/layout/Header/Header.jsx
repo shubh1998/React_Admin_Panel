@@ -1,4 +1,4 @@
-import { StyledIconButton } from './styles/Header.styles'
+import { RightSideOptionContainer, StyledIconButton } from './styles/Header.styles'
 import MenuIcon from '@mui/icons-material/Menu'
 import { AppHeader } from 'components/ui-kit/AppHeader/AppHeader'
 import { useHeaderController } from './controller/useHeaderController'
@@ -29,11 +29,11 @@ export const Header = () => {
           : <></>
       }
       right={
-        <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+        <RightSideOptionContainer>
           <LanguageMenu />
           <Notification />
           <ProfileMenu />
-        </div>
+        </RightSideOptionContainer>
       }
     />
   )

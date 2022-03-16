@@ -8,7 +8,7 @@ import { CustomTypography } from 'components/ui-kit/Typography/CustomTypography'
 import { LOADER_TYPE } from 'utils/constants/constants'
 import { Link } from 'react-router-dom'
 import { useLoginController } from './controller/useLoginController'
-import { LoginContainer } from './Login.styles'
+import { ForgotPasswordLinkContainer, LoginContainer, LoginIconContainer, RootLoginContainer, WelcomeTextContainer } from './Login.styles'
 
 export const Login = () => {
   const {
@@ -23,39 +23,16 @@ export const Login = () => {
   return (
     <Grid container>
       <Grid item xs={12} lg={6} sx={{ position: 'relative' }}>
-        <div
-          style={{
-            position: 'absolute',
-            top: 0,
-            bottom: 0,
-            right: 0,
-            left: 0,
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center'
-          }}
-        >
-          <LoginContainer
-            style={{
-              maxWidth: '500px  ',
-              margin: '40px auto',
-              textAlign: 'left'
-            }}
-          >
-            <div
-              style={{
-                borderBottom: '4px solid lightgrey',
-                width: 'fit-content',
-                marginBottom: 15,
-                paddingBottom: 10
+        <RootLoginContainer>
+          <LoginContainer>
+            <CustomTypography
+              value={t('login')}
+              variant='h3'
+              sx={{
+                fontWeight: 'bold'
               }}
-            >
-              <CustomTypography
-                value={t('login')}
-                variant='h3'
-                sx={{ fontWeight: 'bold' }}
-              />
-            </div>
+            />
+            <br />
             <CustomTextField
               sx={{ marginBottom: '20px' }}
               label={t('username')}
@@ -85,22 +62,14 @@ export const Login = () => {
               enableValidation={Boolean(values.password || errors.password)}
             />
 
-            <div
-              style={{
-                display: 'flex',
-                justifyContent: 'flex-end',
-                alignItems: 'center',
-                marginBottom: '10px'
-              }}
-            >
+            <ForgotPasswordLinkContainer>
               <Link to='#' style={{ textDecoration: 'none' }}>
-                {' '}
                 <CustomTypography
                   value={t('forgotPassword')}
                   sx={{ fontSize: 14 }}
                 />
               </Link>
-            </div>
+            </ForgotPasswordLinkContainer>
             <CustomButton
               disabled={Boolean(errors.username) || Boolean(errors.password) || !values.username.length || loginLoading}
               onClick={handleSubmit}
@@ -112,11 +81,11 @@ export const Login = () => {
               }
             </CustomButton>
           </LoginContainer>
-        </div>
+        </RootLoginContainer>
 
-        <div style={{ height: '100vh', width: '100%' }}>
+        <LoginIconContainer>
           <Login1Icon style={{ height: '100%', width: '100%' }} />
-        </div>
+        </LoginIconContainer>
       </Grid>
       <Grid
         item
@@ -127,29 +96,18 @@ export const Login = () => {
           position: 'relative'
         }}
       >
-        <div
-          style={{
-            position: 'absolute',
-            top: 0,
-            bottom: 0,
-            right: 0,
-            left: 0,
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center'
-          }}
-        >
+        <WelcomeTextContainer>
           <CustomTypography
             variant='h2'
             align='center'
             value={t('WelcomeToOurCommunity')}
             sx={{ color: (theme) => theme.colors.white, padding: '20px' }}
           />
-        </div>
+        </WelcomeTextContainer>
 
-        <div style={{ height: '100vh', width: '100%' }}>
+        <LoginIconContainer>
           <LoginBg2Icon style={{ height: '100%', width: '100%' }} />
-        </div>
+        </LoginIconContainer>
       </Grid>
     </Grid>
   )

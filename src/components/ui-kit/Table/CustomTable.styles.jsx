@@ -25,3 +25,10 @@ export const StyledTableRow = styled(TableRow)(({ theme }) => ({
     backgroundColor: theme.palette.action.hover
   }
 }))
+
+export const StatusContainer = styled('div')(({ theme }) => ({
+  display: 'flex',
+  justifyContent: 'center',
+  gap: '8%',
+  alignItems: 'center'
+}))
