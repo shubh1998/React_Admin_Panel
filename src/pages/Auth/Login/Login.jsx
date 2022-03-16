@@ -6,6 +6,7 @@ import { LoginBg2Icon } from 'components/ui-kit/icons/iconComponents/LoginBg2Ico
 import { CustomTextField } from 'components/ui-kit/TextField/CustomTextField'
 import { CustomTypography } from 'components/ui-kit/Typography/CustomTypography'
 import { LOADER_TYPE } from 'utils/constants/constants'
+import { Link } from 'react-router-dom'
 import { useLoginController } from './controller/useLoginController'
 import { LoginContainer } from './Login.styles'
 
@@ -15,7 +16,8 @@ export const Login = () => {
     values,
     handleChange,
     errors,
-    loginLoading
+    loginLoading,
+    t
   } = useLoginController()
 
   return (
@@ -49,15 +51,15 @@ export const Login = () => {
               }}
             >
               <CustomTypography
-                value='Log in'
+                value={t('login')}
                 variant='h3'
                 sx={{ fontWeight: 'bold' }}
               />
             </div>
             <CustomTextField
               sx={{ marginBottom: '20px' }}
-              label='Username'
-              placeholder='Username'
+              label={t('username')}
+              placeholder={t('username')}
               variant='outlined'
               fullWidth
               id='username'
@@ -70,9 +72,9 @@ export const Login = () => {
             />
             <CustomTextField
               sx={{ marginBottom: '20px' }}
-              label='Password'
+              label={t('password')}
               type='password'
-              placeholder='password'
+              placeholder={t('password')}
               variant='outlined'
               name='password'
               id='password'
@@ -83,6 +85,22 @@ export const Login = () => {
               enableValidation={Boolean(values.password || errors.password)}
             />
 
+            <div
+              style={{
+                display: 'flex',
+                justifyContent: 'flex-end',
+                alignItems: 'center',
+                marginBottom: '10px'
+              }}
+            >
+              <Link to='#' style={{ textDecoration: 'none' }}>
+                {' '}
+                <CustomTypography
+                  value={t('forgotPassword')}
+                  sx={{ fontSize: 14 }}
+                />
+              </Link>
+            </div>
             <CustomButton
               disabled={Boolean(errors.username) || Boolean(errors.password) || !values.username.length || loginLoading}
               onClick={handleSubmit}
@@ -90,7 +108,7 @@ export const Login = () => {
               {
                 loginLoading
                   ? <AppLoader variant={LOADER_TYPE.PULSE} size={5} />
-                  : <CustomTypography sx={{ fontWeight: 'bold' }} value='Login' />
+                  : <CustomTypography sx={{ fontWeight: 'bold' }} value={t('login')} />
               }
             </CustomButton>
           </LoginContainer>
@@ -124,7 +142,7 @@ export const Login = () => {
           <CustomTypography
             variant='h2'
             align='center'
-            value='Welcome to our community'
+            value={t('WelcomeToOurCommunity')}
             sx={{ color: (theme) => theme.colors.white, padding: '20px' }}
           />
         </div>

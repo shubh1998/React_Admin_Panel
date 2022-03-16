@@ -5,13 +5,11 @@ import { CustomTypography } from 'components/ui-kit/Typography/CustomTypography'
 import React from 'react'
 import { useTranslation } from 'react-i18next'
 import { useDispatch } from 'react-redux'
-import { useNavigate } from 'react-router-dom'
 import { handleToaster } from 'redux-thunk/redux/Toaster/toasterSlice'
-import { ROUTE_PATHS, TOASTER_TYPE } from 'utils/constants/constants'
+import { TOASTER_TYPE } from 'utils/constants/constants'
 
 export const Settings = () => {
   const { t } = useTranslation()
-  const navigate = useNavigate()
   const dispatch = useDispatch()
 
   const changePassword = () => {
@@ -20,7 +18,6 @@ export const Settings = () => {
       toasterMessage: 'Password changed successfully, please re-login !!',
       toasterType: TOASTER_TYPE.success
     }))
-    navigate(ROUTE_PATHS.login)
   }
 
   return (
@@ -58,7 +55,7 @@ export const Settings = () => {
         sx={{ margin: '30px 0' }}
         onClick={changePassword}
       >
-        <CustomTypography sx={{ fontWeight: 'bold' }} value='Change Password' />
+        <CustomTypography sx={{ fontWeight: 'bold' }} value={t('changePassword')} />
       </CustomButton>
     </Paper>
   )

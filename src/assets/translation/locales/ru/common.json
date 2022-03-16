@@ -23,5 +23,11 @@
   "administrator": "Администратор",
   "addNewUser": "Добавить нового пользователя",
   "usersList": "Список пользователей",
-  "customerSupport": "Служба поддержки"
+  "customerSupport": "Служба поддержки",
+  "login": "Войти",
+  "username": "Имя пользователя",
+  "password": "Пароль",
+  "changePassword": "Изменить пароль",
+  "WelcomeToOurCommunity": "Добро пожаловать в наше сообщество",
+  "forgotPassword": "Забыл пароль"
 }

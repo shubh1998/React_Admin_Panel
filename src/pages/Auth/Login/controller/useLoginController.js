@@ -3,6 +3,7 @@ import { useFormik } from 'formik'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { operatorLogin } from 'redux-thunk/thunk/Auth/Auth'
+import { useTranslation } from 'react-i18next'
 
 const loginSchema = yup.object({
   username: yup
@@ -23,6 +24,7 @@ export const useLoginController = () => {
   const navigate = useNavigate()
   const dispatch = useDispatch()
   const loginLoading = useSelector((state) => state.auth.loginLoading)
+  const { t } = useTranslation()
 
   const { handleSubmit, values, handleChange, errors } = useFormik({
     initialValues: {
@@ -44,6 +46,7 @@ export const useLoginController = () => {
     values,
     handleChange,
     errors,
-    loginLoading
+    loginLoading,
+    t
   }
 }
