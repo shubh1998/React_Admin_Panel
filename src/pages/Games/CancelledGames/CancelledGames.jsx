@@ -40,8 +40,8 @@ export const CancelledGames = () => {
         <CustomButton>Show Transaction</CustomButton>
         <CustomButton variant='text'>Show Transaction</CustomButton>
       </div>
-      <CustomSwitch size='small' color='error' />
-      <CustomSwitch size='medium' />
+      <CustomSwitch size='small' color='error' label='start' labelPlacement='start' />
+      <CustomSwitch size='medium' color='error' label='start' labelPlacement='start' />
       <CustomSwitch size='large' />
       <CustomSwitch size='small' disabled />
       <div>

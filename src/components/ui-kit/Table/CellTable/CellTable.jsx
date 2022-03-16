@@ -2,19 +2,14 @@ import PropTypes from 'prop-types'
 import CircleIcon from '@mui/icons-material/Circle'
 import { CustomTypography } from 'components/ui-kit/Typography/CustomTypography'
 import { CustomSwitch } from 'components/ui-kit/Switch/CustomSwitch'
+import { StatusContainer } from '../CustomTable.styles'
 
 export const CellType = ({ column, row }) => {
   const cellData = row[column.value]
   switch (column.type) {
     case 'status':
       return (
-        <div style={{
-          display: 'flex',
-          justifyContent: 'center',
-          gap: '8%',
-          alignItems: 'center'
-        }}
-        >
+        <StatusContainer>
           <CircleIcon
             sx={{
               fontSize: 13
@@ -26,7 +21,7 @@ export const CellType = ({ column, row }) => {
             value={cellData ? 'Active' : 'Inactive'}
           />
 
-        </div>
+        </StatusContainer>
       )
     case 'switch':
       return (
@@ -34,9 +29,6 @@ export const CellType = ({ column, row }) => {
           <CustomSwitch
             inputProps={{ 'aria-label': 'controlled' }}
             checked={cellData.switchValue}
-          // onChange={() => {
-          //   cellData.onChange()
-          // }}
           />
         </div>
       )

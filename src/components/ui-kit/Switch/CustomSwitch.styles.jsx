@@ -1,11 +1,11 @@
-import { Switch, styled } from '@mui/material'
+import { Switch, styled, FormControlLabel } from '@mui/material'
 
 export const StyledSwitch = styled((props) => (
   <Switch focusVisibleClassName='.Mui-focusVisible' disableRipple {...props} />
 ))(({ theme, checked }) => ({
   '& .MuiSwitch-thumb': {
     boxSizing: 'border-box',
-    backgroundColor: 'white'
+    backgroundColor: theme.colors.white
   },
   '& .MuiSwitch-switchBase': {
     '& + .MuiSwitch-track': {
@@ -22,4 +22,15 @@ export const StyledSwitch = styled((props) => (
     }
   }
 
+}))
+
+export const StyledFormControlLabel = styled(FormControlLabel)(({ theme, checked }) => ({
+  '&.MuiFormControlLabel-root': {
+    marginLeft: 0,
+    color: checked ? theme.palette.success.main : theme.palette.error.main
+  },
+  '& .MuiTypography-root': {
+    fontWeight: 600,
+    minWidth: '70px'
+  }
 }))

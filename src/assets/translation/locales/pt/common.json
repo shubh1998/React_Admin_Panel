@@ -23,5 +23,11 @@
   "administrator": "Administrador",
   "addNewUser": "Adicionar novo usuário",
   "usersList": "Lista de usuários",
-  "customerSupport": "Suporte ao cliente"
+  "customerSupport": "Suporte ao cliente",
+  "login": "Entrar",
+  "username": "Nome de usuário",
+  "password": "Senha",
+  "changePassword": "Alterar senha",
+  "WelcomeToOurCommunity": "Bem vindo à nossa comunidade",
+  "forgotPassword": "Esqueceu a senha"
 }

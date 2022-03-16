@@ -1,10 +1,10 @@
 import { combineReducers } from '@reduxjs/toolkit'
-import userReducer from './User/userSlice'
+import authSlice from './Auth/authSlice'
 import hamSlice from './Ham/hamSlice'
 import toasterSlice from './Toaster/toasterSlice'
 
 export const rootReducer = combineReducers({
-  user: userReducer,
+  auth: authSlice,
   ham: hamSlice,
   toaster: toasterSlice
 })

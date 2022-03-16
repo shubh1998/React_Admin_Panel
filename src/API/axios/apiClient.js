@@ -24,7 +24,7 @@ class ApiClient {
 
 // Create axios Instance
 const axiosInst = axios.create({
-  baseURL: 'https://demo-be-fg.herokuapp.com/api/v1'
+  baseURL: process.env.REACT_APP_API_URL
 })
 
 // Adding axios request interceptor
@@ -38,8 +38,7 @@ axiosInst.interceptors.request.use(
     return request
   },
   (error) => {
-    console.log(error)
-    Promise.reject(error)
+    return Promise.reject(error)
   }
 )
 
@@ -47,8 +46,7 @@ axiosInst.interceptors.request.use(
 axiosInst.interceptors.response.use(
   (res) => res.data.data,
   (error) => {
-    console.log(error)
-    Promise.reject(error)
+    return Promise.reject(error.response.data.errors)
   }
 )
 

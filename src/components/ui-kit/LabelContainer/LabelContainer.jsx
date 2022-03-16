@@ -6,7 +6,7 @@ export const LabelContainer = ({ children, type, label }) => {
   return (
     type !== 'filter' && type !== 'dateFilter'
       ? (
-        <div style={{ width: 'fit-content' }}>
+        <div style={{ width: 'fit-content', height: '100px' }}>
           <div style={{ textAlign: 'start' }}>
             <CustomTypography sx={{ color: (theme) => theme.colors.loginTextColor }} variant='subtitle1' value={`${label}*`} />
           </div>

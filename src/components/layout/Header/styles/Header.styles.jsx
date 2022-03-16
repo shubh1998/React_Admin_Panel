@@ -31,3 +31,8 @@ export const StyledProfileDiv = styled('div')(({ theme }) => ({
     backgroundColor: theme.colors.lightGray
   }
 }))
+
+export const RightSideOptionContainer = styled('div')(({ theme }) => ({
+  display: 'flex',
+  justifyContent: 'space-between'
+}))

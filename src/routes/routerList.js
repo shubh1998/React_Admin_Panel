@@ -9,6 +9,7 @@ import { PhoneIcon } from 'components/ui-kit/icons/iconComponents/PhoneIcon'
 import { PlayersIcon } from 'components/ui-kit/icons/iconComponents/PlayersIcon'
 import { ProfileIcon } from 'components/ui-kit/icons/iconComponents/ProfileIcon'
 import { UserListIcon } from 'components/ui-kit/icons/iconComponents/UserListIcon'
+import { AddUser } from 'pages/AddUser/AddUser'
 import { Login } from 'pages/Auth/Login/Login'
 import { Dashboard } from 'pages/Dashboard/Dashboard'
 import { CancelledGames } from 'pages/Games/CancelledGames/CancelledGames'
@@ -17,127 +18,6 @@ import { Profile } from 'pages/Profile/Profile'
 import { Settings } from 'pages/Settings/Settings'
 import { ROUTE_PATHS } from 'utils/constants/constants'
 import { v4 as uuidv4 } from 'uuid'
-
-// export const routerListOld = [
-//   {
-//     key: uuidv4(),
-//     label: 'dashboard',
-//     sectionName: 'home',
-//     path: ROUTE_PATHS.dashboard,
-//     component: Dashboard,
-//     hasAuth: true,
-//     hasSideBarOption: true,
-//     icon: DashboardIcon,
-//     subMenus: []
-//   },
-//   {
-//     key: uuidv4(),
-//     label: 'login',
-//     sectionName: 'login',
-//     path: ROUTE_PATHS.login,
-//     component: Login,
-//     hasAuth: false,
-//     hasSideBarOption: false,
-//     icon: LoginIcon,
-//     subMenus: []
-//   },
-//   {
-//     key: uuidv4(),
-//     label: 'settings',
-//     sectionName: 'settings',
-//     path: ROUTE_PATHS.settings,
-//     component: Settings,
-//     hasAuth: true,
-//     hasSideBarOption: false,
-//     icon: EllipseIcon,
-//     subMenus: []
-//   },
-//   {
-//     key: uuidv4(),
-//     label: 'profile',
-//     sectionName: 'profile',
-//     path: ROUTE_PATHS.profile,
-//     component: Profile,
-//     hasAuth: true,
-//     hasSideBarOption: false,
-//     icon: ProfileIcon,
-//     subMenus: []
-//   },
-//   {
-//     key: uuidv4(),
-//     label: 'games',
-//     sectionName: 'reports',
-//     path: ROUTE_PATHS.games,
-//     component: PreRoundReport,
-//     hasAuth: true,
-//     hasSideBarOption: true,
-//     icon: GameIcon,
-//     subMenus: [
-//       {
-//         key: uuidv4(),
-//         label: 'preRoundReports',
-//         sectionName: 'reports',
-//         path: ROUTE_PATHS.preRoundReportReports,
-//         component: PreRoundReport,
-//         hasAuth: true,
-//         hasSideBarOption: true,
-//         icon: EllipseIcon
-//       },
-//       {
-//         key: uuidv4(),
-//         label: 'cancelledGames',
-//         sectionName: 'reports',
-//         path: ROUTE_PATHS.cancelledGames,
-//         component: CancelledGames,
-//         hasAuth: true,
-//         hasSideBarOption: true,
-//         icon: EllipseIcon
-//       }
-//     ]
-//   },
-//   {
-//     key: uuidv4(),
-//     label: 'players',
-//     sectionName: 'reports',
-//     path: ROUTE_PATHS.games,
-//     component: PreRoundReport,
-//     hasAuth: true,
-//     hasSideBarOption: true,
-//     icon: PlayersIcon,
-//     subMenus: [
-//       {
-//         key: uuidv4(),
-//         label: 'allPlayers',
-//         sectionName: 'reports',
-//         path: ROUTE_PATHS.allPlayers,
-//         component: PreRoundReport,
-//         hasAuth: true,
-//         hasSideBarOption: true,
-//         icon: EllipseIcon
-//       },
-//       {
-//         key: uuidv4(),
-//         label: 'activePlayers',
-//         sectionName: 'reports',
-//         path: ROUTE_PATHS.activePlayers,
-//         component: CancelledGames,
-//         hasAuth: true,
-//         hasSideBarOption: true,
-//         icon: EllipseIcon
-//       },
-//       {
-//         key: uuidv4(),
-//         label: 'blockedPlayers',
-//         sectionName: 'reports',
-//         path: ROUTE_PATHS.blockedPlayers,
-//         component: CancelledGames,
-//         hasAuth: true,
-//         hasSideBarOption: true,
-//         icon: EllipseIcon
-//       }
-//     ]
-//   }
-// ]
 
 export const routerList = [
   {
@@ -317,7 +197,7 @@ export const routerList = [
         key: uuidv4(),
         label: 'addNewUser',
         path: ROUTE_PATHS.addNewUser,
-        component: PreRoundReport,
+        component: AddUser,
         hasAuth: true,
         hasSideBarOption: true,
         icon: AddUserIcon,

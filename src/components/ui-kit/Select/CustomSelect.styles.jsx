@@ -31,12 +31,12 @@ export const StyledMenuItem = styled(MenuItem)(({ theme, styled, type }) => ({
     color: styled ? 'black' : theme.palette.primary.light,
     '&:hover': {
       background: styled ? theme.palette.primary.main : 'rgba(0, 0, 0, 0.04)',
-      color: styled ? 'white' : theme.palette.primary.light
+      color: styled ? theme.colors.white : theme.palette.primary.light
     }
   }
   // '&.MuiMenuItem-root.Mui-selected': {
   //   background: theme.palette.primary.main,
-  //   color: 'white',
+  //   color: (theme) => theme.colors.white,
   //   borderRadius: '22px'
   // }
 }))

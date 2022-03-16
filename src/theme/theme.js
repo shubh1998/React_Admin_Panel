@@ -198,5 +198,5 @@ export const theme = createTheme({
     width: 240
   },
   colors: colors,
-  drawerWidth: 265
+  drawerWidth: 300
 })

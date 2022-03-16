@@ -4,7 +4,7 @@ import { createPortal } from 'react-dom'
 import { Alert, Slide, Snackbar } from '@mui/material'
 import { useSelector, useDispatch } from 'react-redux'
 import { handleToaster } from 'redux-thunk/redux/Toaster/toasterSlice'
-import { notificationRoot } from 'assets/domNodes'
+import { notificationRoot } from 'assets/dom/domNodes'
 
 const TransitionLeft = (props) => {
   return <Slide {...props} direction='right' />
@@ -40,7 +40,11 @@ export const AppToaster = () => {
   const dispatch = useDispatch()
 
   const handleToasterClose = () => {
-    dispatch(handleToaster({ openToaster: false }))
+    dispatch(handleToaster({
+      openToaster: false,
+      toasterMessage,
+      toasterType
+    }))
   }
 
   return notificationRoot

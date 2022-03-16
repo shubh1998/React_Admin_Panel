@@ -18,6 +18,7 @@ import faker from 'faker'
 import { Card, CardContent, Grid } from '@mui/material'
 import { CustomTypography } from 'components/ui-kit/Typography/CustomTypography'
 import { colors } from 'theme/colors/colors'
+import { ChartContainer, HorizontalLine, PieChartContainer } from './Dashboard.styles'
 
 ChartJS.register(
   CategoryScale,
@@ -167,7 +168,7 @@ export const Dashboard = () => {
                               fontSize: '20px'
                             }}
                           />
-                          <hr style={{ width: '100px' }} />
+                          <HorizontalLine />
                           <br />
                           <CustomTypography
                             color={bgColor}
@@ -195,26 +196,26 @@ export const Dashboard = () => {
         </Grid>
         <Grid item xs={12} sm={12} md={12} lg={5}>
           <Card elevation={3}>
-            <div style={{ display: 'block', height: '460px', width: '460px', padding: '20px', margin: 'auto' }}>
+            <PieChartContainer>
               <Pie data={PieChartData} />
-            </div>
+            </PieChartContainer>
           </Card>
         </Grid>
       </Grid>
       <Card elevation={3} sx={{ marginBottom: 5 }}>
         <CardContent sx={{ textAlign: 'center' }}>
           <CustomTypography variant='h6' value='All & Unique Visitors' sx={{ fontWeight: 600 }} />
-          <div style={{ maxWidth: '96%', margin: 'auto' }}>
+          <ChartContainer>
             <Bar options={barChartOptions} data={barChartData} height={70} />
-          </div>
+          </ChartContainer>
         </CardContent>
       </Card>
       <Card elevation={3}>
         <CardContent sx={{ textAlign: 'center' }}>
           <CustomTypography variant='h6' value='NGR' sx={{ fontWeight: 600 }} />
-          <div style={{ maxWidth: '95%', margin: 'auto' }}>
+          <ChartContainer>
             <Line options={lineChartOptions} data={lineChartData} height={70} />
-          </div>
+          </ChartContainer>
         </CardContent>
       </Card>
     </>
