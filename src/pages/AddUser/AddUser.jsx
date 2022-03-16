@@ -95,7 +95,7 @@ export const AddUser = () => {
                 <div style={{ textAlign: 'start' }}>
                   <CustomTypography variant='subtitle1' value='Status*' />
                 </div>
-                <div sx={{
+                <div style={{
                   display: 'flex'
                 }}
                 >

@@ -5,10 +5,14 @@ export const AddUserContainer = styled('div')(() => ({
   minHeight: '100vh'
 }))
 
-export const AddUserForm = styled('div')(() => ({
+export const AddUserForm = styled('div')(({ theme }) => ({
   width: 'fit-content',
-  maxWidth: '900px',
-  margin: 'auto'
+  maxWidth: '770px',
+  margin: 'auto',
+  [theme.breakpoints.down('md')]: {
+    maxWidth: '500px'
+  }
+
 }))
 
 export const GridItem = styled(Grid)(({ theme }) => ({
