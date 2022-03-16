@@ -5,7 +5,7 @@ export const StyledSwitch = styled((props) => (
 ))(({ theme, checked }) => ({
   '& .MuiSwitch-thumb': {
     boxSizing: 'border-box',
-    backgroundColor: (theme) => theme.colors.white
+    backgroundColor: theme.colors.white
   },
   '& .MuiSwitch-switchBase': {
     '& + .MuiSwitch-track': {
@@ -26,9 +26,11 @@ export const StyledSwitch = styled((props) => (
 
 export const StyledFormControlLabel = styled(FormControlLabel)(({ theme, checked }) => ({
   '&.MuiFormControlLabel-root': {
+    marginLeft: 0,
     color: checked ? theme.palette.success.main : theme.palette.error.main
   },
   '& .MuiTypography-root': {
-    fontWeight: 600
+    fontWeight: 600,
+    minWidth: '70px'
   }
 }))

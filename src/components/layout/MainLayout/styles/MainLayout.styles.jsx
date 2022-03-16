@@ -26,7 +26,7 @@ export const StyledBox = styled(Box)(
     padding: padding || 0,
     height: height || 'auto',
     width: '100%',
-    backgroundColor: (theme) => theme.colors.layout || 'none'
+    backgroundColor: theme.colors.layout || 'none'
   })
 )
 

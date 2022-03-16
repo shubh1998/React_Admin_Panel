@@ -1,11 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { FormControl } from '@mui/material'
+import { FormControl, FormHelperText } from '@mui/material'
 import { StyledMenuItem, StyledSelect } from './CustomSelect.styles'
 import { LabelContainer } from 'components/ui-kit/LabelContainer/LabelContainer'
 
 export const CustomSelect = ({
-  label, onChange, items, value, styled, labeltype, formControlStyle, disabled
+  label, error, onChange, items, value, styled, labeltype, formControlStyle, disabled, helperText,
+  ...otherProps
 }) => (
   <LabelContainer type={labeltype} label={label}>
     <FormControl
@@ -20,6 +21,7 @@ export const CustomSelect = ({
             : theme.colors.textFieldGray
         })
       }
+      error={error}
       size='small'
     >
       <StyledSelect
@@ -29,6 +31,7 @@ export const CustomSelect = ({
         inputProps={{ 'aria-label': 'Without label' }}
         type={labeltype}
         disabled={disabled}
+        {...otherProps}
       >
         <StyledMenuItem type={labeltype} styled={styled} key={0} value='' disabled>
           Please Select
@@ -39,6 +42,7 @@ export const CustomSelect = ({
           </StyledMenuItem>
         ))}
       </StyledSelect>
+      {helperText && <FormHelperText>{helperText}</FormHelperText>}
     </FormControl>
   </LabelContainer>
 )
@@ -50,7 +54,8 @@ CustomSelect.defaultProps = {
   styled: true,
   labeltype: 'default',
   formControlStyle: null,
-  disabled: false
+  disabled: false,
+  error: false
 }
 
 CustomSelect.propTypes = {
@@ -60,5 +65,6 @@ CustomSelect.propTypes = {
   value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   labeltype: PropTypes.oneOf(['filter', 'default']),
   formControlStyle: PropTypes.object,
-  disabled: PropTypes.bool
+  disabled: PropTypes.bool,
+  error: PropTypes.bool
 }
